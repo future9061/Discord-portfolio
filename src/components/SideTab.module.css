@@ -1,0 +1,62 @@
+/*SideTab components*/
+
+.side_tab {
+  background-color: #1e1f22;
+  height: 100vh;
+  display: inline-block;
+}
+
+.side_tab ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px;
+  align-items: center;
+}
+
+.side_tab ul li {
+  text-align: center;
+  display: block;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  background-color: #5865f2;
+  line-height: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.side_tab ul li:first-child {
+  border-radius: 20px;
+  font-size: 1.6em;
+}
+
+.side_tab ul li:first-child::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 8px auto;
+  border-bottom: 1px solid #7c7d80;
+}
+
+.side_tab ul li:not(:first-child) {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #313338;
+}
+
+.side_tab ul li:nth-child(6),
+.side_tab ul li:nth-child(7) {
+  color: #23a459;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus_icon {
+  text-align: center;
+  line-height: 50px;
+}

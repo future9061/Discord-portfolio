@@ -1,0 +1,111 @@
+/*category components*/
+
+.category_wrap {
+  display: inline-block;
+  background-color: #2b2d31;
+  color: #abb3bd;
+  padding: 5px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.birthday_wrap ul {
+  margin: 0;
+  padding: 0px;
+}
+
+.birthday_wrap ul li {
+  list-style: none;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  cursor: pointer;
+}
+
+.birthday_wrap ul li p {
+  margin-left: 10px;
+  margin-right: 60px;
+}
+
+.birthday_wrap ul li:first-child {
+  background-color: #404249;
+  color: white;
+  border-radius: 5px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 0px 10px;
+}
+
+.menu_wrap ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu_wrap li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.menu_wrap li > div {
+  position: relative;
+}
+
+.hidden {
+  overflow: hidden;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.circle {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #757982;
+  border: 4px solid #2b2d31;
+  position: absolute;
+  top: -5px;
+  left: -3px;
+}
+
+.menu_wrap ul li:first-child .circle {
+  background-color: #23a55a;
+}
+
+.menu_wrap li div img {
+  width: 100%;
+  height: 100%;
+}
+
+.user {
+  background-color: #1e1f22;
+  color: white;
+  padding: 10px;
+}
+
+.user .hidden {
+  background-color: #faa10e;
+}
+
+.user p {
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  margin: 0;
+  line-height: 40px;
+}
+
+.user .circle {
+  background-color: #23a55a;
+}
