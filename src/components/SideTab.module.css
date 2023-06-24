@@ -2,7 +2,8 @@
 
 .side_tab {
   background-color: #1e1f22;
-  height: 100vh;
+  height: 100%;
+  width: 5%;
   display: inline-block;
 }
 

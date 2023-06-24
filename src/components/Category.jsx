@@ -60,22 +60,21 @@ function Category() {
             </div>
             <p>PWA(mobile)</p>
           </li>
-          <li className={classes.user}>
-            <div>
-              <div className={classes.hidden}>
-                <p>
-                  <BsDiscord />
-                </p>
-              </div>
-              <div className={classes.circle}></div>
-            </div>
-            <div className={classes.text_wrap}>
-              <span>미래의 Portfolio</span>
-              <br></br>
-              <small>future#9061</small>
-            </div>
-          </li>
         </ul>
+        <div className={classes.user}>
+          <div>
+            <div className={classes.hidden}>
+              <p>
+                <BsDiscord />
+              </p>
+            </div>
+            <div className={classes.circle}></div>
+          </div>
+          <div className={classes.text_wrap}>
+            <span>미래의 Portfolio</span>
+            <small>future#9061</small>
+          </div>
+        </div>
       </div>
     </div>
   );
