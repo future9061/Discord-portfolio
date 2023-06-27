@@ -48,7 +48,7 @@ SPA를 만들기에 최적화 된 react framework를 사용하기 때문에 한 
 discord를 고르게 됐습니다.
 
 기능적인 면에서 기본적이지만 react의 주요 기능인 route와 component를 많이 사용하려 노력했습니다.
-각 메뉴마다 <Link />로 페이지를 넘어가며, 반복되는 li들은 component로 만들어 props로 data를 전달받는 작업도 해보았습니다. 
+각 메뉴마다 Link로 페이지를 넘어가며, 반복되는 li들은 component로 만들어 props로 data를 전달받는 작업도 해보았습니다. 
 다양한 react library를 써보며 덕분에 react와 조금 친해진 느낌이 들었습니다.😀😀
 
 
