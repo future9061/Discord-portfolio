@@ -7,7 +7,7 @@ export default function SubBar() {
   return (
     <div className={classes.sub_bar_wrap}>
       <div className={classes.search}>
-        <input type="text" placeholder="대화 찾기 또는 시작하기" />
+        <input type="text" placeholder="Project search" />
       </div>
       <div className={classes.sub_menu_wrap}>
         <ul>

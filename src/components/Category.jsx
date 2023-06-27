@@ -5,24 +5,24 @@ import { GiCakeSlice } from "react-icons/gi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsDiscord } from "react-icons/bs";
 import classes from "./Category.module.css";
+import BrLi from "./li/BrLi";
+import MeLi from "./li/MeLi";
 
 function Category() {
   return (
     <div className={classes.category_wrap}>
       <div className={classes.birthday_wrap}>
         <ul>
-          <li>
-            <div>
-              <IoPersonSharp></IoPersonSharp>
-            </div>
-            <p>친구</p>
-          </li>
-          <li>
-            <div>
-              <GiCakeSlice style={{ color: "#ffff00" }}></GiCakeSlice>
-            </div>
-            <p>Mirae의 생일</p>
-          </li>
+          <BrLi
+            icon={<IoPersonSharp />}
+            text="친구"
+            bgStyle={{ backgroundColor: "red" }}
+          />
+          <BrLi
+            icon={<GiCakeSlice />}
+            text="Mirae의 생일"
+            iconStyle={{ color: "#ffff00" }}
+          />
         </ul>
       </div>
       <div className={classes.menu_wrap}>
@@ -33,33 +33,9 @@ function Category() {
           </span>
         </div>
         <ul>
-          <li>
-            <div>
-              <div className={classes.hidden}>
-                <img src={`${process.env.PUBLIC_URL}img/javascript.png`} />
-              </div>
-              <div className={classes.circle}></div>
-            </div>
-            <p>Javascript</p>
-          </li>
-          <li>
-            <div>
-              <div className={classes.hidden}>
-                <img src={`${process.env.PUBLIC_URL}img/react 1.png`} />
-              </div>
-              <div className={classes.circle}></div>
-            </div>
-            <p>React</p>
-          </li>
-          <li>
-            <div>
-              <div className={classes.hidden}>
-                <img src={`${process.env.PUBLIC_URL}img/pwa.png`} />
-              </div>
-              <div className={classes.circle}></div>
-            </div>
-            <p>PWA(mobile)</p>
-          </li>
+          <MeLi text="javscriript" img="javascript" />
+          <MeLi text="React" img="react 1" />
+          <MeLi text="PWA(mobile)" img="pwa" />
         </ul>
         <div className={classes.user}>
           <div>
