@@ -10,22 +10,14 @@ function SideTab() {
     <div className={classes.side_tab}>
       <ul>
         <li>
-          <a href="">
-            <FontAwesomeIcon icon={faDiscord} style={{ color: "white" }} />
-          </a>
+          <FontAwesomeIcon icon={faDiscord} style={{ color: "white" }} />
         </li>
         <li>
-          <a href=""></a>
+          <img src={`${process.env.PUBLIC_URL}/img/`} />
         </li>
-        <li>
-          <a href=""></a>
-        </li>
-        <li>
-          <a href=""></a>
-        </li>
-        <li>
-          <a href=""></a>
-        </li>
+        <li></li>
+        <li></li>
+        <li></li>
 
         <li className={classes.plus_icon_wrap}>
           <BsPlusLg></BsPlusLg>

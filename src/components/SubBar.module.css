@@ -6,12 +6,12 @@
   background-color: #313338;
   display: flex;
   justify-content: start;
+  align-items: center;
   font-family: "whitney-semibold";
   border-bottom: 1px solid #1d1f22;
 }
 
 .search {
-  background-color: #2b2d31;
   width: 210px;
 }
 
