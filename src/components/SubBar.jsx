@@ -6,33 +6,28 @@ import { RiHome2Fill } from "react-icons/ri";
 export default function SubBar() {
   return (
     <div className={classes.sub_bar_wrap}>
-      <div className={classes.search}>
-        <input type="text" placeholder="Project search" />
-      </div>
-      <div className={classes.sub_menu_wrap}>
-        <ul>
+      <ul>
+        <Link to="/home">
           <li>
-            <a>
-              <RiHome2Fill
-                style={{ verticalAlign: "middle", marginRight: "5px" }}
-              />
-              Home
-            </a>
+            <RiHome2Fill
+              style={{ verticalAlign: "middle", marginRight: "5px" }}
+            />
+            Home
           </li>
-          <li>
-            <a>About</a>
-          </li>
-          <li>
-            <a>Skills</a>
-          </li>
-          <li>
-            <a>Project</a>
-          </li>
-          <li>
-            <a>Contact</a>
-          </li>
-        </ul>
-      </div>
+        </Link>
+        <Link to="/about">
+          <li>About</li>
+        </Link>
+        <Link to="/skills">
+          <li>Skills</li>
+        </Link>
+        <Link to="/project">
+          <li>Project</li>
+        </Link>
+        <Link to="/contact">
+          <li>Contact</li>
+        </Link>
+      </ul>
     </div>
   );
 }

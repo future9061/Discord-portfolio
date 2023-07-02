@@ -1,71 +1,27 @@
-/*SideTab components*/
-
 .side_tab {
-  background-color: #1e1f22;
-  height: 100%;
   width: 5%;
-  display: inline-block;
+  height: 100%;
+  text-align: center;
+  background-color: #1e1f22;
 }
 
 .side_tab ul {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 10px;
-  align-items: center;
+  margin: 10px auto;
+  padding: 0;
+  display: inline-block;
+  width: 90%;
+  text-align: center;
 }
 
-.side_tab ul li {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
+.side_tab li {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  margin: 0px auto 20px auto;
+  display: inline-block;
   list-style: none;
-  cursor: pointer;
-}
-
-.first {
-  border-radius: 18px;
-  font-size: larger;
-  transition: 0.3s;
-  background-color: #5865f2;
-}
-
-.first:hover {
-  border-radius: 50%;
-  font-size: x-large;
-}
-
-.circle {
-  border-radius: 50%;
-  margin-top: 20px;
-  transition: 0.3s;
-  background-color: #313338;
-}
-
-.side_tab ul li:nth-child(6),
-.side_tab ul li:nth-child(7) {
-  color: #23a459;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle:hover {
-  border-radius: 20px;
-  background-color: #23a459;
-}
-
-.circle img {
-  transition: 0.3s;
-}
-
-.circle:hover img {
-  transform: scale(1.2);
-}
-
-.plus_icon {
   text-align: center;
-  line-height: 50px;
+  font-size: 28px;
 }

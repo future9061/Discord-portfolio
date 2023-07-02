@@ -7,17 +7,20 @@ import { BsDiscord } from "react-icons/bs";
 import classes from "./Category.module.css";
 import BrLi from "./li/BrLi";
 import MeLi from "./li/MeLi";
-
+import { RiArrowDownSLine } from "react-icons/ri";
 function Category() {
   return (
     <div className={classes.category_wrap}>
       <div className={classes.birthday_wrap}>
         <ul>
-          <BrLi
-            icon={<IoPersonSharp />}
-            text="친구"
-            bgStyle={{ backgroundColor: "red" }}
-          />
+          <li>
+            <img src={`${process.env.PUBLIC_URL}/img/work3.png`} />
+            Mirae's Work
+            <div>
+              <RiArrowDownSLine />
+            </div>
+          </li>
+          <BrLi icon={<IoPersonSharp />} text="친구" />
           <BrLi
             icon={<GiCakeSlice />}
             text="Mirae의 생일"

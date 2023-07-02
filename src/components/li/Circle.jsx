@@ -1,10 +1,9 @@
 import React from "react";
-import classes from "../SideTab.module.css";
 
-export default function Circle(src) {
-  return (
-    <li className={classes.circle}>
-      <img src={`${process.env.PUBLIC_URL}/img/${src}`} />
-    </li>
-  );
+export function Circle({ text, circleStyle }) {
+  return <li style={circleStyle}>{text}</li>;
+}
+
+export function CircleIcon({ circleStyle, icon }) {
+  return <li style={circleStyle}>{icon}</li>;
 }

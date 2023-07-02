@@ -1,30 +1,60 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-import { BsPlusLg } from "react-icons/bs";
+
+import { BsPlusLg, BsDiscord } from "react-icons/bs";
 import { IoCompass } from "react-icons/io5";
 import classes from "./SideTab.module.css";
-import Circle from "./li/Circle";
+import { CircleIcon } from "./li/Circle";
+import { Circle } from "./li/Circle";
+import { Link } from "react-router-dom";
 
 function SideTab() {
   return (
     <div className={classes.side_tab}>
       <ul>
-        <li className={classes.first}>
-          <FontAwesomeIcon icon={faDiscord} style={{ color: "white" }} />
-        </li>
+        <Link to="/home">
+          <CircleIcon
+            icon={<BsDiscord />}
+            circleStyle={{
+              backgroundColor: "#5663F7",
+              color: "white",
+              fontSize: "30px",
+              borderRadius: "25px",
+            }}
+          />
+        </Link>
 
-        <Circle />
-        <Circle />
-        <Circle />
-        <Circle />
+        <Link to="/about">
+          <Circle text={"👩‍💻"} />
+        </Link>
 
-        <li className={`${classes.plus_icon_wrap} ${classes.circle}`}>
-          <BsPlusLg></BsPlusLg>
-        </li>
-        <li className={classes.circle}>
-          <IoCompass></IoCompass>
-        </li>
+        <Link to="/skills">
+          <Circle text={"🏹"} circleStyle={{ backgroundColor: "#61DAFB" }} />
+        </Link>
+
+        <Link to="/project">
+          <Circle text={"📄"} circleStyle={{ backgroundColor: "#FFDF00" }} />
+        </Link>
+
+        <Link to="/contact">
+          <Circle text={"📞"} circleStyle={{ backgroundColor: "gray" }} />
+        </Link>
+
+        <CircleIcon
+          icon={<BsPlusLg />}
+          circleStyle={{
+            backgroundColor: "#313338",
+            color: "#23A459",
+          }}
+        />
+
+        <CircleIcon
+          icon={<IoCompass />}
+          circleStyle={{
+            backgroundColor: "#313338",
+            color: "#23A459",
+            fontSize: "35px",
+          }}
+        />
       </ul>
     </div>
   );

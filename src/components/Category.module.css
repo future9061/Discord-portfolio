@@ -4,7 +4,6 @@
   display: inline-block;
   background-color: #2b2d31;
   color: #abb3bd;
-  padding: 5px;
   width: 12%;
   height: 100%;
   overflow: hidden;
@@ -36,9 +35,16 @@
 }
 
 .birthday_wrap ul li:first-child {
-  background-color: #404249;
   color: white;
-  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  border: 1px solid red;
+  letter-spacing: 1px;
+}
+
+.birthday_wrap ul li:first-child img {
+  margin-right: 10px;
+  width: 15px;
 }
 
 .menu_wrap {
