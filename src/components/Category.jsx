@@ -1,9 +1,6 @@
 import React from "react";
-
-import { IoPersonSharp } from "react-icons/io5";
-import { GiCakeSlice } from "react-icons/gi";
-import { AiOutlinePlus } from "react-icons/ai";
-import { BsDiscord } from "react-icons/bs";
+import { SiVelog } from "react-icons/si";
+import { BsDiscord, BsGithub } from "react-icons/bs";
 import classes from "./Category.module.css";
 import BrLi from "./li/BrLi";
 import MeLi from "./li/MeLi";
@@ -11,35 +8,48 @@ import { RiArrowDownSLine } from "react-icons/ri";
 function Category() {
   return (
     <div className={classes.category_wrap}>
-      <div className={classes.birthday_wrap}>
+      <div className={classes.title}>
+        <div className={classes.title_inner}>
+          <img src={`${process.env.PUBLIC_URL}/img/work3.png`} />
+          <p> Mirae's Work</p>
+          <span>
+            <RiArrowDownSLine />
+          </span>
+        </div>
+      </div>
+
+      <div className={classes.link_wrap}>
+        <div>
+          <RiArrowDownSLine style={{ marginTop: "10px" }} />
+          <p>Log</p>
+        </div>
         <ul>
-          <li>
-            <img src={`${process.env.PUBLIC_URL}/img/work3.png`} />
-            Mirae's Work
-            <div>
-              <RiArrowDownSLine />
-            </div>
-          </li>
-          <BrLi icon={<IoPersonSharp />} text="친구" />
           <BrLi
-            icon={<GiCakeSlice />}
-            text="Mirae의 생일"
-            iconStyle={{ color: "#ffff00" }}
+            icon={<BsGithub />}
+            text="Git hub"
+            iconStyle={{ color: "#fff" }}
+          />
+          <BrLi
+            icon={<SiVelog />}
+            text="Velog"
+            iconStyle={{ color: "#20C997" }}
           />
         </ul>
       </div>
+
       <div className={classes.menu_wrap}>
-        <div className={classes.title}>
-          <p>다이렉트 메뉴</p>
-          <span>
-            <AiOutlinePlus></AiOutlinePlus>
+        <div>
+          <span style={{ fontSize: "0.9em" }}>
+            <RiArrowDownSLine style={{ marginTop: "10px" }} />
           </span>
+          <p>Direct Menu</p>
         </div>
-        <ul>
+        <ul className={classes.menu_wrap_inner}>
           <MeLi text="javscriript" img="javascript" />
           <MeLi text="React" img="react 1" />
-          <MeLi text="PWA(mobile)" img="pwa" />
+          <MeLi text="Vue" img="vue 1" bgcolor={{ backgroundColor: "black" }} />
         </ul>
+
         <div className={classes.user}>
           <div>
             <div className={classes.hidden}>
