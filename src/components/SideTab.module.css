@@ -13,15 +13,99 @@
   text-align: center;
 }
 
-.side_tab li {
+.side_tab ul li {
+  position: relative;
+}
+
+.side_tab li > div {
   background-color: white;
   width: 60px;
   height: 60px;
   line-height: 60px;
-  border-radius: 50%;
   margin: 0px auto 20px auto;
   display: inline-block;
   list-style: none;
   text-align: center;
   font-size: 28px;
+  background-color: #2d2e33;
+  transition: 0.2s;
+}
+
+.side_tab li > div:not(.firstCircle) {
+  border-radius: 50%;
+}
+
+.firstCircle {
+  border-radius: 20px;
+}
+
+.firstCircle:hover {
+  border-radius: 50%;
+}
+
+.side_tab li img {
+  width: 30px;
+  transform: translateY(5px);
+}
+.side_tab ul > div {
+  width: 50px;
+  height: 1px;
+  transform: translate(17px, -10px);
+  background-color: #404249;
+}
+
+.side_tab li div:not(.firstCircle):hover {
+  background-color: #23a459;
+  border-radius: 20px;
+}
+
+.side_tab li span {
+  display: block;
+  width: 0px;
+  height: 5px;
+  border-left: 5px solid white;
+  border-top: 2.5px solid transparent;
+  border-bottom: 2.5px solid transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transform: scaleY(1);
+  position: absolute;
+  left: -5px;
+  top: 30%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.side_tab li:hover span {
+  opacity: 1;
+  transform: scale(2, 5);
+}
+
+.side_tab li > p {
+  color: white;
+  position: absolute;
+  padding: 7px;
+  border-radius: 15px;
+  left: 90%;
+  z-index: 2;
+  background-color: #5865f2;
+  font-size: 0.7em;
+  top: 15px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.side_tab li:hover p {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.icon {
+  color: #23a459;
+}
+
+.icon:hover {
+  background-color: #23a459;
+  color: #fff;
 }

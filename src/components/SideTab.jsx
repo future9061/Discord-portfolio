@@ -1,58 +1,61 @@
 import React from "react";
 
-import { BsPlusLg, BsDiscord } from "react-icons/bs";
-import { IoCompass } from "react-icons/io5";
 import classes from "./SideTab.module.css";
-import { CircleIcon } from "./li/Circle";
-import { Circle } from "./li/Circle";
+import { Circle, CircleIcon } from "./li/Circle";
 import { Link } from "react-router-dom";
+import { AiOutlinePlus } from "react-icons/ai";
+import { IoMdCompass } from "react-icons/io";
 
 function SideTab() {
+  function styleChange() {}
+
   return (
     <div className={classes.side_tab}>
       <ul>
         <Link to="/home">
-          <CircleIcon
-            icon={<BsDiscord />}
+          <Circle
+            onClick={styleChange}
+            src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
             circleStyle={{
-              backgroundColor: "#5663F7",
-              color: "white",
-              fontSize: "30px",
-              borderRadius: "25px",
+              backgroundColor: " #5865F2",
             }}
+            imgStyle={{ width: "40px", transform: "translateY(5px)" }}
+            name="firstCircle"
+            text="Home"
           />
         </Link>
 
+        <div></div>
+
         <Link to="/about">
-          <Circle text={"👩‍💻"} />
+          <Circle src="/img/about img.png" text="About" />
         </Link>
 
         <Link to="/skills">
-          <Circle text={"🏹"} circleStyle={{ backgroundColor: "#61DAFB" }} />
+          <Circle src="/img/skills img.png" text="Skills" />
         </Link>
 
         <Link to="/project">
-          <Circle text={"📄"} circleStyle={{ backgroundColor: "#FFDF00" }} />
+          <Circle src="/img/project.png" text="Project" />
         </Link>
 
         <Link to="/contact">
-          <Circle text={"📞"} circleStyle={{ backgroundColor: "gray" }} />
+          <Circle src="/img/connect img.png" text="connect" />
         </Link>
 
         <CircleIcon
-          icon={<BsPlusLg />}
-          circleStyle={{
-            backgroundColor: "#313338",
-            color: "#23A459",
+          icon={<AiOutlinePlus />}
+          iconStyle={{
+            fontSize: "40px",
+            transform: "translateY(8px)",
           }}
         />
 
         <CircleIcon
-          icon={<IoCompass />}
-          circleStyle={{
-            backgroundColor: "#313338",
-            color: "#23A459",
-            fontSize: "35px",
+          icon={<IoMdCompass />}
+          iconStyle={{
+            fontSize: "40px",
+            transform: "translateY(8px)",
           }}
         />
       </ul>

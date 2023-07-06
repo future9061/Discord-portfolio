@@ -10,12 +10,12 @@ function App() {
     <div className="wrap">
       <TopBar />
       <div className="top">
-        <SideTab></SideTab>
+        <SideTab />
         <div className="main">
-          <Category></Category>
+          <Category />
           <div className="outlet">
-            <SubBar></SubBar>
-            <Outlet></Outlet>
+            <SubBar />
+            <Outlet />
           </div>
         </div>
       </div>
