@@ -48,16 +48,17 @@ function Category() {
 
         <div className={classes.user}>
           <div>
-            <div className={classes.hidden}>
-              <p>
-                <BsDiscord />
-              </p>
+            <div>
+              <div className={classes.hidden}>
+                <p>
+                  <BsDiscord style={{ fontSize: "20px" }} />
+                </p>
+              </div>
             </div>
-            <div className={classes.circle}></div>
-          </div>
-          <div className={classes.text_wrap}>
-            <span>미래의 Portfolio</span>
-            <small>future#9061</small>
+            <div className={classes.text_wrap}>
+              <span>미래의 Portfolio</span>
+              <small>future#9061</small>
+            </div>
           </div>
         </div>
       </div>

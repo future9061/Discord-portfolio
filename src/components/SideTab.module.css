@@ -47,10 +47,11 @@
   width: 30px;
   transform: translateY(5px);
 }
+
 .side_tab ul > div {
   width: 50px;
   height: 1px;
-  transform: translate(17px, -10px);
+  transform: translate(18px, -10px);
   background-color: #404249;
 }
 
@@ -64,8 +65,8 @@
   width: 0px;
   height: 5px;
   border-left: 5px solid white;
-  border-top: 2.5px solid transparent;
-  border-bottom: 2.5px solid transparent;
+  border-top: 1.5px solid transparent;
+  border-bottom: 1.5px solid transparent;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   transform: scaleY(1);
@@ -78,7 +79,7 @@
 
 .side_tab li:hover span {
   opacity: 1;
-  transform: scale(2, 5);
+  transform: scale(2, 7);
 }
 
 .side_tab li > p {

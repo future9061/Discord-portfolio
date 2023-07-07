@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import classes from "./Home.module.css";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
-    <div>
-      <h2>welcome to mirae world</h2>h
+    <div className={classes.home_wrap}>
+      <div className={classes.home_inner}>
+        <div className={classes.img_wrap}>
+          <img src={`${process.env.PUBLIC_URL}/img/bg-img.png`} />
+        </div>
+        <div className={classes.text_wrap}>
+          <p>{displayText}</p>
+          <div></div>
+        </div>
+        <div className={classes.btn_wrap}>
+          <button>Start</button>
+
+          <Link to="/setting">
+            <button>Setting</button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
