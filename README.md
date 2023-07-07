@@ -1,4 +1,4 @@
-![discode](https://github.com/future9061/portfolio/assets/132829711/b9c6017a-8c00-4de2-a97e-85ab1cfdabce)
+사진은 완성 후..
 <br>
 
 
