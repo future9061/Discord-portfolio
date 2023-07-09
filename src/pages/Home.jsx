@@ -10,12 +10,13 @@ export function Home() {
           <img src={`${process.env.PUBLIC_URL}/img/bg-img.png`} />
         </div>
         <div className={classes.text_wrap}>
-          <p>{displayText}</p>
+          <p></p>
           <div></div>
         </div>
         <div className={classes.btn_wrap}>
+          <Link to="/about">
           <button>Start</button>
-
+          </Link>
           <Link to="/setting">
             <button>Setting</button>
           </Link>

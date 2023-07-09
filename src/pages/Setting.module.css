@@ -1,0 +1,15 @@
+.setting_wrap{
+    border: 1px solid red;}
+
+.setting_inner{
+    border: 1px solid blue;
+}
+
+.light_wrap{
+    border: 1px solid white;
+}
+
+.dark_wrap{
+    border: 1px solid white;
+ 
+}
