@@ -13,11 +13,16 @@ export function Contact() {
             <img />
           </div>
           <div className={classes.text_wrap}>
-            <h2>이미래 / Mi Rae Lee</h2>
+            <h2>이미래 / Lee Mi Rae</h2>
             <p>✨소통하고 협력하여 성공을 이뤄내겠습니다.</p>
             <ul>
               <li>
-                <span></span>
+                {/* <span>
+                  <img
+                    src={`${process.env.PUBLIC_URL}img/email.png`}
+                    alt="email"
+                  />
+                </span> */}
                 416homin@naver.com
               </li>
               <li>

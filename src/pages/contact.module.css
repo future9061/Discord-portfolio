@@ -1,9 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap");
+
+/* font-family: 'Archivo Black', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
 .contact_wrap {
   color: white;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.contact_inner {
+  text-align: center;
+}
+
+.contact_inner > div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .contact_inner > h2 {
   margin-top: 20px;
   text-align: center;
   font-size: 3em;
+  margin-bottom: 100px;
+}
+
+.img_wrap {
+  width: 400px;
+  height: 400px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.text_wrap {
+  display: inline-block;
+  margin-left: 20px;
+  text-align: start;
+  transform: translateY(30%);
+}
+
+.text_wrap h2 {
+  color: #5865f2;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.text_wrap p {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+/* .text_wrap span {
+  background-color: white;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.text_wrap span img {
+  width: 15px;
+  height: 15px;
+  padding-top: 2.5px;
+} */
+
+.text_wrap li {
+  margin-bottom: 10px;
 }
