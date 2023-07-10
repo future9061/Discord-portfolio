@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Skills.module.css";
 import Back from "../components/ui/Back";
+import { SkillsBox } from "../components/li/SkillsBox";
 
 export function Skills() {
   return (
@@ -12,99 +13,58 @@ export function Skills() {
           <div className="language">
             <h2>Language</h2>
             <ul>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/javascript-icon.png`}
-                  alt="javascript-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/html-icon.png`}
-                  alt="html-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/css-icon.png`}
-                  alt="css-icon"
-                />
-              </div>
+              <SkillsBox img="javascript-icon.png" alt="javascript-icon" />
+              <SkillsBox
+                img="html-icon.png"
+                alt="html-icon"
+                ImgStyle={{ transform: "scale(1.07,1)" }}
+              />
+              <SkillsBox
+                img="css-icon.png"
+                ImgStyle={{ transform: "scale(1.2,1.1)" }}
+                alt="css-icon"
+              />
             </ul>
           </div>
+
           <div className="framework">
             <h2>Framework</h2>
             <ul>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/react-icon.png`}
-                  alt="react-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/vue 1.png`}
-                  alt="vue-icon"
-                />
-              </div>
+              <SkillsBox img="react-icon.png" alt="react-icon" />
+              <SkillsBox
+                img="vue 1.png"
+                alt="react-icon"
+                ImgStyle={{ transform: "scale(1.2,1.3)" }}
+              />
             </ul>
           </div>
+
           <div className="library">
             <h2>Library</h2>
             <ul>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/bootstrap-icon.png`}
-                  alt="bootstrap-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/tailwind-icon.png`}
-                  alt="tailwind-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/firebase-icon.png`}
-                  alt="firebase-icon"
-                />
-              </div>
+              <SkillsBox img="bootstrap-icon.png" alt="bootstrap-icon" />
+              <SkillsBox img="tailwind-icon.png" alt="tailwind-icon" />
+              <SkillsBox img="firebase-icon.png" alt="firebase-icon" />
             </ul>
           </div>
           <div className="Tools">
             <h2>Tools</h2>
             <ul>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/git-icon.png`}
-                  alt="git-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/github-icon.png`}
-                  alt="github-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/figma-icon.png`}
-                  alt="figma-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/photoshop-icon.png`}
-                  alt="photoshop-icon"
-                />
-              </div>
-              <div>
-                <img
-                  src={`${process.env.PUBLIC_URL}img/netlify-icon.png`}
-                  alt="netlify-icon"
-                />
-              </div>
+              <SkillsBox
+                img="git-icon.png"
+                alt="git-icon"
+                ImgStyle={{ transform: "scale(1.15)" }}
+              />
+              <SkillsBox img="github-icon.png" alt="github-icon" />
+              <SkillsBox
+                img="figma-icon.png"
+                alt="figma-icon"
+                ImgStyle={{ transform: "scale(1.2)" }}
+              />
+
+              <SkillsBox img="photoshop-icon.png" alt="photoshop-icon" />
+
+              <SkillsBox img="netlify-icon.png" alt="netlify-icon" />
             </ul>
           </div>
         </div>

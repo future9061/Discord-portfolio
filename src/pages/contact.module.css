@@ -1,0 +1,9 @@
+.contact_wrap {
+  color: white;
+}
+
+.contact_inner > h2 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 3em;
+}
