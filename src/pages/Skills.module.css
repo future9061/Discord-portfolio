@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap");
+
+/* font-family: 'Archivo Black', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+.skills_wrap {
+  color: white;
+  border: 1px solid red;
+  overflow-y: scroll;
+}
+
+.skills_inner {
+  border: 1px solid blue;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.skills_inner > h2 {
+  font-size: 4em;
+  color: #5865f2;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.inner_wrap {
+  border: 1px solid white;
+  display: inline-block;
+  text-align: start;
+}
+
+.inner_wrap ul {
+  display: flex;
+}
+
+.inner_wrap ul div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid blue;
+}
+
+.inner_wrap img {
+  width: 100%;
+  ob
+}

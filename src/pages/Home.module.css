@@ -13,9 +13,10 @@
 }
 
 .home_inner p {
-  font-size: 5em;
+  font-size: 7em;
   color: #c9c8c8;
   font-family: "Khand", sans-serif;
+  height: 1.2em;
 }
 
 .text_wrap {
@@ -24,7 +25,7 @@
 
 .text_wrap > div {
   width: 5px;
-  height: 55px;
+  height: 80px;
   background-color: #5865f2;
   transform: translate(5px, 7px);
 }
@@ -46,11 +47,22 @@
   cursor: pointer;
 }
 
-.btn_wrap button:first-child {
-  background-color: #2b2d31;
+.btn_wrap a button:active {
+  background-color: #5865f2;
+  border: none;
 }
 
 .btn_wrap button:last-child {
   background-color: #313338;
   border: 5px solid #2b2d31;
+}
+
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink-effect 1s step-end infinite;
 }
