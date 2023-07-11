@@ -76,6 +76,7 @@
 .text_wrap span {
   display: inline-block;
   margin-right: 7px;
+  transform: translateY(4px);
 }
 
 .text_wrap span img {

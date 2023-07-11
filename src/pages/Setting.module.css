@@ -5,9 +5,6 @@
   height: 100%;
 }
 
-.setting_inner {
-}
-
 .setting_inner h2 {
   text-align: center;
   color: rgb(230, 230, 230);
@@ -30,14 +27,19 @@
 
 .img_wrap {
   width: 40em;
-  height: 25em;
-  border: 1px solid red;
+  height: 20em;
+  border: 5px solid white;
   margin-bottom: 50px;
   transition: 0.5s;
 }
 
+.img_wrap img {
+  width: 100%;
+  height: 100%;
+}
+
 .img_wrap:hover {
-  transform: translateY(10px) scale(1.2);
+  transform: translateY(10px) scale(1.1);
 }
 
 .basic_mode button,
@@ -55,8 +57,7 @@
 }
 
 .basic_mode button {
-  background-color: #5865f2;
-  border: 5px solid white;
+  background-color: #23a459;
 }
 
 .dark_mode button {
@@ -75,5 +76,5 @@
 }
 
 .dark .basic_mode button {
-  background-color: #23a459;
+  background-color: #5865f2;
 }

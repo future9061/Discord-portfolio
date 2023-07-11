@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 
 import classes from "./SideTab.module.css";
-import { Circle, CircleIcon } from "./li/Circle";
+import { Circle, CircleIcon, CirclePlus } from "./li/Circle";
 import { Link } from "react-router-dom";
-import { AiOutlinePlus, AiFillSetting } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
+import { FcSettings } from "react-icons/fc";
 // import { IoMdCompass } from "react-icons/io";
 import { ThemeContext } from "../store/Context";
 
@@ -44,22 +45,24 @@ function SideTab() {
           <Circle src="/img/connect img.png" text="connect" />
         </Link>
 
-        <CircleIcon
-          icon={<AiOutlinePlus />}
-          iconStyle={{
-            fontSize: "40px",
-            transform: "translateY(8px)",
-          }}
-        />
         <Link to="/setting">
           <CircleIcon
-            icon={<AiFillSetting />}
+            text="Setting"
+            icon={<FcSettings />}
             iconStyle={{
               fontSize: "40px",
               transform: "translateY(8px)",
             }}
           />
         </Link>
+
+        <CirclePlus
+          icon={<AiOutlinePlus />}
+          iconStyle={{
+            fontSize: "40px",
+            transform: "translateY(8px)",
+          }}
+        />
       </ul>
     </div>
   );

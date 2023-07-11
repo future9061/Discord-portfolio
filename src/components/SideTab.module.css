@@ -59,7 +59,7 @@
   border-radius: 20px;
 }
 
-.side_tab li span {
+.side_tab li:not(:nth-of-type(6)) span {
   display: block;
   width: 0px;
   height: 5px;
