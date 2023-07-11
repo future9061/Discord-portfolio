@@ -31,6 +31,22 @@ react로 저의 portfolio를 만들어봤습니다.
 <br>
 
 
+## 🧾code review
+- Dark mode
+  2.모든 component에 적용해야 하기 때문에 context 사용
+  3.useState로 상태 보관
+  4.onClick 이벤트로 클릭하면 setUseState
+
+  ```ruby
+
+  //context.js
+
+  
+    
+  
+  ```
+  
+
 ## 🎇Upgrade
 
 - 아직 없음
