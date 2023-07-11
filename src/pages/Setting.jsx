@@ -4,14 +4,10 @@ import Back from "../components/ui/Back";
 import { ThemeContext } from "../store/Context";
 
 export function Setting() {
- const thema =
+  const { themeMode, setThemeMode, chooseTheme } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
+  console.log("감지하고 잇니? ", chooseTheme);
 
-  useEffect(() => {
-    choiceThema();
-  }, [choiceThema]);
-
-  console.log("테마모드", themeMode);
   return (
     <div className={`${classes.setting_wrap} ${dark}`}>
       <Back />
@@ -24,7 +20,6 @@ export function Setting() {
                 onClick={(e) => {
                   e.stopPropagation();
                   setThemeMode("basic");
-                  choiceThema();
                 }}
                 src={`${process.env.PUBLIC_URL}/img/basic-mode.png`}
                 alt="basic-mode"
@@ -34,7 +29,6 @@ export function Setting() {
               onClick={(e) => {
                 e.stopPropagation();
                 setThemeMode("basic");
-                choiceThema();
               }}
             >
               Basic
@@ -46,7 +40,6 @@ export function Setting() {
                 onClick={(e) => {
                   e.stopPropagation();
                   setThemeMode("dark");
-                  choiceThema();
                 }}
                 src={`${process.env.PUBLIC_URL}/img/blue-mode.png`}
                 alt="blue-mode"
@@ -56,7 +49,6 @@ export function Setting() {
               onClick={(e) => {
                 e.stopPropagation();
                 setThemeMode("dark");
-                choiceThema();
               }}
             >
               Blue
