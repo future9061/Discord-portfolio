@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Skills.module.css";
 import Back from "../components/ui/Back";
 import { SkillsBox } from "../components/li/SkillsBox";
+import { ThemeContext } from "../store/Context";
 
 export function Skills() {
+  const { themeMode } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
+
   return (
-    <div className={classes.skills_wrap}>
+    <div className={`${classes.skills_wrap} ${dark}`}>
       <Back />
       <div className={classes.skills_inner}>
         <h2>Skills 🚀</h2>

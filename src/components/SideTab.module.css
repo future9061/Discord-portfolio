@@ -18,7 +18,6 @@
 }
 
 .side_tab li > div {
-  background-color: white;
   width: 60px;
   height: 60px;
   line-height: 60px;
@@ -109,4 +108,14 @@
 .icon:hover {
   background-color: #23a459;
   color: #fff;
+}
+
+/*다크모드*/
+
+.dark {
+  background-color: #131926;
+}
+
+.dark li > div {
+  background-color: #303757;
 }

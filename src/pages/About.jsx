@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./About.module.css";
 import Back from "../components/ui/Back";
+import { ThemeContext } from "../store/Context";
 
 export function About() {
+  const { themeMode } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
   return (
-    <div className={classes.about_wrap}>
+    <div className={`${classes.about_wrap} ${dark}`}>
       <Back />
       <div className={classes.about_inner}>
         <h2>About me🌟</h2>

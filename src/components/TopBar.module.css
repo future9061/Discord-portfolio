@@ -48,3 +48,9 @@
 .topwrap_icons ul li:last-child {
   color: #a8b0b9;
 }
+
+/*다크모드*/
+
+.dark {
+  background-color: #131926;
+}

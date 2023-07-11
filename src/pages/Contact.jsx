@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./contact.module.css";
 import Back from "../components/ui/Back";
+import { ThemeContext } from "../store/Context";
 
 export function Contact() {
+  const { themeMode } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
   return (
-    <div className={classes.contact_wrap}>
+    <div className={`${classes.contact_wrap} ${dark}`}>
       <Back />
       <div className={classes.contact_inner}>
         <h2>🚩contact Me!</h2>
@@ -17,24 +20,40 @@ export function Contact() {
             <p>✨소통하고 협력하여 성공을 이뤄내겠습니다.</p>
             <ul>
               <li>
-                {/* <span>
+                <span>
                   <img
                     src={`${process.env.PUBLIC_URL}img/email.png`}
                     alt="email"
                   />
-                </span> */}
+                </span>
                 416homin@naver.com
               </li>
               <li>
-                <span></span>
+                <span>
+                  <img
+                    style={{ transform: "scaleX(-1)" }}
+                    src={`${process.env.PUBLIC_URL}img/call2.png`}
+                    alt="call"
+                  />
+                </span>
                 010-7688-2981
               </li>
               <li>
-                <span></span>
+                <span>
+                  <img
+                    src={`${process.env.PUBLIC_URL}img/smallgithub3.png`}
+                    alt="github"
+                  />
+                </span>
                 https://github.com/future9061
               </li>
               <li>
-                <span></span>
+                <span>
+                  <img
+                    src={`${process.env.PUBLIC_URL}img/location2.png`}
+                    alt="location"
+                  />
+                </span>
                 Songpa-gu, seoul
               </li>
             </ul>

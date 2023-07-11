@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsDiscord, BsGithub } from "react-icons/bs";
 import classes from "./Category.module.css";
 import BrLi from "./li/BrLi";
 import MeLi from "./li/MeLi";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { ThemeContext } from "../store/Context";
 function Category() {
+  const { themeMode } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
   return (
-    <div className={classes.category_wrap}>
+    <div className={`${classes.category_wrap} ${dark}`}>
       <div className={classes.title}>
         <div className={classes.title_inner}>
           <img src={`${process.env.PUBLIC_URL}/img/mirae work.png`} />

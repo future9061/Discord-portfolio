@@ -66,3 +66,22 @@
 .blink {
   animation: blink-effect 1s step-end infinite;
 }
+
+/*다크모드*/
+.dark {
+  background-color: #2d354a;
+}
+
+.dark .text_wrap p {
+  color: white;
+}
+
+.dark .home_inner .btn_wrap a:nth-of-type(1) button {
+  background-color: #171f2f;
+  border: 5px solid #171f2f;
+}
+
+.dark .home_inner .btn_wrap a:nth-of-type(2) button {
+  background-color: transparent;
+  border: 5px solid #171f2f;
+}

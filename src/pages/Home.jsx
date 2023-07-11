@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import classes from "./Home.module.css";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../store/Context";
 
 export function Home() {
   const txt = "Welcome to Mirae World!";
@@ -17,11 +18,18 @@ export function Home() {
     }
     return () => clearInterval(interval);
   });
+
+  const { themeMode } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
   return (
-    <div className={classes.home_wrap}>
+    <div className={`${classes.home_wrap} ${dark}`}>
       <div className={classes.home_inner}>
         <div className={classes.img_wrap}>
-          <img src={`${process.env.PUBLIC_URL}/img/bg-img.png`} />
+          {themeMode !== "dark" ? (
+            <img src={`${process.env.PUBLIC_URL}/img/bg-img.png`} />
+          ) : (
+            <img src={`${process.env.PUBLIC_URL}/img/dark-bg-img.png`} />
+          )}
         </div>
         <div className={classes.text_wrap}>
           <p>{text}</p>

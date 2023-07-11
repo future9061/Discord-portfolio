@@ -1,0 +1,11 @@
+.project_wrap {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+/*다크모드*/
+
+.dark {
+  background-color: #2d354a;
+}

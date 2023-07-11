@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import classes from "./SideTab.module.css";
 import { Circle, CircleIcon } from "./li/Circle";
 import { Link } from "react-router-dom";
-import { AiOutlinePlus } from "react-icons/ai";
-import { IoMdCompass } from "react-icons/io";
+import { AiOutlinePlus, AiFillSetting } from "react-icons/ai";
+// import { IoMdCompass } from "react-icons/io";
+import { ThemeContext } from "../store/Context";
 
 function SideTab() {
-  function styleChange() {}
+  const { themeMode } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
 
   return (
-    <div className={classes.side_tab}>
+    <div className={`${classes.side_tab} ${dark}`}>
       <ul>
         <Link to="/home">
           <Circle
-            onClick={styleChange}
             src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
             circleStyle={{
               backgroundColor: " #5865F2",
@@ -50,14 +51,15 @@ function SideTab() {
             transform: "translateY(8px)",
           }}
         />
-
-        <CircleIcon
-          icon={<IoMdCompass />}
-          iconStyle={{
-            fontSize: "40px",
-            transform: "translateY(8px)",
-          }}
-        />
+        <Link to="/setting">
+          <CircleIcon
+            icon={<AiFillSetting />}
+            iconStyle={{
+              fontSize: "40px",
+              transform: "translateY(8px)",
+            }}
+          />
+        </Link>
       </ul>
     </div>
   );
