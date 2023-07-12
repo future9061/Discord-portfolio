@@ -30,6 +30,24 @@
   transform: translate(5px, 7px);
 }
 
+.sub_title {
+  display: block;
+  color: rgba(35, 164, 89, 0.5);
+  font-weight: 200;
+  transform: translateY(-10px);
+  font-size: 1.5em;
+  animation: smooth 1.5s forwards;
+}
+
+@keyframes smooth {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .btn_wrap {
   display: flex;
   justify-content: center;
@@ -89,4 +107,8 @@
 .dark .home_inner .btn_wrap a button:active {
   background-color: #5865f2;
   border: none;
+}
+
+.dark > .sub_title {
+  color: rgba(88, 101, 242, 0.5);
 }

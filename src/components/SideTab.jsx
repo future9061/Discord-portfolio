@@ -22,12 +22,9 @@ function SideTab() {
             }}
             action={atCircle}
             src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
-            circleStyle={{
-              backgroundColor: " #5865F2",
-            }}
-            imgStyle={{ width: "40px", transform: "translateY(5px)" }}
             text="Home"
             name="first"
+            imgStyle={{ transform: "scale(1.4)" }}
           />
         </Link>
 
@@ -43,8 +40,6 @@ function SideTab() {
             action={atCircle}
           />
         </Link>
-
-        {console.log(atCircle)}
 
         <Link to="/skills">
           <Circle

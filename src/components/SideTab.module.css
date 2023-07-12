@@ -3,6 +3,7 @@
   height: 100%;
   text-align: center;
   background-color: #1e1f22;
+  border: 1px solid white;
 }
 
 .side_tab ul {
@@ -11,36 +12,40 @@
   display: inline-block;
   width: 90%;
   text-align: center;
+  border: 1px solid blue;
 }
 
 .side_tab ul li {
   position: relative;
+  border: 1px solid red;
 }
 
 .side_tab li > div {
   width: 60px;
   height: 60px;
-  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0px auto 20px auto;
-  display: inline-block;
-  list-style: none;
-  text-align: center;
-  font-size: 28px;
-  background-color: #2d2e33;
+  font-size: 30px;
   transition: 0.2s;
 }
 
-.side_tab li > div:not(.home) {
-  border-radius: 50%;
+.side_tab li:not(.first) > div {
+  background-color: #2d2e33;
 }
 
-/* .firstCircle > li div {
+.first > div {
+  background-color: #5865f2;
   border-radius: 20px;
 }
-
-.firstCircle:hover {
+.first > div:hover {
   border-radius: 50%;
-} */
+}
+
+.side_tab li:not(.first) > div {
+  border-radius: 50%;
+}
 
 .side_tab li img {
   width: 30px;
@@ -54,12 +59,12 @@
   background-color: #404249;
 }
 
-.side_tab li div:not(.firstCircle):hover {
+.side_tab li:not(.first) div:hover {
   background-color: #23a459;
   border-radius: 20px;
 }
 
-.side_tab li:not(:nth-of-type(6)) span {
+.side_tab li span {
   display: block;
   width: 0px;
   height: 5px;
@@ -110,16 +115,40 @@
   color: #fff;
 }
 
-.fixedStyle {
-  border: 1px solid red;
-}
-
 /*다크모드*/
 
 .dark {
   background-color: #131926;
 }
 
-.dark li > div {
+.dark li:not(.first) > div {
   background-color: #303757;
+}
+
+/*클릭*/
+.fixedStyle {
+}
+
+.fixedStyle section {
+  display: block;
+  width: 0px;
+  height: 5px;
+  border-left: 5px solid white;
+  border-top: 1.5px solid transparent;
+  border-bottom: 1.5px solid transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  left: -5px;
+  top: 30%;
+  transform: scale(2, 7);
+}
+
+.fixedStyle div {
+  border-radius: 20px;
+}
+
+.fixedStyle section img {
+  width: 30px;
+  height: 30px;
 }

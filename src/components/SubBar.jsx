@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classes from "./SubBar.module.css";
 import { ThemeContext } from "../store/Context";
 import { Circle } from "./li/Circle";
+import BrLi from "./li/BrLi";
 
 export default function SubBar() {
   const { themeMode } = useContext(ThemeContext);
@@ -12,7 +13,7 @@ export default function SubBar() {
     <div className={`${classes.sub_bar_wrap} ${dark}`}>
       <ul>
         <Link to="/home">
-          <Circle
+          <BrLi
             text="Home"
             onClick={() => {
               setAtcircle("Home");
@@ -21,7 +22,7 @@ export default function SubBar() {
           />
         </Link>
         <Link to="/about">
-          <Circle
+          <BrLi
             text="About"
             onClick={() => {
               setAtcircle("About");
@@ -30,7 +31,7 @@ export default function SubBar() {
           />
         </Link>
         <Link to="/skills">
-          <Circle
+          <BrLi
             text="Skills"
             onClick={() => {
               setAtcircle("Skills");
@@ -39,7 +40,7 @@ export default function SubBar() {
           />
         </Link>
         <Link to="/project">
-          <Circle
+          <BrLi
             text="Project"
             onClick={() => {
               setAtcircle("Project");
@@ -48,9 +49,8 @@ export default function SubBar() {
           />
         </Link>
         <Link to="/contact">
-          <Circle
+          <BrLi
             text="Contact"
-            className={classes.green}
             onClick={() => {
               setAtcircle("Contact");
             }}

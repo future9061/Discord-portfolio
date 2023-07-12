@@ -1,15 +1,19 @@
 import React from "react";
 import classes from "../SideTab.module.css";
 
-export function Circle({ src, circleStyle, imgStyle, text, onClick, action }) {
+export function Circle({ src, text, onClick, action, imgStyle, name }) {
   return (
     <li
-      className={`${action === text ? classes.fixedStyle : ""}`}
+      className={`${action === text ? classes.fixedStyle : ""} ${
+        classes[name]
+      }`}
       onClick={onClick}
     >
-      <span></span>
-      <div style={circleStyle}>
-        <img src={src} alt="sidetab" style={imgStyle} />
+      {action !== text ? <span></span> : <section></section>}
+      <div>
+        <div>
+          <img src={src} alt="sidetab" style={imgStyle} />
+        </div>
       </div>
       <p>{text}</p>
     </li>
@@ -29,7 +33,11 @@ export function CircleIcon({
       className={`${action === text ? classes.fixedStyle : ""}`}
       onClick={onClick}
     >
-      <span></span>
+      {action !== text ? (
+        <span></span>
+      ) : (
+        <section className={classes.white}></section>
+      )}
       <div style={circleStyle} className={classes.icon}>
         <p style={iconStyle}>{icon}</p>
       </div>

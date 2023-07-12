@@ -29,16 +29,8 @@
   border-radius: 10px;
 }
 
-.sub_bar_wrap ul li:hover:not(.green) {
-  background-color: #404249;
-}
-
-.green {
-  background-color: #248046;
-}
-
-.green:hover {
-  filter: brightness(120%);
+.sub_bar_wrap ul li:hover {
+  backdrop-filter: brightness(160%);
 }
 
 .sub_bar_wrap ul a {
@@ -53,9 +45,19 @@
 }
 
 .dark ul li:hover:not(.green) {
-  background-color: #4f576b;
+  backdrop-filter: brightness(160%);
 }
 
 /* .dark .green {
   background-color: rgb(72, 79, 160);
 } */
+
+/*클릭*/
+
+.sub_bar_wrap ul .green {
+  background-color: #248046;
+}
+
+.sub_bar_wrap ul .clickStyle {
+  backdrop-filter: brightness(160%);
+}
