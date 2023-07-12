@@ -6,7 +6,10 @@ import { ThemeContext } from "../store/Context";
 export function Setting() {
   const { themeMode, setThemeMode, chooseTheme } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
-  console.log("감지하고 잇니? ", chooseTheme);
+
+  useEffect(() => {
+    chooseTheme();
+  }, [themeMode, chooseTheme]);
 
   return (
     <div className={`${classes.setting_wrap} ${dark}`}>

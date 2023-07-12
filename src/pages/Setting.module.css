@@ -76,5 +76,9 @@
 }
 
 .dark .basic_mode button {
-  background-color: #5865f2;
+  background-color: #1e1f22;
+}
+
+.dark .dark_mode button {
+  background-color: rgb(88, 101, 242);
 }

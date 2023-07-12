@@ -247,3 +247,7 @@
 .dark::before {
   background-color: #131926;
 }
+
+.dark .user .hidden {
+  background-color: #63c23e;
+}

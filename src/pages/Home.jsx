@@ -19,7 +19,7 @@ export function Home() {
     return () => clearInterval(interval);
   });
 
-  const { themeMode, LocalTheme, toggleTheme } = useContext(ThemeContext);
+  const { themeMode } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
   return (
     <div className={`${classes.home_wrap} ${dark}`}>

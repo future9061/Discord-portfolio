@@ -47,8 +47,8 @@
   cursor: pointer;
 }
 
-.btn_wrap a button:active {
-  background-color: #5865f2;
+.home_wrap .btn_wrap a button:active {
+  background-color: #23a459;
   border: none;
 }
 
@@ -84,4 +84,9 @@
 .dark .home_inner .btn_wrap a:nth-of-type(2) button {
   background-color: transparent;
   border: 5px solid #171f2f;
+}
+
+.dark .home_inner .btn_wrap a button:active {
+  background-color: #5865f2;
+  border: none;
 }
