@@ -13,7 +13,6 @@ const ThemeProvider = ({ children }) => {
     } else {
       window.localStorage.setItem("theme", "dark");
     }
-    console.log("chooseTheme", themeMode);
   }, [themeMode]);
 
   return (

@@ -24,7 +24,6 @@ function SideTab() {
             src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
             text="Home"
             name="first"
-            imgStyle={{ transform: "scale(1.4)" }}
           />
         </Link>
 

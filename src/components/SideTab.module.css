@@ -3,7 +3,6 @@
   height: 100%;
   text-align: center;
   background-color: #1e1f22;
-  border: 1px solid white;
 }
 
 .side_tab ul {
@@ -12,15 +11,17 @@
   display: inline-block;
   width: 90%;
   text-align: center;
-  border: 1px solid blue;
+  position: relative;
 }
 
 .side_tab ul li {
-  position: relative;
   border: 1px solid red;
+  position: relative;
 }
 
-.side_tab li > div {
+.side_tab li > article,
+.fixedStyle li > nav,
+.icon {
   width: 60px;
   height: 60px;
   display: flex;
@@ -31,39 +32,69 @@
   transition: 0.2s;
 }
 
-.side_tab li:not(.first) > div {
+.fixedStyle > nav div {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.side_tab li:not(.first) > article,
+.icon {
   background-color: #2d2e33;
 }
 
-.first > div {
+li:not(.first) > nav {
+  background-color: #23a459;
+}
+
+.first > article {
   background-color: #5865f2;
   border-radius: 20px;
 }
-.first > div:hover {
+
+.first > nav {
+  border-radius: 50%;
+  background-color: #5865f2;
+}
+
+.first > article:hover {
   border-radius: 50%;
 }
 
-.side_tab li:not(.first) > div {
+.side_tab li:not(.first) > article,
+.icon {
   border-radius: 50%;
+  color: white;
 }
 
-.side_tab li img {
+.side_tab li:not(.first) > nav {
+  border-radius: 20px;
+}
+
+.side_tab li article img,
+.side_tab li nav img {
   width: 30px;
+  height: 30px;
   transform: translateY(5px);
 }
 
 .side_tab ul > div {
   width: 50px;
   height: 1px;
-  transform: translate(18px, -10px);
+  position: absolute;
+  top: 70px;
+  left: calc(50% - 25px);
   background-color: #404249;
 }
 
-.side_tab li:not(.first) div:hover {
+.side_tab li:not(.first) article:hover,
+.icon:hover {
   background-color: #23a459;
   border-radius: 20px;
 }
 
+/*하얀색 박스*/
 .side_tab li span {
   display: block;
   width: 0px;
@@ -79,6 +110,21 @@
   top: 30%;
   opacity: 0;
   transition: 0.5s;
+}
+
+.fixedStyle section {
+  display: block;
+  width: 0px;
+  height: 5px;
+  border-left: 5px solid white;
+  border-top: 1.5px solid transparent;
+  border-bottom: 1.5px solid transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  left: -5px;
+  top: 30%;
+  transform: scale(2, 7);
 }
 
 .side_tab li:hover span {
@@ -106,15 +152,6 @@
   transform: scale(1);
 }
 
-.icon {
-  color: #23a459;
-}
-
-.icon:hover {
-  background-color: #23a459;
-  color: #fff;
-}
-
 /*다크모드*/
 
 .dark {
@@ -123,32 +160,4 @@
 
 .dark li:not(.first) > div {
   background-color: #303757;
-}
-
-/*클릭*/
-.fixedStyle {
-}
-
-.fixedStyle section {
-  display: block;
-  width: 0px;
-  height: 5px;
-  border-left: 5px solid white;
-  border-top: 1.5px solid transparent;
-  border-bottom: 1.5px solid transparent;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  position: absolute;
-  left: -5px;
-  top: 30%;
-  transform: scale(2, 7);
-}
-
-.fixedStyle div {
-  border-radius: 20px;
-}
-
-.fixedStyle section img {
-  width: 30px;
-  height: 30px;
 }

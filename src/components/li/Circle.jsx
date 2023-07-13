@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "../SideTab.module.css";
 
-export function Circle({ src, text, onClick, action, imgStyle, name }) {
+export function Circle({ src, text, onClick, action, name }) {
   return (
     <li
       className={`${action === text ? classes.fixedStyle : ""} ${
@@ -9,12 +9,22 @@ export function Circle({ src, text, onClick, action, imgStyle, name }) {
       }`}
       onClick={onClick}
     >
-      {action !== text ? <span></span> : <section></section>}
-      <div>
-        <div>
-          <img src={src} alt="sidetab" style={imgStyle} />
-        </div>
-      </div>
+      {action === text ? <section></section> : <span></span>}
+
+      {action === text ? (
+        <nav className={classes.width}>
+          <div>
+            <img src={src} alt="sidetab" />
+          </div>
+        </nav>
+      ) : (
+        <article>
+          <li>
+            <img src={src} alt="sidetab" />
+          </li>
+        </article>
+      )}
+
       <p>{text}</p>
     </li>
   );
