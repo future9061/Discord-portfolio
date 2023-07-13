@@ -40,9 +40,10 @@ react로 저의 portfolio를 만들어봤습니다.
   ```ruby
 
   //context.js
-
   
-    
+    export const ThemeContext = React.createContext();
+  
+    const ThemeProvider = ({children}) => {}
   
   ```
   
