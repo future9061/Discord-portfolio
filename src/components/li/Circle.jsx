@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../store/Context";
 import classes from "../SideTab.module.css";
 
 export function Circle({ src, text, onClick, action, name }) {
+  const { setAtcircle } = useContext(ThemeContext);
+
   return (
     <li
       className={`${action === text ? classes.fixedStyle : ""} ${
         classes[name]
       }`}
-      onClick={onClick}
+      onClick={() => {
+        setAtcircle(text);
+      }}
     >
       {action === text ? <section></section> : <span></span>}
 
@@ -30,36 +35,40 @@ export function Circle({ src, text, onClick, action, name }) {
   );
 }
 
-export function CircleIcon({
-  circleStyle,
-  iconStyle,
-  icon,
-  text,
-  onClick,
-  action,
-}) {
+export function CircleIcon({ icon, text, action }) {
+  const { setAtcircle } = useContext(ThemeContext);
   return (
     <li
       className={`${action === text ? classes.fixedStyle : ""}`}
-      onClick={onClick}
+      onClick={() => {
+        setAtcircle(text);
+      }}
     >
-      {action !== text ? (
-        <span></span>
-      ) : (
+      {action === text ? (
         <section className={classes.white}></section>
+      ) : (
+        <span></span>
       )}
-      <div style={circleStyle} className={classes.icon}>
-        <p style={iconStyle}>{icon}</p>
-      </div>
+
+      {action === text ? (
+        <nav className={classes.icon}>
+          <p>{icon}</p>
+        </nav>
+      ) : (
+        <div className={classes.icon}>
+          <p>{icon}</p>
+        </div>
+      )}
+
       <p>{text}</p>
     </li>
   );
 }
-export function CirclePlus({ circleStyle, iconStyle, icon }) {
+export function CirclePlus({ icon }) {
   return (
     <li>
-      <div style={circleStyle} className={classes.icon}>
-        <p style={iconStyle}>{icon}</p>
+      <div className={classes.icon}>
+        <p>{icon}</p>
       </div>
     </li>
   );

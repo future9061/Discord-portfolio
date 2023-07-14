@@ -19,8 +19,9 @@ export function Home() {
     return () => clearInterval(interval);
   });
 
-  const { themeMode } = useContext(ThemeContext);
+  const { themeMode, atCircle, setAtcircle } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
+
   return (
     <div className={`${classes.home_wrap} ${dark}`}>
       <div className={classes.home_inner}>
@@ -38,10 +39,22 @@ export function Home() {
         <span className={classes.sub_title}> Front-end Developer </span>
         <div className={classes.btn_wrap}>
           <Link to="/about">
-            <button>Start</button>
+            <button
+              onClick={() => {
+                setAtcircle("About");
+              }}
+            >
+              Start
+            </button>
           </Link>
           <Link to="/setting">
-            <button>Setting</button>
+            <button
+              onClick={() => {
+                setAtcircle("Setting");
+              }}
+            >
+              Setting
+            </button>
           </Link>
         </div>
       </div>

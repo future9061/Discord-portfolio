@@ -14,9 +14,15 @@
   position: relative;
 }
 
-.side_tab ul li {
-  border: 1px solid red;
+.side_tab ul li,
+.fixedStyle ul li {
   position: relative;
+  margin: 0px auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
 }
 
 .side_tab li > article,
@@ -24,10 +30,6 @@
 .icon {
   width: 60px;
   height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px auto 20px auto;
   font-size: 30px;
   transition: 0.2s;
 }
@@ -35,8 +37,6 @@
 .fixedStyle > nav div {
   width: 60px;
   height: 60px;
-  flex-shrink: 0;
-  flex-grow: 1;
 }
 
 .side_tab li:not(.first) > article,
@@ -62,24 +62,48 @@ li:not(.first) > nav {
   border-radius: 50%;
 }
 
-.side_tab li:not(.first) > article,
-.icon {
+.side_tab li:not(.first) > article {
   border-radius: 50%;
   color: white;
+}
+
+.icon {
+  border-radius: 50%;
+  color: #23a459;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.icon:hover {
+  color: white;
+}
+
+.fixedStyle > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
 }
 
 .side_tab li:not(.first) > nav {
   border-radius: 20px;
 }
 
-.side_tab li article img,
-.side_tab li nav img {
+.side_tab li:not(.first) article img,
+.side_tab .fixedStyle:not(.first) nav img {
   width: 30px;
   height: 30px;
-  transform: translateY(5px);
 }
 
-.side_tab ul > div {
+.first article img,
+.first nav img {
+  width: 40px;
+  height: 30px;
+}
+
+.side_tab ul > div .fixedStyle ul > {
   width: 50px;
   height: 1px;
   position: absolute;
@@ -106,8 +130,8 @@ li:not(.first) > nav {
   border-bottom-right-radius: 2px;
   transform: scaleY(1);
   position: absolute;
-  left: -5px;
-  top: 30%;
+  left: -15px;
+  top: 40%;
   opacity: 0;
   transition: 0.5s;
 }
@@ -122,9 +146,15 @@ li:not(.first) > nav {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   position: absolute;
-  left: -5px;
-  top: 30%;
+  left: -15px;
+  top: 40%;
   transform: scale(2, 7);
+}
+
+.fixedStyle nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .side_tab li:hover span {
