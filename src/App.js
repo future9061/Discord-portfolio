@@ -6,18 +6,25 @@ import Category from "./components/Category";
 import { Outlet } from "react-router-dom";
 import ThemeProvider from "./store/Context";
 import Loading from "./pages/Loading";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const sessionVal = window.sessionStorage.getItem("isLoading");
+  const [isLoading, setIsLoading] = useState(
+    sessionVal ? JSON.parse(sessionVal) : true
+  );
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 3000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
 
-  //   return () => clearTimeout(timer);
-  // }, [isLoading]); //새로고침 누를 때마다 나타나는 거 싫어.. 재랜더링 되지 않는 변수가 뭐있지?
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    window.sessionStorage.setItem("isLoading", JSON.stringify(isLoading));
+  }, [isLoading]);
 
   return (
     <>

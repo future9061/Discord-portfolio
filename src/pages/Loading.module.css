@@ -3,20 +3,20 @@
 .loading_wrap {
   width: 100%;
   height: 100%;
-  background-color: #5165f6;
+  background-color: #14141a;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.img_wrap {
+.gif_wrap {
   border-radius: 50%;
   overflow: hidden;
 }
 
-img {
-  width: 600px;
+.gif_wrap > img {
+  width: 200px;
 }
 
 .text_wrap {
@@ -46,7 +46,7 @@ h1 {
 }
 
 .dott1 {
-  animation: dott1 1.5s infinite 1.5s;
+  animation: dott1 1.5s infinite;
 }
 
 @keyframes dott1 {
@@ -59,7 +59,7 @@ h1 {
 }
 
 .dott2 {
-  animation: dott2 1.5s infinite 1.5s;
+  animation: dott2 1.5s infinite;
 }
 
 @keyframes dott2 {
@@ -72,7 +72,7 @@ h1 {
 }
 
 .dott3 {
-  animation: dott3 1.5s infinite 1.5s;
+  animation: dott3 1.5s infinite;
 }
 
 @keyframes dott3 {

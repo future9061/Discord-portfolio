@@ -4,7 +4,7 @@ import classes from "./Loading.module.css";
 export default function Loading() {
   return (
     <div className={classes.loading_wrap}>
-      <div className={classes.img_wrap}>
+      <div className={classes.gif_wrap}>
         <img src={process.env.PUBLIC_URL + "/img/gif.gif"} />
       </div>
       <div className={classes.text_wrap}>
