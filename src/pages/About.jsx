@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import classes from "./About.module.css";
 import Back from "../components/ui/Back";
 import { ThemeContext } from "../store/Context";
+import { useNavigate } from "react-router-dom";
 
 export function About() {
   const { themeMode } = useContext(ThemeContext);
+
   let dark = themeMode === "dark" ? classes.dark : "";
   return (
     <div className={`${classes.about_wrap} ${dark}`}>

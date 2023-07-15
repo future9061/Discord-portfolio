@@ -19,7 +19,7 @@ export function Home() {
     return () => clearInterval(interval);
   });
 
-  const { themeMode, atCircle, setAtcircle } = useContext(ThemeContext);
+  const { themeMode, setMenuTxt } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
 
   return (
@@ -41,7 +41,7 @@ export function Home() {
           <Link to="/about">
             <button
               onClick={() => {
-                setAtcircle("About");
+                setMenuTxt("About");
               }}
             >
               Start
@@ -50,7 +50,7 @@ export function Home() {
           <Link to="/setting">
             <button
               onClick={() => {
-                setAtcircle("Setting");
+                setMenuTxt("Setting");
               }}
             >
               Setting

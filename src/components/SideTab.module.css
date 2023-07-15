@@ -21,22 +21,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .side_tab li > article,
 .fixedStyle li > nav,
 .icon {
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
+  width: 70px;
+  height: 70px;
   transition: 0.2s;
 }
 
 .fixedStyle > nav div {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .side_tab li:not(.first) > article,
@@ -49,7 +48,7 @@ li:not(.first) > nav {
 }
 
 .first > article {
-  background-color: #5865f2;
+  background-color: #2d2e33;
   border-radius: 20px;
 }
 
@@ -73,7 +72,7 @@ li:not(.first) > nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 38px;
 }
 
 .icon:hover {
@@ -84,7 +83,6 @@ li:not(.first) > nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
 }
 
 .side_tab li:not(.first) > nav {
@@ -93,21 +91,21 @@ li:not(.first) > nav {
 
 .side_tab li:not(.first) article img,
 .side_tab .fixedStyle:not(.first) nav img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .first article img,
 .first nav img {
-  width: 40px;
-  height: 30px;
+  width: 50px;
+  height: 40px;
 }
 
-.side_tab ul > div .fixedStyle ul > {
+.line {
   width: 50px;
   height: 1px;
   position: absolute;
-  top: 70px;
+  top: 80px;
   left: calc(50% - 25px);
   background-color: #404249;
 }
@@ -116,6 +114,10 @@ li:not(.first) > nav {
 .icon:hover {
   background-color: #23a459;
   border-radius: 20px;
+}
+
+.side_tab .first article:hover {
+  background-color: #5865f2;
 }
 
 /*하얀색 박스*/
@@ -148,7 +150,7 @@ li:not(.first) > nav {
   position: absolute;
   left: -15px;
   top: 40%;
-  transform: scale(2, 7);
+  transform: scale(2.3, 8);
 }
 
 .fixedStyle nav div {
@@ -159,7 +161,7 @@ li:not(.first) > nav {
 
 .side_tab li:hover span {
   opacity: 1;
-  transform: scale(2, 7);
+  transform: scale(2.3, 8);
 }
 
 .side_tab li > p {
@@ -167,10 +169,10 @@ li:not(.first) > nav {
   position: absolute;
   padding: 7px;
   border-radius: 15px;
-  left: 90%;
+  left: 100%;
   z-index: 2;
   background-color: #5865f2;
-  font-size: 0.7em;
+  font-size: 1em;
   top: 15px;
   transition: 0.5s;
   opacity: 0;

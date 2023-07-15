@@ -14,3 +14,12 @@ export default function MeLi({ img, text }) {
     </li>
   );
 }
+
+export function IconMeLi({ icon, text }) {
+  return (
+    <li>
+      <span>{icon}</span>
+      <p>{text}</p>
+    </li>
+  );
+}

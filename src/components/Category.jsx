@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { BsDiscord, BsGithub } from "react-icons/bs";
 import classes from "./Category.module.css";
-import BrLi from "./li/BrLi";
-import MeLi from "./li/MeLi";
+import MeLi, { IconMeLi } from "./li/MeLi";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { AiFillCaretRight } from "react-icons/ai";
 import { ThemeContext } from "../store/Context";
 function Category() {
   const { themeMode } = useContext(ThemeContext);
@@ -22,23 +22,20 @@ function Category() {
 
       <div className={classes.link_wrap}>
         <div>
-          <RiArrowDownSLine style={{ marginTop: "10px" }} />
+          <span>
+            <AiFillCaretRight />
+          </span>
           <p>Log</p>
         </div>
         <ul>
-          <BrLi
-            icon={<BsGithub />}
-            text="Git hub"
-            iconStyle={{ color: "#fff", fontSize: "30px", marginRight: "6px" }}
-            bgStyle={{ fontSize: "17px" }}
-          />
+          <IconMeLi icon={<BsGithub />} text="GitHub" />
         </ul>
       </div>
 
       <div className={classes.menu_wrap}>
         <div>
           <span>
-            <RiArrowDownSLine style={{ marginTop: "10px" }} />
+            <AiFillCaretRight />
           </span>
           <p>Direct Menu</p>
         </div>
@@ -54,12 +51,12 @@ function Category() {
             <div>
               <div className={classes.hidden}>
                 <p>
-                  <BsDiscord style={{ fontSize: "20px" }} />
+                  <BsDiscord style={{ fontSize: "28px" }} />
                 </p>
               </div>
             </div>
             <div className={classes.text_wrap}>
-              <span>미래의 Portfolio</span>
+              <b>미래의 Portfolio</b>
               <small>future#9061</small>
             </div>
           </div>

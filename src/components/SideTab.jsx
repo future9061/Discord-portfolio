@@ -10,7 +10,7 @@ import { ThemeContext } from "../store/Context";
 function SideTab() {
   const { themeMode } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
-  const { atCircle, setAtcircle } = useContext(ThemeContext);
+  const { atCircle } = useContext(ThemeContext);
 
   return (
     <div className={`${classes.side_tab} ${dark}`}>
@@ -24,7 +24,7 @@ function SideTab() {
           />
         </Link>
 
-        <div></div>
+        <div className={classes.line}></div>
 
         <Link to="/about">
           <Circle src="/img/about img.png" text="About" action={atCircle} />

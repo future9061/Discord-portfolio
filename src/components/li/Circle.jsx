@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../../store/Context";
 import classes from "../SideTab.module.css";
 
-export function Circle({ src, text, onClick, action, name }) {
-  const { setAtcircle } = useContext(ThemeContext);
+export function Circle({ src, text, action, name }) {
+  const { setMenuTxt } = useContext(ThemeContext);
 
   return (
     <li
@@ -11,7 +11,7 @@ export function Circle({ src, text, onClick, action, name }) {
         classes[name]
       }`}
       onClick={() => {
-        setAtcircle(text);
+        setMenuTxt(text);
       }}
     >
       {action === text ? <section></section> : <span></span>}
@@ -36,12 +36,12 @@ export function Circle({ src, text, onClick, action, name }) {
 }
 
 export function CircleIcon({ icon, text, action }) {
-  const { setAtcircle } = useContext(ThemeContext);
+  const { setMenuTxt } = useContext(ThemeContext);
   return (
     <li
       className={`${action === text ? classes.fixedStyle : ""}`}
       onClick={() => {
-        setAtcircle(text);
+        setMenuTxt(text);
       }}
     >
       {action === text ? (
