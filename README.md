@@ -109,6 +109,8 @@ export default App;
                 e.stopPropagation(); 
                 setThemeMode("dark");
               }>dark</button>
+
+//버튼 클릭 시 themeMode가 바뀌면서 
 ```
 
 ## 🎇Upgrade
