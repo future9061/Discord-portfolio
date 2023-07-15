@@ -24,7 +24,7 @@ react로 저의 portfolio를 만들어봤습니다.
 
 
 ## 📌 주요 기능
-#### menu마다 route
+#### blue mode, splash screen, 페이지 이동  
 - 
 
 
@@ -55,7 +55,7 @@ const ThemeProvider = ({ children }) => {
     } else {
       window.localStorage.setItem("theme", "dark");
     }
-  }, [themeMode]);  //themeMode를 의존성 배열로 넣었다. useCallBack 사용하는 부분에서 시간을 많이 허비했는데 밑에 자세히 서술하겠습니다.!
+  }, [themeMode]);  //themeMode를 의존성 배열로 넣었다. 
 
   return (
     <ThemeContext.Provider
@@ -86,6 +86,29 @@ return (
   }
 
 export default App;
+```
+
+<br />
+
+```javascript
+//context 사용할 setting component에서 useContext 생성
+ const { themeMode, setThemeMode, chooseTheme } = useContext(ThemeContext);
+
+  let dark = themeMode === "dark" ? classes.dark : "";
+
+ useEffect(() => {
+    chooseTheme();
+  }, [themeMode, chooseTheme]);
+
+  <button onClick={(e) => {
+                e.stopPropagation(); //이벤트 버블링 현상
+                setThemeMode("basic");
+              }>Basic</button>
+
+ <button onClick={(e) => {
+                e.stopPropagation(); 
+                setThemeMode("dark");
+              }>dark</button>
 ```
 
 ## 🎇Upgrade
