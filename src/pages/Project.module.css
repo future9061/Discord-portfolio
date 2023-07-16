@@ -1,6 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap");
+
 .project_wrap {
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
+}
+
+.project_inner {
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  padding: 20px;
+}
+
+.project_inner h2 {
+  color: white;
+  font-size: 4em;
+  font-weight: 600;
+  color: aquamarine;
+}
+
+.project_content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/*item style*/
+
+.item_wrap {
+  width: 45%;
+  position: relative;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  backdrop-filter: brightness(0.8);
+  padding: 10px;
+}
+
+.item_wrap > span {
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 0.7%;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.item_inner {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 20px;
+}
+
+.img_wrap {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.img_wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item_wrap h1 {
+  color: white;
+  margin: 20px 0px;
+  font-size: 2em;
+}
+
+.text_wrap {
+  text-align: start;
+  color: #c9c8c8;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+.keyowrd_wrap {
+  display: flex;
+  gap: 20px;
+}
+
+/*언어 버튼 만들기*/
+.keyowrd_wrap div {
   border: 1px solid red;
 }
 

@@ -40,7 +40,7 @@ function Category() {
           <p>Direct Menu</p>
         </div>
         <ul className={classes.menu_wrap_inner}>
-          <MeLi text="javscriript" img="javascript" />
+          <MeLi text="Javscriript" img="javascript" />
           <MeLi text="React" img="react" />
           <MeLi text="Vue" img="vue" />
           <MeLi text="PWA" img="pwa" />

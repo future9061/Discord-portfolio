@@ -36,7 +36,7 @@ export function Home() {
           <p>{text}</p>
           <div className={classes.blink}></div>
         </div>
-        <span className={classes.sub_title}> Front-end Developer </span>
+        {/* <span className={classes.sub_title}> Front-end Developer </span> */}
         <div className={classes.btn_wrap}>
           <Link to="/about">
             <button

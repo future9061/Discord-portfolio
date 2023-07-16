@@ -1,6 +1,11 @@
 /*category components*/
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Roboto:wght@300;400;500&display=swap");
+
+/* font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
 .category_wrap {
   display: inline-block;
   background-color: #2b2d31;
@@ -59,7 +64,9 @@
 
 .link_wrap {
   height: 11%;
+  font-weight: 300;
 }
+
 .menu_wrap {
   position: relative;
   height: 84%;
@@ -68,6 +75,8 @@
 .menu_wrap ul {
   width: 95%;
   margin: auto;
+  /* font-family: "Roboto", sans-serif; */
+  font-weight: 300;
 }
 
 .link_wrap > div,
@@ -78,8 +87,7 @@
 
 .link_wrap > div p,
 .menu_wrap > div p {
-  font-family: "ABeeZee", sans-serif;
-  font-size: 0.85em;
+  font-size: 0.9em;
   margin: 12px 0px;
   color: white;
 }
@@ -216,8 +224,8 @@
   margin-bottom: 3px;
   letter-spacing: -0.3px;
   font-size: 0.95em;
-  font-weight: 400;
-  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 .text_wrap small {

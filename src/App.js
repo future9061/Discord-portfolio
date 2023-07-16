@@ -3,7 +3,7 @@ import TopBar from "./components/TopBar";
 import SubBar from "./components/SubBar";
 import SideTab from "./components/SideTab";
 import Category from "./components/Category";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import ThemeProvider from "./store/Context";
 import Loading from "./pages/Loading";
 import { useState, useEffect } from "react";
@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(
     sessionVal ? JSON.parse(sessionVal) : true
   );
-
+  const navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -25,6 +25,10 @@ function App() {
   useEffect(() => {
     window.sessionStorage.setItem("isLoading", JSON.stringify(isLoading));
   }, [isLoading]);
+
+  useEffect(() => {
+    navigate("/home");
+  }, []);
 
   return (
     <>

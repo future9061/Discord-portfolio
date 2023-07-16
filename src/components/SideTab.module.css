@@ -190,6 +190,29 @@ li:not(.first) > nav {
   background-color: #131926;
 }
 
-.dark li:not(.first) > div {
+.dark li:not(.first) article li {
   background-color: #303757;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.dark li:not(.first) article li:hover {
+  background-color: #23a459;
+  border-radius: 20px;
+}
+
+.dark .first article li {
+  background-color: #303757;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.dark .first article li:hover {
+  background-color: #5865f2;
+  border-radius: 50%;
+}
+
+/*아이콘*/
+.dark li > div {
+  background-color: #303757;
+  border: 1px oslid red;
 }

@@ -12,21 +12,31 @@ export default function SubBar() {
   return (
     <div className={`${classes.sub_bar_wrap} ${dark}`}>
       <ul>
-        <BrLi text="Home" action={atCircle} />
+        <Link to="/Home">
+          <BrLi text="Home" action={atCircle} />
+        </Link>
 
-        <BrLi text="About" action={atCircle} />
+        <Link to="/About">
+          <BrLi text="About" action={atCircle} />
+        </Link>
+        <Link to="/Skills">
+          <BrLi text="Skills" action={atCircle} />
+        </Link>
+        <Link to="/Project">
+          <BrLi text="Project" action={atCircle} />
+        </Link>
 
-        <BrLi text="Skills" action={atCircle} />
+        <Link to="/Contact">
+          <BrLi text="Contact" action={atCircle} />
+        </Link>
 
-        <BrLi text="Project" action={atCircle} />
-
-        <BrLi text="Contact" action={atCircle} />
-
-        <SetIcon
-          icon=<IoMdSettings></IoMdSettings>
-          action={atCircle}
-          text="Setting"
-        />
+        <Link to="/Setting">
+          <SetIcon
+            icon=<IoMdSettings></IoMdSettings>
+            action={atCircle}
+            text="Setting"
+          />
+        </Link>
       </ul>
     </div>
   );

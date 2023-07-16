@@ -2,12 +2,12 @@
 
 .contact_wrap {
   color: white;
-  font-family: "Noto Sans KR", sans-serif;
   height: 100%;
 }
 
 .contact_inner {
   text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .contact_inner > div {

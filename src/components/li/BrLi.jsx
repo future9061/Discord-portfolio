@@ -3,16 +3,13 @@ import classes from "../SubBar.module.css";
 import { ThemeContext } from "../../store/Context";
 
 export default function BrLi({ text, action }) {
-  const { setMenuTxt, handleBtnClick } = useContext(ThemeContext);
-
-  const handleClick = () => {
-    setMenuTxt(text);
-    handleBtnClick();
-  };
+  const { setMenuTxt } = useContext(ThemeContext);
 
   return (
     <li
-      onClick={handleClick}
+      onClick={() => {
+        setMenuTxt(text);
+      }}
       className={action === text ? classes.clickStyle : ""}
     >
       <p>{text}</p>

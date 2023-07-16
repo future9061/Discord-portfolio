@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import classes from "./About.module.css";
 import Back from "../components/ui/Back";
 import { ThemeContext } from "../store/Context";
-import { useNavigate } from "react-router-dom";
 
 export function About() {
   const { themeMode } = useContext(ThemeContext);
@@ -28,7 +27,7 @@ export function About() {
 
         <div className={classes.ment}>
           <b>고통 끝에 오는 희열을 즐기는 신입 개발자😏</b>
-          <p>안녕하세요! 아직은 서투른 프론트엔드 개발자 이미래입니다.</p>
+          <p>안녕하세요! 프론트엔드 개발자 이미래입니다.</p>
         </div>
       </div>
     </div>
