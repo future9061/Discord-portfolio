@@ -215,12 +215,11 @@ font-family: 'Roboto', sans-serif; */
 }
 
 .text_wrap {
-  display: inline-block;
   margin-left: 10px;
 }
 
 .text_wrap b {
-  display: inline-block;
+  display: block;
   margin-bottom: 3px;
   letter-spacing: -0.3px;
   font-size: 0.95em;

@@ -75,6 +75,21 @@
   }
 }
 
+/*스크롤 style*/
+
+.skills_wrap::-webkit-scrollbar {
+  width: 0.6em;
+  background-color: #313338;
+}
+.skills_wrap::-webkit-scrollbar-thumb {
+  background-color: #18191b;
+  border-radius: 10px;
+}
+
+.skills_wrap::-webkit-scrollbar-track {
+  background-color: #404246;
+}
+
 /*다크 모드*/
 
 .dark {
