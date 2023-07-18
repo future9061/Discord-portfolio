@@ -6,7 +6,7 @@ import { IoMdSettings } from "react-icons/io";
 import BrLi, { SetIcon } from "./li/BrLi";
 
 export default function SubBar() {
-  const { themeMode, setMenuTxt, menuTxt } = useContext(ThemeContext);
+  const { themeMode, atCircle } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
 
   //window.history.state 이전 경로가 저장되긴 하나 추출이 어렵다고 함
@@ -14,24 +14,23 @@ export default function SubBar() {
   //const location = useLocation();
   //const previousUrl = location.state?.from;
   //console.log(previousUrl);
-  //간단하게 state 속성의 from으로 이전 경로를 가져올 수 있으나 나는 페이지 이동을 다 link로 한상태임..
 
   return (
     <div className={`${classes.sub_bar_wrap} ${dark}`}>
       <ul>
-        <BrLi text="Home" action={menuTxt} />
+        <BrLi text="Home" action={atCircle} />
 
-        <BrLi text="About" action={menuTxt} />
+        <BrLi text="About" action={atCircle} />
 
-        <BrLi text="Skills" action={menuTxt} />
+        <BrLi text="Skills" action={atCircle} />
 
-        <BrLi text="Project" action={menuTxt} />
+        <BrLi text="Project" action={atCircle} />
 
-        <BrLi text="Contact" action={menuTxt} />
+        <BrLi text="Contact" action={atCircle} />
 
         <SetIcon
           icon={<IoMdSettings></IoMdSettings>}
-          action={menuTxt}
+          action={atCircle}
           text="Setting"
         />
       </ul>

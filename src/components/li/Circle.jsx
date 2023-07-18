@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../../store/Context";
 import classes from "../SideTab.module.css";
 
 export function Circle({ src, text, action, name }) {
-  const { setMenuTxt } = useContext(ThemeContext);
+  const { setMenuTxt, movePage, atCircle } = useContext(ThemeContext);
+
+  useEffect(() => {
+    movePage();
+  }, [atCircle]);
 
   return (
     <li
@@ -12,6 +16,7 @@ export function Circle({ src, text, action, name }) {
       }`}
       onClick={() => {
         setMenuTxt(text);
+        movePage();
       }}
     >
       {action === text ? <section></section> : <span></span>}

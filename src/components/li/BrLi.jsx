@@ -1,15 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import classes from "../SubBar.module.css";
 import { ThemeContext } from "../../store/Context";
 
 export default function BrLi({ text, action }) {
-  const { setMenuTxt, handlePage } = useContext(ThemeContext);
+  const { setMenuTxt, atCircle, movePage } = useContext(ThemeContext);
+  useEffect(() => {
+    movePage();
+  }, [atCircle]);
 
   return (
     <li
       onClick={() => {
         setMenuTxt(text);
-        // handlePage();
+        movePage();
       }}
       className={action === text ? classes.clickStyle : ""}
     >

@@ -8,43 +8,30 @@ import { FcSettings } from "react-icons/fc";
 import { ThemeContext } from "../store/Context";
 
 function SideTab() {
-  const { themeMode } = useContext(ThemeContext);
+  const { themeMode, movePage, atCircle } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
-  const { atCircle } = useContext(ThemeContext);
 
   return (
     <div className={`${classes.side_tab} ${dark}`}>
       <ul>
-        <Link to="/home">
-          <Circle
-            action={atCircle}
-            src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
-            text="Home"
-            name="first"
-          />
-        </Link>
+        <Circle
+          action={atCircle}
+          src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
+          text="Home"
+          name="first"
+        />
 
         <div className={classes.line}></div>
 
-        <Link to="/about">
-          <Circle src="/img/about img.png" text="About" action={atCircle} />
-        </Link>
+        <Circle src="/img/about img.png" text="About" action={atCircle} />
 
-        <Link to="/skills">
-          <Circle src="/img/skills img.png" text="Skills" action={atCircle} />
-        </Link>
+        <Circle src="/img/skills img.png" text="Skills" action={atCircle} />
 
-        <Link to="/project">
-          <Circle src="/img/project.png" text="Project" action={atCircle} />
-        </Link>
+        <Circle src="/img/project.png" text="Project" action={atCircle} />
 
-        <Link to="/contact">
-          <Circle src="/img/connect img.png" text="Contact" action={atCircle} />
-        </Link>
+        <Circle src="/img/connect img.png" text="Contact" action={atCircle} />
 
-        <Link to="/setting">
-          <CircleIcon text="Setting" action={atCircle} icon={<FcSettings />} />
-        </Link>
+        <CircleIcon text="Setting" action={atCircle} icon={<FcSettings />} />
 
         <CirclePlus icon={<AiOutlinePlus />} />
       </ul>
