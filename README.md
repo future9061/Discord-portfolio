@@ -35,7 +35,7 @@ react로 저의 portfolio를 만들어봤습니다.
 - ### Dark mode 
 
    
-1. 모든 component에 저장되어야 하기 때문에 context 사용 
+1. 모든 component에 적용 되어야 하기 때문에 context 사용 
 2. dark 상태를 담아 둘 useState 생성
 3. 새로 고침 시 다크 모드가 풀림(초기값이 basic이기 때문) 때문에 localStorage에 저장   
 
