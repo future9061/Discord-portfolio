@@ -120,8 +120,9 @@ export default App;
   이전 경로를 가져와 조건문을 걸어야 해서 useLocation과 useNavigate Hook으로 코드를 수정했다
 
 > 1.  navigate로 페이지 이동 시 두 번째 인자로 location의 state 객체의 from을 지정(그래야 이전 경로 사용 가능) <br />
-> 2.  Back btn component에서 이전 경로를 sessionStorage에 배열로 저장 <br /> 3.버튼을 클릭하면 sessionStorage에서 get 해온 후 마지막 배열로 navigate 한 후 마지막 배열 삭제.
->     새로운 배열을 다시 sessionStorage에 넣어줌 <br /> 4.이전 경로와 버튼 State가 바르면 버튼 상태 업데이트 하는 조건문 추가하여 이전 페이지로 이동하면 해당 버튼이 활성화 됨
+> 2.  Back btn component에서 이전 경로를 sessionStorage에 배열로 저장 <br />
+> 3.  버튼을 클릭하면 sessionStorage에서 get 해온 후 마지막 배열로 navigate 한 후 마지막 배열 삭제. 새로운 배열을 다시 sessionStorage에 넣어줌 <br />
+> 4.  if(이전 경로버튼!== BtnState){ 버튼 상태 업데이트 하는 조건문} 추가하여 이전 페이지로 이동하면 해당 버튼이 활성화 됨
 
 ```javascript
 //context.js
