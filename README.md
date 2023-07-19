@@ -34,9 +34,10 @@ react로 저의 portfolio를 만들어봤습니다.
 
 - ### splash Screen
 
-  1.Loding component 생성 및 컴포넌트 상태 관리 isLoading useState 생성 2. isLoading는 sesstionStorage의 date로 상태 업데이트. **splash screen은 웹을 열 때 한번만 보여야 함으로 브라우저를 열 때마다 reset되는 sessionStorage가 적합하다.**
-  3.App.js에 조건문으로 <Loading /> 넣기  
-  4.setTimeOut으로 2000ms 뒤에 isLoading이 false로 바뀜
+  1.Loding component 생성 및 컴포넌트 상태 관리 isLoading useState 생성 <br />
+  2. isLoading는 sesstionStorage의 date로 상태 업데이트. **splash screen은 웹을 열 때 한번만 보여야 함으로 브라우저를 열 때마다 reset되는 sessionStorage가 적합하다.** <br />
+  3.App.js에 조건문으로 <Loading /> 넣기  <br />
+  4.setTimeOut으로 2000ms 뒤에 isLoading이 false로 바뀜 <br />
 
   ```javascript
   function App() {
@@ -157,12 +158,13 @@ export default App;
 ```
 
 - ### ⭐⭐⭐⭐⭐Back Btn
-  기존에는 navigate(-1)로 어렵지 않던 기능이지만 **이전 페이지로 이동하면서 이전 페이지의 버튼이 활성화 되지 않는 문제** 를 발견. 버튼의 상태관리 데이터와 Back버튼이 무관하기 때문..  
+  >기존에는 navigate(-1)로 어렵지 않던 기능이지만 **이전 페이지로 이동하면서 이전 페이지의 버튼이 활성화 되지 않는 문제** 를 발견. 버튼의 상태관리 데이터와 Back버튼이 무관하기 때문..  
   이전 경로를 가져와 조건문을 걸어야 해서 useLocation과 useNavigate Hook으로 코드를 수정했다
 
-> 1.  navigate로 페이지 이동 시 두 번째 인자로 location의 state 객체의 from을 지정(그래야 이전 경로 사용 가능) <br />
-> 2.  Back btn component에서 이전 경로를 sessionStorage에 배열로 저장 <br />  
->     3.버튼을 클릭하면 sessionStorage에서 get 해온 후 마지막 배열로 navigate 한 후 마지막 배열 삭제 및 새로운 배열을 다시 sessionStorage에 넣어줌 <br /> 4.이전 경로와 버튼 State가 바르면 버튼 상태 업데이트 하는 조건문 추가하여 이전 페이지로 이동하면 해당 버튼이 활성화 됨
+ 1.  navigate로 페이지 이동 시 두 번째 인자로 location의 state 객체의 from을 지정(그래야 이전 경로 사용 가능) <br />
+ 2.  Back btn component에서 이전 경로를 sessionStorage에 배열로 저장 <br />  
+ 3. 버튼을 클릭하면 sessionStorage에서 get 해온 후 마지막 배열로 navigate 한 후 마지막 배열 삭제 및 새로운 배열을 다시 sessionStorage에 넣어줌 <br />
+ 4. 이전 경로와 버튼 State가 바르면 버튼 상태 업데이트 하는 조건문 추가하여 이전 페이지로 이동하면 해당 버튼이 활성화 됨
 
 ```javascript
 //context.js
