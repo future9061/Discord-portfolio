@@ -24,6 +24,10 @@ const ThemeProvider = ({ children }) => {
     }
   }, [themeMode]);
 
+    const movePage = useCallback(() => {
+    navigate(`/${atCircle}`, { state: { from: location.pathname } });
+  }, [atCircle, location.pathname, navigate]);
+
   return (
     <ThemeContext.Provider
       value={{
@@ -33,6 +37,7 @@ const ThemeProvider = ({ children }) => {
         atCircle,
         setAtcircle,
         setMenuTxt,
+        movePage
       }}
     >
       {children}
