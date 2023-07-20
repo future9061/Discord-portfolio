@@ -1,12 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classes from "./Skills.module.css";
 import Back from "../components/ui/Back";
-import { SkillsBox } from "../components/li/SkillsBox";
+import { SkillsBox, SkillsModal } from "../components/li/SkillsBox";
 import { ThemeContext } from "../store/Context";
 
 export function Skills() {
   const { themeMode } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
+  const talk = "MouseOn으로 해당 스킬의 구체적인 역량을 확인할 수 있어요!";
+  const [talkWrap, settalkWrap] = useState("");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      settalkWrap(talkWrap + talk[count]);
+      setCount(count + 1);
+    }, 50);
+    if (count === talk.length) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  });
 
   return (
     <div className={`${classes.skills_wrap} ${dark}`}>
@@ -17,16 +31,16 @@ export function Skills() {
           <div className="language">
             <h2>Language</h2>
             <ul>
-              <SkillsBox img="javascript-icon.png" alt="javascript-icon" />
+              <SkillsBox img="javascript-icon.png" alt="Javascipt" />
               <SkillsBox
                 img="html-icon.png"
-                alt="html-icon"
+                alt="HTML"
                 ImgStyle={{ transform: "scale(1.07,1)" }}
               />
               <SkillsBox
                 img="css-icon.png"
                 ImgStyle={{ transform: "scale(1.2,1.1)" }}
-                alt="css-icon"
+                alt="CSS"
               />
             </ul>
           </div>
@@ -34,10 +48,10 @@ export function Skills() {
           <div className="framework">
             <h2>Framework</h2>
             <ul>
-              <SkillsBox img="react-icon.png" alt="react-icon" />
+              <SkillsBox img="react-icon.png" alt="React" />
               <SkillsBox
                 img="vue 1.png"
-                alt="react-icon"
+                alt="Vue"
                 ImgStyle={{ transform: "scale(1.2,1.3)" }}
               />
             </ul>
@@ -71,6 +85,12 @@ export function Skills() {
               <SkillsBox img="netlify-icon.png" alt="netlify-icon" />
             </ul>
           </div>
+          <SkillsModal />
+        </div>
+
+        <div className={classes.blue}>
+          <p>{talkWrap}</p>
+          <img src={process.env.PUBLIC_URL + "/img/logo(img).png"} alt="wink" />
         </div>
       </div>
     </div>

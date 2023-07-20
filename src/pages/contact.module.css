@@ -46,7 +46,7 @@
   display: inline-block;
   margin-left: 30px;
   text-align: start;
-  transform: translateY(10%);
+  /* transform: translateY(10%); */
 }
 
 .text_wrap h2 {
@@ -64,8 +64,10 @@
 }
 
 .text_wrap ul li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   transition: 0.3s;
+  display: flex;
+  align-items: baseline;
 }
 
 .text_wrap ul li:hover {
@@ -73,16 +75,24 @@
   transform: scaleY(1.02) translateY(-3px);
 }
 
-.text_wrap span {
+.text_wrap div {
   display: inline-block;
   margin-right: 7px;
   transform: translateY(4px);
 }
 
-.text_wrap span img {
+.text_wrap div img {
   width: 18px;
   height: 18px;
   padding-top: 2.5px;
+}
+
+.text_wrap ul li p{
+  margin-right: 5px;
+}
+
+.text_wrap ul li span{
+  cursor: pointer;
 }
 
 /*다크 모드*/
