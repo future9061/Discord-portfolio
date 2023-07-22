@@ -1,26 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
 import classes from "./Skills.module.css";
 import Back from "../components/ui/Back";
-import { SkillsBox, SkillsModal } from "../components/li/SkillsBox";
+import { SkillsBox } from "../components/li/SkillsBox";
 import { ThemeContext } from "../store/Context";
 
 export function Skills() {
-  const { themeMode } = useContext(ThemeContext);
+  const { themeMode, talk, select, setSelect, setTalk } =
+    useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
-  const talk = "MouseOn으로 해당 스킬의 구체적인 역량을 확인할 수 있어요!";
+
   const [talkWrap, settalkWrap] = useState("");
-  const [count, setCount] = useState(0);
+  const [talkCount, setTalkCount] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      settalkWrap(talkWrap + talk[count]);
-      setCount(count + 1);
-    }, 50);
-    if (count === talk.length) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  });
+    // console.log("확인:", talk);
+  }, [select, setSelect]);
 
   return (
     <div className={`${classes.skills_wrap} ${dark}`}>
@@ -31,7 +25,7 @@ export function Skills() {
           <div className="language">
             <h2>Language</h2>
             <ul>
-              <SkillsBox img="javascript-icon.png" alt="Javascipt" />
+              <SkillsBox img="javascript-icon.png" alt="Javascript" />
               <SkillsBox
                 img="html-icon.png"
                 alt="HTML"
@@ -60,9 +54,9 @@ export function Skills() {
           <div className="library">
             <h2>Library</h2>
             <ul>
-              <SkillsBox img="bootstrap-icon.png" alt="bootstrap-icon" />
-              <SkillsBox img="tailwind-icon.png" alt="tailwind-icon" />
-              <SkillsBox img="firebase-icon.png" alt="firebase-icon" />
+              <SkillsBox img="bootstrap-icon.png" alt="Bootstrap" />
+              <SkillsBox img="tailwind-icon.png" alt="Tailwind" />
+              <SkillsBox img="firebase-icon.png" alt="Firebase" />
             </ul>
           </div>
           <div className="Tools">
@@ -70,27 +64,26 @@ export function Skills() {
             <ul>
               <SkillsBox
                 img="git-icon.png"
-                alt="git-icon"
+                alt="Git"
                 ImgStyle={{ transform: "scale(1.15)" }}
               />
-              <SkillsBox img="github-icon.png" alt="github-icon" />
+              <SkillsBox img="github-icon.png" alt="GitHub" />
               <SkillsBox
                 img="figma-icon.png"
-                alt="figma-icon"
+                alt="Figma"
                 ImgStyle={{ transform: "scale(1.2)" }}
               />
 
-              <SkillsBox img="photoshop-icon.png" alt="photoshop-icon" />
+              <SkillsBox img="photoshop-icon.png" alt="Photoshop" />
 
-              <SkillsBox img="netlify-icon.png" alt="netlify-icon" />
+              <SkillsBox img="netlify-icon.png" alt="Netlify" />
             </ul>
           </div>
-          <SkillsModal />
         </div>
 
         <div className={classes.blue}>
           <p>{talkWrap}</p>
-          <img src={process.env.PUBLIC_URL + "/img/logo(img).png"} alt="wink" />
+          <img src={process.env.PUBLIC_URL + "/img/logo(img).png"} alt="logo" />
         </div>
       </div>
     </div>

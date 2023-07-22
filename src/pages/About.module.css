@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap");
 .about_wrap {
   height: 100%;
+  overflow-y: scroll;
 }
 
 .about_inner {
@@ -55,20 +56,45 @@
   color: #808083;
 }
 
+.ment_wrap {
+  width: 43%;
+  margin: auto;
+}
+
 .ment {
   display: inline-block;
   text-align: start;
+  line-height: 30px;
+  margin-bottom: 40px;
 }
 
 .ment b {
-  color: #5865f2;
   font-weight: 600;
   font-size: 1.2em;
+  color: #5865f2;
+}
+
+.ment > p > b {
+  color: #23a459;
 }
 
 .ment p {
   font-weight: 100;
   margin-top: 20px;
+  word-break: keep-all;
+}
+
+.about_wrap::-webkit-scrollbar {
+  width: 0.6em;
+  background-color: #313338;
+}
+.about_wrap::-webkit-scrollbar-thumb {
+  background-color: #18191b;
+  border-radius: 10px;
+}
+
+.about_wrap::-webkit-scrollbar-track {
+  background-color: #404246;
 }
 
 /*다크 모드*/

@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
 .skills_wrap {
   color: white;
   overflow-y: scroll;
+  position: relative;
 }
 
 .skills_inner {
@@ -20,6 +21,7 @@
 .inner_wrap {
   display: inline-block;
   text-align: start;
+  transform: translateX(80px);
 }
 
 .inner_wrap > div {
@@ -88,6 +90,97 @@
 
 .skills_wrap::-webkit-scrollbar-track {
   background-color: #404246;
+}
+
+.blue {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 0.7em;
+  color: #000;
+  animation: upDown 1.5s infinite;
+}
+
+.blue p {
+  width: 200px;
+  padding: 12px 0px 12px 15px;
+  border-radius: 30px;
+  background-color: #fff;
+  text-align: start;
+  position: relative;
+  word-break: keep-all;
+  line-height: 13px;
+}
+
+.blue p::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+}
+
+.blue img {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(-2px);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  20% {
+    transform: translateY(-8px);
+  }
+  30% {
+    transform: translateY(-12px);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  90% {
+    transform: translateY(0px);
+  }
+}
+
+/*모달*/
+.modal_wrap {
+  display: inline-block;
+  width: 300px;
+  padding: 50px;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 200px);
+  text-align: start;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.modal_wrap h1 {
+  margin-bottom: 20px;
 }
 
 /*다크 모드*/

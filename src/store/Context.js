@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import data from "./SkillData";
 
 export const ThemeContext = React.createContext();
 
@@ -8,8 +9,12 @@ const ThemeProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(LocalTheme);
   const location = useLocation();
   const navigate = useNavigate();
+  const SkillData = [...data];
 
-  
+  /*챗봇 */
+  const [talk, setTalk] = useState(SkillData[0].content);
+
+  console.log("context", talk);
 
   //  클릭하면 atCircle이 아니라 텍스트에 저장
   //텍스트의 값이 없으면 Home 있으면 클릭한 값
@@ -29,7 +34,7 @@ const ThemeProvider = ({ children }) => {
     }
   }, [themeMode]);
 
-    const movePage = useCallback(() => {
+  const movePage = useCallback(() => {
     navigate(`/${atCircle}`, { state: { from: location.pathname } });
   }, [atCircle, location.pathname, navigate]);
 
@@ -42,7 +47,10 @@ const ThemeProvider = ({ children }) => {
         atCircle,
         setAtcircle,
         setMenuTxt,
-        movePage
+        movePage,
+        talk,
+        setTalk,
+        SkillData,
       }}
     >
       {children}
