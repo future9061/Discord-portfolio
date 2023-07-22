@@ -57,6 +57,7 @@
 }
 
 .ment_wrap {
+  transform: translateX(30px);
   width: 43%;
   margin: auto;
 }
@@ -104,4 +105,34 @@
 
 .dark .img {
   border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+/*반응형*/
+
+@media (max-width: 1500px) {
+  .about_inner h2 {
+    font-size: 2.5em;
+  }
+
+  .about_inner h3 {
+    font-size: 1em;
+  }
+
+  .img {
+    width: 14em;
+    border-radius: 50%;
+    border: 1.5px solid #4e5057;
+  }
+
+  .mirae_wrap {
+    margin-bottom: 70px;
+  }
+
+  .ment_wrap {
+    width: 50%;
+  }
+
+  .ment p {
+    font-size: 0.9em;
+  }
 }

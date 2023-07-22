@@ -188,3 +188,20 @@
 .dark {
   background-color: #2d354a;
 }
+
+/*반응형*/
+
+@media (max-width: 1500px) {
+  .skills_inner > h2 {
+    font-size: 3em;
+  }
+
+  .inner_wrap > div h2 {
+    font-size: 1.3em;
+  }
+
+  .inner_wrap ul div {
+    width: 80px;
+    height: 80px;
+  }
+}

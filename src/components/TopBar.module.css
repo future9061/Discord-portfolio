@@ -27,7 +27,7 @@
   height: 5px;
 }
 
-.topwrap_icons ul li {
+.topwrap_icons ul li:not(:last-child) {
   list-style: none;
   margin-right: 20px;
 }
@@ -53,4 +53,30 @@
 
 .dark {
   background-color: #131926;
+}
+
+/*반응형*/
+@media (max-width: 1500px) {
+  .topbar_wrap {
+    height: 3%;
+  }
+
+  .logo {
+    width: 70px;
+    height: 13px;
+  }
+
+  .topwrap_icons ul li:first-child {
+    width: 8px;
+    height: 3px;
+  }
+
+  .topwrap_icons ul li:nth-child(2) {
+    width: 6.5px;
+    height: 6.5px;
+  }
+
+  .topwrap_icons ul li:last-child {
+    font-size: 0.9em;
+  }
 }

@@ -30,16 +30,6 @@
   transform: translate(5px, 7px);
 }
 
-/* .sub_title {
-  display: block;
-   color: #5865f2; 
-  color: white;
-  font-weight: 200;
-  transform: translateY(-10px);
-  font-size: 1.5em;
-  animation: smooth 1.5s forwards;
-} */
-
 @keyframes smooth {
   from {
     opacity: 0.4;
@@ -112,4 +102,23 @@
 
 .dark > .sub_title {
   color: rgba(88, 101, 242, 0.5);
+}
+
+/*반응형*/
+
+.home_inner p {
+  font-size: 5.5em;
+}
+
+.text_wrap > div {
+  width: 5px;
+  height: 60px;
+  background-color: #5865f2;
+  transform: translate(5px, 7px);
+}
+
+.btn_wrap button {
+  width: 170px;
+  height: 55px;
+  font-size: 1.8em;
 }

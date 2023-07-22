@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Khand:wght@300;400;500;600;700&display=swap");
 
-/* font-family: "Kanit", sans-serif; */
-/* font-family: 'Khand', sans-serif */
-
 .wrap {
   background-color: #313338;
   width: 100%;
@@ -28,4 +25,18 @@
   flex-direction: column;
   width: 88%;
   height: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 1500px) {
+  .top {
+    height: 97%;
+  }
+
+  .outlet {
+    width: 89%;
+  }
+}
+
+@media (max-width: 1400px) {
 }

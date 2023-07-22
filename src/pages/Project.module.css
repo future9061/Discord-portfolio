@@ -160,8 +160,29 @@
 .link_wrap div:hover p {
   display: block;
 }
+
 /*다크모드*/
 
 .dark {
   background-color: #2d354a;
+}
+
+/*반응형*/
+
+@media (max-width: 1500px) {
+  .project_inner h2 {
+    font-size: 3em;
+  }
+
+  .item_inner > div:first-child h1 {
+    font-size: 1.8em;
+  }
+
+  .text_wrap {
+    font-size: 0.9em;
+  }
+
+  .keyowrd_wrap div {
+    font-size: 0.9em;
+  }
 }

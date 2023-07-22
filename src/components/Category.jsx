@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BsDiscord, BsGithub } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import classes from "./Category.module.css";
 import MeLi, { IconMeLi } from "./li/MeLi";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -50,9 +50,10 @@ function Category() {
           <div>
             <div>
               <div className={classes.hidden}>
-                <p>
-                  <BsDiscord style={{ fontSize: "28px" }} />
-                </p>
+                <img
+                  src={process.env.PUBLIC_URL + "/img/logowhiteimg.png"}
+                  alt="white_logo"
+                />
               </div>
             </div>
             <div className={classes.text_wrap}>

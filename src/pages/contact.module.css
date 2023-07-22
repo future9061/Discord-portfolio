@@ -87,11 +87,11 @@
   padding-top: 2.5px;
 }
 
-.text_wrap ul li p{
+.text_wrap ul li p {
   margin-right: 5px;
 }
 
-.text_wrap ul li span{
+.text_wrap ul li span {
   cursor: pointer;
 }
 
@@ -99,4 +99,16 @@
 
 .dark {
   background-color: #2d354a;
+}
+
+/*반응형*/
+
+@media (max-width: 1500px) {
+  .text_wrap ul li {
+    font-size: 0.8em;
+  }
+
+  .text_wrap ul li span {
+    font-size: 1.3em;
+  }
 }

@@ -72,3 +72,16 @@
 .sub_bar_wrap ul .clickStyle {
   backdrop-filter: brightness(160%);
 }
+
+/*반응형*/
+
+@media (max-width: 1500px) {
+  .sub_bar_wrap {
+    height: 4%;
+  }
+
+  .sub_bar_wrap ul {
+    font-size: 0.85em;
+    padding: 8px;
+  }
+}

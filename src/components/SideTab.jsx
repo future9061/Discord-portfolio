@@ -2,13 +2,12 @@ import React, { useContext, useState } from "react";
 
 import classes from "./SideTab.module.css";
 import { Circle, CircleIcon, CirclePlus } from "./li/Circle";
-import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import { FcSettings } from "react-icons/fc";
 import { ThemeContext } from "../store/Context";
 
 function SideTab() {
-  const { themeMode, movePage, atCircle } = useContext(ThemeContext);
+  const { themeMode, atCircle } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
 
   return (
@@ -16,7 +15,7 @@ function SideTab() {
       <ul>
         <Circle
           action={atCircle}
-          src={`${process.env.PUBLIC_URL}/img/logo white img.png`}
+          src={`${process.env.PUBLIC_URL}/img/logowhiteimg.png`}
           text="Home"
           name="first"
         />

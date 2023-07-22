@@ -4,7 +4,7 @@
   height: 100%;
 }
 
-.setting_inner{
+.setting_inner {
   font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -84,4 +84,17 @@
 
 .dark .dark_mode button {
   background-color: rgb(88, 101, 242);
+}
+
+/* 반응형 */
+
+@media (max-width: 1500px) {
+  .setting_inner > div {
+    margin-top: 200px;
+  }
+
+  .img_wrap {
+    width: 30em;
+    height: 15em;
+  }
 }

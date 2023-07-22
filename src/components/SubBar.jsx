@@ -9,12 +9,6 @@ export default function SubBar() {
   const { themeMode, atCircle } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
 
-  //window.history.state 이전 경로가 저장되긴 하나 추출이 어렵다고 함
-  //useNavigator으로 페이지 이동했으면
-  //const location = useLocation();
-  //const previousUrl = location.state?.from;
-  //console.log(previousUrl);
-
   return (
     <div className={`${classes.sub_bar_wrap} ${dark}`}>
       <ul>
