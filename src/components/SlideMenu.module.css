@@ -1,7 +1,46 @@
 .slide_wrap {
-  width: 10%;
-  border: 1px solid red;
+  display: none;
+  background-color: #2b2d31;
 }
 
-.slide_inner ul li {
+.slide_inner {
+  padding: 13px;
+  white-space: nowrap;
+  color: white;
+}
+
+.slide_inner h2 {
+  float: right;
+  margin-bottom: 20px;
+}
+
+.slide_inner ul {
+  clear: both;
+}
+
+.slide_inner ul h3 {
+  margin-bottom: 15px;
+}
+
+.slide_inner ul > li > li {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  font-weight: 50;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.slide_inner ul > li:hover > li {
+  backdrop-filter: brightness(1.5);
+}
+
+/*반응형*/
+@media (max-width: 1100px) {
+  .slide_wrap {
+    width: 20%;
+    display: block;
+    transform: translateX(-100%);
+  }
 }

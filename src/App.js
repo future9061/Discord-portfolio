@@ -8,6 +8,7 @@ import ThemeProvider from "./store/Context";
 import Loading from "./pages/Loading";
 import { useState, useEffect } from "react";
 import SlideMenu from "./components/SlideMenu";
+import Burger from "./components/Burger";
 
 function App() {
   const sessionVal = window.sessionStorage.getItem("isLoading");
@@ -40,6 +41,7 @@ function App() {
           <div className="wrap">
             <TopBar />
             <div className="top">
+              <Burger />
               <SlideMenu />
               <SideTab />
               <div className="main">

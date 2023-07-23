@@ -38,5 +38,18 @@
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1100px) {
+  .top {
+    border: 1px solid blue;
+  }
+
+  .main {
+    width: 100%;
+    border: 1px solid red;
+  }
+
+  .outlet {
+    width: 100%;
+    border: 1px solid white;
+  }
 }

@@ -1,19 +1,19 @@
 import React from "react";
 import classes from "./SlideMenu.module.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import MeLi from "./li/MeLi";
+import MeLi, { IconMeLi } from "./li/MeLi";
+import { BsGithub } from "react-icons/bs";
 
 function SlideMenu() {
   return (
     <div className={classes.slide_wrap}>
       <div className={classes.slide_inner}>
-        <h2>
-          <AiOutlineCloseCircle />
-        </h2>
         <ul>
+          <h3>Log</h3>
           <li>
-            <p>Log</p>
+            <IconMeLi icon={<BsGithub />} text="GitHub" />
           </li>
+          <h3>Direct Menu</h3>
           <li>
             <MeLi text="Javscriript" img="javascript" />
           </li>
