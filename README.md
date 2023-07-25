@@ -169,7 +169,7 @@ export default App;
 ```javascript
 //context.js
 const movePage = useCallback(() => {
-  navigate(`/${atCircle}`, { state: { from: location.pathname } });
+  navigate(`/${atCircle}`, { state: { from: location.pathname } }); //페이지 이동할 때 이전경로를 저장해두기!
 }, [atCircle, location.pathname, navigate]);
 
 //back.jsx - sesstionStorage에 이전 경로 배열로 넣기
@@ -213,6 +213,8 @@ const handleClick = () => {
   }
 };
 ```
+
+<br />
 
 
 - ### Skills chat bot
@@ -264,25 +266,35 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
        <div onClick={handleClick} value={alt} id="image">
       );
 
+<br />
+
+- ### 버튼 상태 관리
+
+1. onClick 시 style이 바뀌어야 함
+2. 클릭하면 class 명이 추가되는 방식
+(toggle 방식으로 click시 ture 스타일, false 스타일로 관리하면 용이함 업데이트 해 -> 아마 이럴때 useMediaquery 쓰지 않을까?)
+
+
+```javascript
 
 
 
 
+//BrLi component
 
-//Skills.js  (page)
 
-  useEffect(() => {
-    const talkInterval = setInterval(() => {
-      setTalkCount((prevTalkCount) => prevTalkCount + 1); // ⭐비동기여서 TalkCount를 함수로 업데이트 함, 함수를 만나면 함수 내부에 코드를 먼저 시행하기 때문. useState 말고 let 키워드로 변수 선언하려 했으나 어째서인지 에러 뜸 
-      settalkWrap(talkWrap + select[talkCount]);talkWrap의 이전값에 select을 한 글자씩 넣음
-    }, 40);
-
-    if (talkCount >= talk.length) {
-      clearInterval(talkInterval);
-    }
-
-    return () => clearInterval(talkInterval);  
-  }, [talk, talkCount, settalkWrap]);
+  return (
+    <li
+      onClick={() => {
+        setMenuTxt(text); //클릭시 navigate로 이동하면서 
+        movePage();
+      }}
+      className={action === text ? classes.clickStyle : ""}
+    >
+      <p>{text}</p>
+    </li>
+  );
+}
 
 ```
 
