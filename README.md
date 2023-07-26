@@ -7,7 +7,7 @@
 3. [개발 기간](##3.-개발-기간)
 4. [개발 환경](##4.-개발-환경)
 5. [주요 기능]
-6. [code review](##6-code-review)
+[6.code review](##6-code-review)
 7. [project review](##7.-project-review)
 
 <br>
@@ -43,6 +43,7 @@ react로 저의 portfolio를 만들어봤습니다.
 
 <br>
 🧾
+
 ## 6 code review
 
 - ### splash Screen
