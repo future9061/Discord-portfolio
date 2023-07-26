@@ -7,10 +7,7 @@ import copyData from "../store/Project";
 import { ThemeContext } from "../store/Context";
 
 export default function ProjectItem() {
-  const { projectBtn, setProjectBtn, pathName, setMenuTxt } =
-    useContext(ThemeContext);
-
-  /*page가 project가 아니라면  projectBtn을 초기화 시켜서 모든 item 보이게*/
+  const { projectBtn } = useContext(ThemeContext);
 
   return copyData.map((elem, index) => {
     return (
