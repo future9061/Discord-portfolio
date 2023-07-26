@@ -1,21 +1,34 @@
-사진은 완성 후..
+![image](https://github.com/future9061/portfolio/assets/132829711/30ba018e-7153-434c-87c4-4f10c1852873)
 <br>
 
-# portfolio
+# 목차
+1. [프로젝트 소개](##1.-프로젝트-소개)
+2. [directory 구조](##2.-directory-구조)
+3. [개발 기간](##3.-개발-기간)
+4. [개발 환경](##4.-개발-환경)
+5. [주요 기능]
+6. [code review](##6.-code-review)
+7. [project review](##7.-project-review)
 
 <br>
 
-## 🖥️ 프로젝트 소개
+## 🖥️ 1. 프로젝트 소개
 
 react로 저의 portfolio를 만들어봤습니다.
+
 <br>
 
-## 🕰️ 개발 기간
+## 📁 2. directory 구조
+
+<br>
+
+
+## 🕰️ 3. 개발 기간
 
 - 23.06.26일 - 미정
   <br>
 
-## ⚙️ 개발 환경
+## ⚙️ 4. 개발 환경
 
 - `vs code 1.77`
 - **Framework** : react(18.2.0)
@@ -30,7 +43,7 @@ react로 저의 portfolio를 만들어봤습니다.
 
 <br>
 
-## 🧾code review
+## 🧾 6. code review
 
 - ### splash Screen
 
@@ -385,7 +398,7 @@ const handleClick = (e) => {
 
 <br>
 
-## 프로젝트 리뷰 📢
+## 📢 7. project review 
 
 portfolio를 만들기 시작하며 사용하기 편하고, 한 눈에 잘 들어오는 UI를 고민하던 도중
 react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 discord를 선택했습니다.
