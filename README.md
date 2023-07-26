@@ -42,8 +42,8 @@ react로 저의 portfolio를 만들어봤습니다.
 -
 
 <br>
-
-## 🧾 6. code review
+🧾
+## 6. code review
 
 - ### splash Screen
 
