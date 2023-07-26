@@ -222,8 +222,7 @@ const handleClick = () => {
 
  1.  skills에 대한 data import <br />
  2.  요소를 클릭하면 e.target과 data.title 비교 후 useState에 담음<br />  
- 3. interval로 타이핑 효과 <br />
-
+ 3.  interval로 타이핑 효과 <br />
 
 ```javascript
 
@@ -231,7 +230,7 @@ const handleClick = () => {
 
 const SkillData = [...data];  // data의 독립적인 카피본 생성
 const [select, setSelect] = useState(SkillData[0].content); //초기값 지정, 클릭 시 select state에 상태 업데이트됨 
-const [talk, setTalk] = useState(select); //최종적으로 클릭한 요소의 content를 업데이트
+const [talk, setTalk] = useState(select); //최종적으로 클릭한 요소를 업데이트
 const [talkCount, setTalkCount] = useState(0); //타이핑 효과에서 length 관리를 위해 count state 생성
 const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
 
@@ -266,37 +265,28 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
        <div onClick={handleClick} value={alt} id="image">
       );
 
-<br />
-
-- ### 버튼 상태 관리
-
-1. onClick 시 style이 바뀌어야 함
-2. 클릭하면 class 명이 추가되는 방식
-(toggle 방식으로 click시 ture 스타일, false 스타일로 관리하면 용이함 업데이트 해 -> 아마 이럴때 useMediaquery 쓰지 않을까?)
-
-
-```javascript
 
 
 
 
-//BrLi component
 
+//Skills.js  (page)
 
-  return (
-    <li
-      onClick={() => {
-        setMenuTxt(text); //클릭시 navigate로 이동하면서 
-        movePage();
-      }}
-      className={action === text ? classes.clickStyle : ""}
-    >
-      <p>{text}</p>
-    </li>
-  );
-}
+  useEffect(() => {
+    const talkInterval = setInterval(() => {
+      setTalkCount((prevTalkCount) => prevTalkCount + 1); // ⭐비동기여서 TalkCount를 함수로 업데이트 함, 함수를 만나면 함수 내부에 코드를 먼저 시행하기 때문. useState 말고 let 키워드로 변수 선언하려 했으나 어째서인지 에러 뜸 
+      settalkWrap(talkWrap + select[talkCount]);talkWrap의 이전값에 select을 한 글자씩 넣음
+    }, 40);
+
+    if (talkCount >= talk.length) {
+      clearInterval(talkInterval);
+    }
+
+    return () => clearInterval(talkInterval);  
+  }, [talk, talkCount, settalkWrap]);
 
 ```
+
 
 <br>
 
