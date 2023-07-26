@@ -286,16 +286,108 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
   }, [talk, talkCount, settalkWrap]);
 
 ```
+<br />
 
+- ### component 스타일 변경
+(여러 개의  componenet 중 클릭한 component만 style 변경)
+
+1. map으로 MeLi 컴포넌트 생성
+2. 각 MeLi component에 map의 두 번째 인자 index를 value로 전달
+3. 클릭 시, UseState에 e.target.value 값 업데이트
+4. 삼항연산으로 index === e.target.value 라면 className 남김
+5. MeLi component를 사용하는 project 페이지가 아니라면, 초기화 해서 버튼의 스타일을 없앰
+
+```javascript
+
+//MeLi.jsx
+
+
+const btnData = ["All", "Javascript", "React", "Vue", "PWA"]; //컴포넌트 데이터를 배열로 생성
+const [clickBtn, setClickBtn] = useState(""); // 클릭한 컴포넌트의 value를 담을 useState
+
+  const handleClick = (e) => {
+    setClickBtn(() => e.target.value);   //클릭한 요소의 value를 업데이트 
+  };
+
+
+
+//초기화 코드
+ useEffect(() => {
+    if (pathName !== "Project") {
+      setClickBtn(() => "");
+    }
+  }, [pathName]);    //pathName은 context에서 가져온 것으로 location.pathname을 변수에 담은 것이다.
+
+
+
+//map으로 component 생성
+  return btnData.map((elem, index) => {
+    return (
+      <li
+        key={index}
+        onClick={handleClick}
+        value={index}
+        className={index === clickBtn ? classes.active : ""}   //classname을 남김
+      >
+          <img style={{ pointerEvents: "none" }} //이벤트 캡처링을 막기 위해 style로 pointer 이벤트를 막음/>
+           <p style={{ pointerEvents: "none" }}></p>
+       </li>
+    );
+  });
+}
+
+```
+
+<br />
+
+- ### Item filter 효과
+(클릭한 버튼에 해당되는 item만 보이게 함)
+
+1. 클릭한 버튼의 id값과 item의 keyword를 비교해 클라스 명 부착
+2. 페이지 전환 시 초기화
+
+
+```javascript
+
+//context.js
+const [projectBtn, setProjectBtn] = useState(""); //클릭한 버튼의 id가 업데이트 됨
+
+// 버튼 컴포넌트
+const handleClick = (e) => {
+    setProjectBtn(() => e.target.id);
+  }
+
+  useEffect(() => {
+    if (pathName !== "Project") {  //초기화 코드, 페이지 이동 시 초기화 됨
+      setProjectBtn(() => "");
+    }
+  }, [pathName]);
+
+
+
+//PtojectItem.jsx
+ return copyData.map((elem, index) => {
+    return (
+      <div
+        key={index}
+        className={
+          projectBtn !== elem.keyword &&  // btn.id와 item.keyword가 다른 요소 .hide 클라스 추가
+          projectBtn !== "All" && // 버튼이 All인 경우 모든 item이 보여야 함
+          projectBtn !== "" // 버튼을 누르지 않은 상태면 모든 아이템이 보여야 함
+            ? classes.hide
+            : ""
+        }
+      >
+          ....생략
+      </div>
+
+```
 
 <br>
 
-## 느낀점 📢
+## 프로젝트 리뷰 📢
 
-portfolio를 만들기 시작하며 사용하기 편하고, 한 눈에 잘 들어오는 UI를 고민해보았습니다.
-SPA를 만들기에 최적화 된 react framework를 사용하기 때문에 한 페이지 내에서 모든 content를 보여주기 적합하다고 생각해서
-discord를 고르게 됐습니다.
+portfolio를 만들기 시작하며 사용하기 편하고, 한 눈에 잘 들어오는 UI를 고민하던 도중
+react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 discord를 선택했습니다.
 
-기능적인 면에서 기본적이지만 주요 기능인 route와 component를 많이 사용하려 노력했습니다.
-각 메뉴마다 Link로 페이지를 넘어가며, 반복되는 li들은 component로 만들어 props로 data를 전달받는 작업도 해보았습니다.  
-react-router-dom, react-icons 등 다양한 react library를 써보며 덕분에 react와 조금 친해진 느낌이 들었습니다.😀😀
+
