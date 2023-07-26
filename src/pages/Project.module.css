@@ -48,7 +48,11 @@
 
 /*item style*/
 
-.item_wrap {
+.hide {
+  display: none;
+}
+
+.project_content > div {
   margin-bottom: 20px;
   width: 28%;
   position: relative;

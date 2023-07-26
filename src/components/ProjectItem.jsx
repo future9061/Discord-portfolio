@@ -7,21 +7,19 @@ import copyData from "../store/Project";
 import { ThemeContext } from "../store/Context";
 
 export default function ProjectItem() {
-  const { projectBtn, setProjectBtn } = useContext(ThemeContext);
+  const { projectBtn, setProjectBtn, pathName, setMenuTxt } =
+    useContext(ThemeContext);
 
   /*page가 project가 아니라면  projectBtn을 초기화 시켜서 모든 item 보이게*/
 
-  // useEffect(() => {
-  //   if (location.pathname === "/Project") {
-  //     setProjectBtn("");
-  //   }
-  // }, [location.pathname]);
-
-  return copyData.map((elem) => {
+  return copyData.map((elem, index) => {
     return (
       <div
+        key={index}
         className={
-          projectBtn !== elem.keyword && projectBtn !== "All"
+          projectBtn !== elem.keyword &&
+          projectBtn !== "All" &&
+          projectBtn !== ""
             ? classes.hide
             : ""
         }

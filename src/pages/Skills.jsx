@@ -5,16 +5,41 @@ import { SkillsBox } from "../components/li/SkillsBox";
 import { ThemeContext } from "../store/Context";
 
 export function Skills() {
-  const { themeMode, talk, select, setSelect, setTalk } =
-    useContext(ThemeContext);
+  const {
+    themeMode,
+    talk,
+    talkCount,
+    setTalkCount,
+    select,
+    setSelect,
+    talkWrap,
+    settalkWrap,
+    SkillData,
+    pathName,
+  } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
 
-  const [talkWrap, settalkWrap] = useState("");
-  const [talkCount, setTalkCount] = useState(0);
-
   useEffect(() => {
-    // console.log("확인:", talk);
-  }, [select, setSelect]);
+    const talkInterval = setInterval(() => {
+      setTalkCount((prevTalkCount) => prevTalkCount + 1); // 비동기여서 count를 함수로 부름
+      settalkWrap(talkWrap + select[talkCount]);
+    }, 40);
+
+    if (talkCount >= talk.length) {
+      clearInterval(talkInterval);
+    }
+
+    return () => clearInterval(talkInterval);
+  }, [talk, talkCount, settalkWrap]);
+
+  /* 초기화 */
+  useEffect(() => {
+    if (pathName === "Skills") {
+      setSelect(() => {
+        return SkillData[0].content;
+      });
+    }
+  }, [pathName]);
 
   return (
     <div className={`${classes.skills_wrap} ${dark}`}>

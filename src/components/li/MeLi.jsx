@@ -3,34 +3,31 @@ import classes from "../Category.module.css";
 import { ThemeContext } from "../../store/Context";
 
 export default function MeLi() {
-  const { setMenuTxt, setProjectBtn, location } = useContext(ThemeContext);
+  const { setMenuTxt, setProjectBtn, pathName } = useContext(ThemeContext);
   const btnData = ["All", "Javascript", "React", "Vue", "PWA"];
   const [clickBtn, setClickBtn] = useState("");
-  const pathName = location.pathname.replace("/", "");
 
   const handleClick = (e) => {
-    setMenuTxt("Project");
+    setMenuTxt(() => "Project");
 
-    setClickBtn((pre) => {
-      return e.target.value;
-    });
+    setClickBtn(() => e.target.value);
 
-    setProjectBtn(() => {
-      return e.target.id;
-    });
+    setProjectBtn(() => e.target.id);
   };
 
-  /* 페이지 벗어나면 버튼 초기화 코드 */
+  /* 페이지 벗어나면 버튼 및 스킬 아이템 초기화 코드 */
 
   useEffect(() => {
-    if (clickBtn != "" && pathName !== "Project") {
-      setClickBtn("");
+    if (pathName !== "Project") {
+      setClickBtn(() => "");
+      setProjectBtn(() => "");
     }
-  }, [pathName, setClickBtn, clickBtn]);
+  }, [pathName]);
 
   return btnData.map((elem, index) => {
     return (
       <li
+        key={index}
         onClick={handleClick}
         value={index}
         className={index === clickBtn ? classes.active : ""}
