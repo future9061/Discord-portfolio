@@ -1,32 +1,27 @@
 import { ThemeContext } from "../../store/Context";
-import React, { useCallback, useContext, useEffect, useState } from "react";
-
-// import classes from "../../pages/Skills.module.css";
+import React, { useContext, useEffect } from "react";
 
 export function SkillsBox({ img, alt, ImgStyle }) {
-  const { talk, setTalk, SkillData } = useContext(ThemeContext);
-  const [select, setSelect] = useState("");
+  const { SkillData, setSelect, select } = useContext(ThemeContext);
 
-  const handleClick = useCallback(
-    (e) => {
-      e.stopPropagation();
-      setSelect(SkillData.find((item) => item.title === e.target.alt));
-    },
-    [SkillData, setSelect, talk]
-  );
+  const handleClick = (e) => {
+    const selectItem = SkillData.find((item) => item.title === e.target.alt);
+    if (selectItem) {
+      setSelect(selectItem.content);
+    }
+  };
 
   useEffect(() => {
-    setTalk(select.content);
-    console.log("선택한거 ", select);
-  }, [select.content, setTalk]);
+    const imgElem = document.getElementById("image");
+    imgElem.addEventListener("click", handleClick);
+  }, [select]);
 
   return (
-    <div>
+    <div onClick={handleClick} value={alt} id="image">
       <img
         src={`${process.env.PUBLIC_URL}img/${img}`}
         alt={alt}
         style={ImgStyle}
-        onClick={handleClick}
       />
     </div>
   );

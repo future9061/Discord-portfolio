@@ -39,7 +39,7 @@ export default function Back() {
 
       //버튼 활성화
       const btnOn = lastUrl.replace("/", "");
-      console.log(btnOn);
+
       if (btnOn !== atCircle) {
         setMenuTxt(btnOn);
       }

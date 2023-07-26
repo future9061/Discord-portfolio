@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BsGithub } from "react-icons/bs";
 import classes from "./Category.module.css";
 import MeLi, { IconMeLi } from "./li/MeLi";
@@ -8,6 +8,7 @@ import { ThemeContext } from "../store/Context";
 function Category() {
   const { themeMode } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
+
   return (
     <div className={`${classes.category_wrap} ${dark}`}>
       <div className={classes.title}>
@@ -27,9 +28,11 @@ function Category() {
           </span>
           <p>Log</p>
         </div>
-        <ul>
-          <IconMeLi icon={<BsGithub />} text="GitHub" />
-        </ul>
+        <a href="https://github.com/future9061" target="_blank">
+          <ul>
+            <IconMeLi icon={<BsGithub />} text="GitHub" />
+          </ul>
+        </a>
       </div>
 
       <div className={classes.menu_wrap}>
@@ -40,10 +43,7 @@ function Category() {
           <p>Direct Menu</p>
         </div>
         <ul className={classes.menu_wrap_inner}>
-          <MeLi text="Javscriript" img="javascript" />
-          <MeLi text="React" img="react" />
-          <MeLi text="Vue" img="vue" />
-          <MeLi text="PWA" img="pwa" />
+          <MeLi />
         </ul>
 
         <div className={classes.user}>
