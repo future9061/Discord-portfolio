@@ -61,7 +61,7 @@ react로 저의 portfolio를 만들어봤습니다.
 
 #### blue mode, splash screen, 페이지 이동
 
--
+-ㄹ
 
 <br>
 
