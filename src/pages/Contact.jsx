@@ -10,9 +10,9 @@ import { Link } from "react-router-dom";
 export function Contact() {
   const { themeMode } = useContext(ThemeContext);
   let dark = themeMode === "dark" ? classes.dark : "";
-  const handleCopy = () => { 
-    alert("복사 완료!")
-  }
+  const handleCopy = () => {
+    alert("복사 완료!");
+  };
   return (
     <div className={`${classes.contact_wrap} ${dark}`}>
       <Back />
@@ -20,7 +20,7 @@ export function Contact() {
         <h2>🚩contact Me!</h2>
         <div>
           <div className={classes.img_wrap}>
-            <img />
+            <img src={`${process.env.PUBLIC_URL}img/contact.png`} />
           </div>
           <div className={classes.text_wrap}>
             <h2>이미래 / Lee Mi Rae</h2>
@@ -34,7 +34,11 @@ export function Contact() {
                   />
                 </div>
                 <p>416homin@naver.com</p>
-                <CopyToClipboard text="416homin@naver.com" onCopy={handleCopy}><span><PiCopyLight /></span></CopyToClipboard>
+                <CopyToClipboard text="416homin@naver.com" onCopy={handleCopy}>
+                  <span>
+                    <PiCopyLight />
+                  </span>
+                </CopyToClipboard>
               </li>
               <li>
                 <div>
@@ -45,19 +49,26 @@ export function Contact() {
                   />
                 </div>
                 <p>010-7688-2981</p>
-                <CopyToClipboard text="010-7688-2981" onCopy={handleCopy}><span><PiCopyLight /></span></CopyToClipboard>
-                              
+                <CopyToClipboard text="010-7688-2981" onCopy={handleCopy}>
+                  <span>
+                    <PiCopyLight />
+                  </span>
+                </CopyToClipboard>
               </li>
               <li>
                 <div>
                   <img
-                      style={{ transform: "scaleX(-1)" }}
+                    style={{ transform: "scaleX(-1)" }}
                     src={`${process.env.PUBLIC_URL}img/smallgithub3.png`}
                     alt="github"
                   />
                 </div>
                 <p>https://github.com/future9061</p>
-                <Link to="https://github.com/future9061"  target='_blank'><span><LiaExternalLinkAltSolid/></span>  </Link>
+                <Link to="https://github.com/future9061" target="_blank">
+                  <span>
+                    <LiaExternalLinkAltSolid />
+                  </span>{" "}
+                </Link>
               </li>
 
               <li>

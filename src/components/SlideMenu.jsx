@@ -1,31 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./SlideMenu.module.css";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 import MeLi, { IconMeLi } from "./li/MeLi";
 import { BsGithub } from "react-icons/bs";
+import { ThemeContext } from "../store/Context";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 function SlideMenu() {
+  const { themeMode, setSlideToggle, slideToggle } = useContext(ThemeContext);
+  let dark = themeMode === "dark" ? classes.dark : "";
+
+  const clickSlide = () => {
+    setSlideToggle(() => false);
+  };
+
   return (
-    <div className={classes.slide_wrap}>
+    <div className={`${classes.slide_wrap} ${slideToggle ? classes.show : ""}`}>
       <div className={classes.slide_inner}>
+        <div onClick={clickSlide}>
+          <AiOutlineCloseCircle />
+        </div>
         <ul>
           <h3>Log</h3>
-          <li>
+          <a href="https://github.com/future9061" target="_blank">
             <IconMeLi icon={<BsGithub />} text="GitHub" />
-          </li>
+          </a>
           <h3>Direct Menu</h3>
-          <li>
-            <MeLi text="Javscriript" img="javascript" />
-          </li>
-          <li>
-            <MeLi text="React" img="react" />
-          </li>
-          <li>
-            <MeLi text="Vue" img="vue" />
-          </li>
-          <li>
-            <MeLi text="PWA" img="pwa" />
-          </li>
+          <MeLi />
         </ul>
       </div>
     </div>

@@ -39,17 +39,13 @@
 }
 
 @media (max-width: 1100px) {
-  .top {
-    border: 1px solid blue;
-  }
-
   .main {
-    width: 100%;
-    border: 1px solid red;
+    width: 97%;
   }
 
   .outlet {
     width: 100%;
-    border: 1px solid white;
+    position: fixed;
+    left: 3%;
   }
 }

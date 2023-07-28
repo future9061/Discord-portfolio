@@ -20,3 +20,10 @@
     display: block;
   }
 }
+
+/* 다크 모드*/
+
+.dark {
+  background-color: #131926;
+  color: white;
+}

@@ -106,19 +106,69 @@
 
 /*반응형*/
 
-.home_inner p {
-  font-size: 5.5em;
+@media (max-width: 1200px) {
+  .home_inner p {
+    font-size: 5.5em;
+  }
+
+  .text_wrap > div {
+    width: 5px;
+    height: 60px;
+    background-color: #5865f2;
+    transform: translate(5px, 7px);
+  }
+
+  .btn_wrap button {
+    width: 170px;
+    height: 55px;
+    font-size: 1.8em;
+  }
 }
 
-.text_wrap > div {
-  width: 5px;
-  height: 60px;
-  background-color: #5865f2;
-  transform: translate(5px, 7px);
+@media (max-width: 800px) {
+  .home_inner p {
+    font-size: 5em;
+  }
 }
 
-.btn_wrap button {
-  width: 170px;
-  height: 55px;
-  font-size: 1.8em;
+@media (max-width: 730px) {
+  .home_inner p {
+    font-size: 4.5em;
+  }
+
+  .text_wrap > div {
+    width: 4px;
+    height: 50px;
+    transform: translate(5px, 5px);
+  }
+}
+
+@media (max-width: 650px) {
+  .home_inner p {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 580px) {
+  .home_inner p {
+    font-size: 3.5em;
+  }
+
+  .text_wrap > div {
+    width: 3px;
+    height: 40px;
+    transform: translate(5px, 3px);
+  }
+}
+
+@media (max-width: 500px) {
+  .home_inner p {
+    font-size: 3em;
+  }
+
+  .text_wrap > div {
+    width: 3px;
+    height: 40px;
+    transform: translate(5px, 3px);
+  }
 }

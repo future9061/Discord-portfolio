@@ -42,12 +42,12 @@ function App() {
             <TopBar />
             <div className="top">
               <Burger />
-              <SlideMenu />
               <SideTab />
               <div className="main">
                 <Category />
                 <div className="outlet">
                   <SubBar />
+                  <SlideMenu />
                   <Outlet />
                 </div>
               </div>
