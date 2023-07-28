@@ -8,12 +8,12 @@
 5. [📌 주요 기능](#-주요-기능)
 6. [🧾 code review](#-code-review)
     - [splash Screen](#splash-screen)
-    - [Text Style1](#text-style1)   
-    - [Text Stlye2](#text-style2)   
-    - [List](#list)      
-    - [Link](#link)   
-    - [Code Block](#code-block)   
-    - [Table](#table)   
+    - [Dark mode](#dark-mode)   
+    - [Back Btn](#-Back-Btn)   
+    - [Skills chat bot](#skills-chat-bot)      
+    - [component 스타일 변경](#component-스타일-변경)   
+    - [Item filter 효과](#item-filter-효과)   
+  
 
 <br>
 
