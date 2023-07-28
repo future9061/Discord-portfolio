@@ -7,7 +7,7 @@
 4. [❗ 개발 환경](#-개발-환경)
 5. [📌 주요 기능](#-주요-기능)
 6. [🧾 code review](#-code-review)
-    - [splash Screen](#-splash-screen)
+    - [splash Screen](#splash-screen)
     - [Text Style1](#text-style1)   
     - [Text Stlye2](#text-style2)   
     - [List](#list)      
