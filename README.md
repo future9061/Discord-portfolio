@@ -13,7 +13,7 @@
 
 1. [🖥️ 프로젝트 소개 ](#-프로젝트-소개)
 1. [❓ EASYME.md가 뭐예요?  ](#-easymemd가-뭐예요)
-3. [📁 directory 구조](#2.-directory-구조)
+3. [📁 directory 구조](#-directory-구조)
 4. [🧾 code review](#6.-code-review)
     - [Header](#header)   
     - [Text Style1](#text-style1)   
@@ -37,7 +37,8 @@ react로 저의 portfolio를 만들어봤습니다.
 
 <br>
 
-## 📁 2. directory 구조
+## 📁 directory 구조
+
 
 <br>
 
