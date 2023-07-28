@@ -11,7 +11,7 @@
 7. [project review](##7.-project-review)
 
 
-1. [🖥️ 프로젝트 소개](#-프로젝트-소개)
+1. [🖥️ Project 소개](#-Project-소개)
 2. [📁 directory 구조](#-directory-구조)
 4. [🧾 code review](#6.-code-review)
     - [Header](#header)   
@@ -26,7 +26,7 @@
 
 
 
-## 🖥️ 프로젝트 소개
+## 🖥️ Project 소개
 <br>
 
 ![image](https://github.com/future9061/portfolio/assets/132829711/30ba018e-7153-434c-87c4-4f10c1852873)
