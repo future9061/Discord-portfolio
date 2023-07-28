@@ -10,6 +10,17 @@
 [6.code review](#6.-code-review)
 7. [project review](##7.-project-review)
 
+1. [🖥️ 1. 프로젝트 소개](1.- 프로젝트-소개)
+2. [📁 2. directory 구조](#2.-directory-구조)
+3. [🧾 6. code review](#6.-code-review)
+    - [Header](#header)   
+    - [Text Style1](#text-style1)   
+    - [Text Stlye2](#text-style2)   
+    - [List](#list)      
+    - [Link](#link)   
+    - [Code Block](#code-block)   
+    - [Table](#table)   
+
 <br>
 
 ## 🖥️ 1. 프로젝트 소개
@@ -47,9 +58,9 @@ react로 저의 portfolio를 만들어봤습니다.
 -
 
 <br>
-🧾
 
-## 6. code review
+
+## 🧾 6. code review
 
 - ### splash Screen
 
