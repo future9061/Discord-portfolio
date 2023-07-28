@@ -79,15 +79,28 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 
 ## 📌 주요 기능
 
-#### splash Screen
+#### splash Screen - [코드 보기](#splash-screen)
+- setTimeout 활용
+- Session Storage에 toggle 형태로 저장 -> 브라우저를 새로 열 때만 보인다.
 
-#### Dark Screen
+#### Dark mode - [코드 보기](#dark-mode)
+- Local Storage에 mode 저장하여 새로고침해도 mode가 유지된다.
+  
+#### Back Btn - [코드 보기](#back-btn)
+- location으로 이전 경로를 가져와 Local Storage에 저장.
+- Back 버튼 클릭 시 Local Storage의 배열 마지막을 꺼내 와 navigate로 이동 후 pop으로 삭제한다.
 
-#### Back Btn
+#### Skills chat bot - [코드 보기](#skills-chat-bot)
+- data를 import 해 클릭 요소와 data를 비교
+- 일치하는 data를 setInterval로 타이핑 효과를 넣어 보여준다.
 
-#### Skills chat bot
+#### 클릭 시 특정 component style 변경 - [코드 보기](#component-스타일-변경)
+- databinding한 여러 개의 목록 component를 map으로 생성해 index 번호를 부여
+- 클릭 요소와 data의 index 번호를 비교 후 해당 컴포넌트만 className 남긴다.
 
-#### Skills chat bot
+#### Item filter 효과 - [코드 보기](#item-filter-효과)
+- 클릭한 btn의 id와 item의 title을 비교해, 일치하지 않을 시 hide 클라스를 부착한다.
+
 
 <br>
 
@@ -97,7 +110,7 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 - ### splash Screen
 
   1.Loding component 생성 및 컴포넌트 상태 관리 isLoading useState 생성 <br />
-  2. isLoading는 sesstionStorage의 date로 상태 업데이트. **splash screen은 웹을 열 때 한번만 보여야 함으로 브라우저를 열 때마다 reset되는 sessionStorage가 적합하다.** <br />
+  2. isLoading는 sesstionStorage의 date로 상태 업데이트. splash screen은 웹을 열 때 한번만 보여야 함으로 브라우저를 열 때마다 reset되는 sessionStorage가 적합하다. <br />
   3.App.js에 조건문으로 <Loading /> 넣기  <br />
   4.setTimeOut으로 2000ms 뒤에 isLoading이 false로 바뀜 <br />
 
