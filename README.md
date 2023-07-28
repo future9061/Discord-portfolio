@@ -10,9 +10,9 @@
 [6.code review](#6.-code-review)
 7. [project review](##7.-project-review)
 
-1. [🖥️ 1. 프로젝트 소개](1.- 프로젝트-소개)
-2. [📁 2. directory 구조](#2.-directory-구조)
-3. [🧾 6. code review](#6.-code-review)
+1. [🖥️ 프로젝트 소개](#-프로젝트-소개)
+2. [📁 directory 구조](#2.-directory-구조)
+3. [🧾 code review](#6.-code-review)
     - [Header](#header)   
     - [Text Style1](#text-style1)   
     - [Text Stlye2](#text-style2)   
@@ -23,7 +23,7 @@
 
 <br>
 
-## 🖥️ 1. 프로젝트 소개
+🖥️ ## 프로젝트 소개
 
 <br>
 
