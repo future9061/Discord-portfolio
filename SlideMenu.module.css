@@ -1,0 +1,61 @@
+.slide_wrap {
+  background-color: #2b2d31;
+  width: 20%;
+  height: 95.5%;
+  position: absolute;
+  top: 4.2%;
+  left: -100%;
+  z-index: 2;
+}
+
+.slide_inner {
+  padding: 5px 10px;
+}
+
+.slide_inner > div {
+  color: white;
+  float: right;
+  padding: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.slide_inner ul {
+  clear: right;
+}
+
+.slide_inner h3 {
+  color: white;
+  margin: 10px 0px;
+}
+
+.slide_inner li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #9da4ad;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+}
+
+.slide_inner li:hover {
+  backdrop-filter: brightness(1.5);
+  color: white;
+}
+
+/*다크 모드*/
+.dark {
+  background-color: #18253d;
+}
+
+/*반응형*/
+@media (max-width: 1100px) {
+  .slide_wrap {
+    transition: 0.2s;
+  }
+
+  .show {
+    left: 0;
+  }
+}
