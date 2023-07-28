@@ -14,7 +14,11 @@ function SlideMenu() {
   };
 
   return (
-    <div className={`${classes.slide_wrap} ${slideToggle ? classes.show : ""}`}>
+    <div
+      className={`${classes.slide_wrap} ${
+        slideToggle ? classes.show : ""
+      } ${dark}`}
+    >
       <div className={classes.slide_inner}>
         <div onClick={clickSlide}>
           <AiOutlineCloseCircle />
