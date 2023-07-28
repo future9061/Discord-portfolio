@@ -11,7 +11,7 @@
 7. [project review](##7.-project-review)
 
 1. [🖥️ 프로젝트 소개](#-프로젝트-소개)
-[🖥️ 프로젝트 소개 ](#-프로젝트-소개)
+[🖥️ 프로젝트 소개 ](##-프로젝트-소개)
 1. [❓ EASYME.md가 뭐예요?  ](#-easymemd가-뭐예요)
 3. [📁 directory 구조](#2.-directory-구조)
 4. [🧾 code review](#6.-code-review)
