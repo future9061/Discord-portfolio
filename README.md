@@ -12,31 +12,60 @@
     - [Back Btn](#back-Btn)   
     - [Skills chat bot](#skills-chat-bot)      
     - [component 스타일 변경](#component-스타일-변경)   
-    - [Item filter 효과](#item-filter-효과)   
+    - [Item filter 효과](#item-filter-효과)
+7. [📢 Project review](#-project-review)
   
 
 <br>
 
 ## 💻 프로젝트 소개
 
-
-<br>ㄹ
+<br>
 
 ![image](https://github.com/future9061/portfolio/assets/132829711/30ba018e-7153-434c-87c4-4f10c1852873)
 
 <br>
-react로 저의 portfolio를 만들어봤습니다.
+
+portfolio를 만들기 시작하며 사용하기 편하고, 한 눈에 잘 들어오는 UI를 고민하던 도중
+react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 discord를 선택했습니다. <br>
+다양한 애니메이션으로 시각적인 효과를 강조하는 것보단 실제 웹과 같은 로직으로 구성해 완성도 있는 프로젝트를 만드는 것을 목표로 하였습니다.  
 
 <br>
 
 ## 📁 directory 구조
 
+<br>
+
+```javascript
+
+📦public
+ ┣ 📂img
+ ┣ 📜favicon.ico
+ ┣ 📜index.html
+ ┗ 📜reset.css
+
+
+📦src
+ ┣ 📂components  // 페이지를 구성하는 컴포넌트 directory
+ ┃ ┣ 📂li  //menu bar를 구성하는 각 메뉴들의 directory
+ ┃ ┣ 📂ui //모든 page에 들어가는 공통 UI directory
+ ┣ 📂pages 
+ ┣ 📂store //data와 context를 모아놓은 directory
+ ┃ ┣ 📜Context.js
+ ┃ ┣ 📜Project.js
+ ┃ ┗ 📜SkillData.js
+ ┣ 📜App.css
+ ┣ 📜App.js
+ ┣ 📜index.css
+ ┗ 📜index.js
+
+```
 
 <br>
 
 ## ⏲ 개발 기간
 
-- 23.06.26일 - 미정
+- 23.06.26일 - 2023.07.28
   
 <br>
 
@@ -44,15 +73,21 @@ react로 저의 portfolio를 만들어봤습니다.
 
 - `vs code 1.77`
 - **Framework** : react(18.2.0)
-- **library** : react-router-dom(6.14.0)
+- **library** : react-router-dom(6.14.0)  react-copy-to-clipboard(5.1.0) react-icons(4.10.1)  
 
 <br>
 
 ## 📌 주요 기능
 
-#### blue mode, splash screen, 페이지 이동
+#### splash Screen
 
--ㄹ
+#### Dark Screen
+
+#### Back Btn
+
+#### Skills chat bot
+
+#### Skills chat bot
 
 <br>
 
@@ -412,9 +447,8 @@ const handleClick = (e) => {
 
 <br>
 
-## 📢 7. project review 
+## 📢 Project review 
 
-portfolio를 만들기 시작하며 사용하기 편하고, 한 눈에 잘 들어오는 UI를 고민하던 도중
-react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 discord를 선택했습니다.
+
 
 
