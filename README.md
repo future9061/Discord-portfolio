@@ -9,7 +9,7 @@
 6. [🧾 code review](#-code-review)
     - [splash Screen](#splash-screen)
     - [Dark mode](#dark-mode)   
-    - [Back Btn](#-back-Btn)   
+    - [Back Btn](#-----back-Btn)   
     - [Skills chat bot](#skills-chat-bot)      
     - [component 스타일 변경](#component-스타일-변경)   
     - [Item filter 효과](#item-filter-효과)   
