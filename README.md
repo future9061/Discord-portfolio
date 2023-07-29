@@ -12,7 +12,8 @@
    - [Skills chat bot](#skills-chat-bot)
    - [component 스타일 변경](#component-스타일-변경)
    - [Item filter 효과](#item-filter-효과)
-7. [📢 Project review](#-project-review)
+7. [📈 업그레이드 및 버전관리](#업그레이드-및-버전관리)
+8. [📢 Project review](#-project-review)
 
 <br>
 
