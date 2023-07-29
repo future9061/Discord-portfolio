@@ -123,6 +123,19 @@
   background-color: #2d354a;
 }
 
+.dark::-webkit-scrollbar {
+  width: 0.6em;
+  background-color: #18253d;
+}
+.dark::-webkit-scrollbar-thumb {
+  background-color: #18253d;
+  border-radius: 10px;
+}
+
+.dark::-webkit-scrollbar-track {
+  background-color: #303a4b;
+}
+
 /*반응형*/
 
 @media (max-width: 1600px) {
