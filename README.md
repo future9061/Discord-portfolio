@@ -12,7 +12,7 @@
    - [Skills chat bot](#skills-chat-bot)
    - [component 스타일 변경](#component-스타일-변경)
    - [Item filter 효과](#item-filter-효과)
-7. [🎬 업그레이드 및 버전관리](#업그레이드-및-버전관리)
+7. [📲 업그레이드 및 버전관리](#업그레이드-및-버전관리)
 8. [📢 Project review](#-project-review)
 
 <br>
@@ -460,7 +460,9 @@ const handleClick = (e) => {
 
 ```
 
-## 🎬 업그레이드 및 버전관리
+<br />
+
+## 📲 업그레이드 및 버전관리
 
 ### ver.2 : 최적화 및 반응형 수정
 
