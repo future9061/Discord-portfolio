@@ -67,6 +67,11 @@
   backdrop-filter: brightness(160%);
 }
 
+.dark ul div h1 {
+  background-color: #2d354a;
+  color: white;
+}
+
 /*클릭*/
 
 .sub_bar_wrap ul .clickStyle {
