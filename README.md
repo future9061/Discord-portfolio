@@ -12,7 +12,7 @@
    - [Skills chat bot](#skills-chat-bot)
    - [component 스타일 변경](#component-스타일-변경)
    - [Item filter 효과](#item-filter-효과)
-7. [🔰 업그레이드 및 버전관리](#업그레이드-및-버전관리)
+7. [🎫 업그레이드 및 버전관리](#업그레이드-및-버전관리)
 8. [📢 Project review](#-project-review)
 
 <br>
@@ -462,7 +462,7 @@ const handleClick = (e) => {
 
 <br />
 
-## 🔰 업그레이드 및 버전관리
+## 🎫 업그레이드 및 버전관리
 
 ### ver.2 : 최적화 및 반응형 수정
 
@@ -505,8 +505,7 @@ const router = createBrowserRouter([
 
 <br />
 
-2.반응형  
-모바일에서 layout 깨지는 부분수정
+
 
 <br>
 
