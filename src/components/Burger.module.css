@@ -1,0 +1,29 @@
+.burger_wrap {
+  display: none;
+  background-color: #1e1f22;
+  color: #676c72;
+  font-size: 20px;
+  z-index: 1;
+  width: 30px;
+}
+
+.burger_inner {
+  padding: 5px;
+}
+
+.burger_inner span {
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .burger_wrap {
+    display: block;
+  }
+}
+
+/* 다크 모드*/
+
+.dark {
+  background-color: #131926;
+  color: white;
+}

@@ -1,0 +1,158 @@
+.about_wrap {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.about_inner {
+  color: white;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: auto;
+  font-size: 20px;
+}
+
+.img {
+  animation: scale 1s;
+  width: 17em;
+  border-radius: 50%;
+  border: 1.5px solid #4e5057;
+}
+
+@keyframes scale {
+  from {
+    scale: 0.5;
+    opacity: 0.5;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.about_inner h2 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #23a459;
+}
+
+.about_inner h3 {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.mirae_wrap {
+  margin-bottom: 30px;
+}
+
+.mirae_wrap b {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.mirae_wrap p {
+  font-weight: 50;
+  color: #808083;
+}
+
+.ment_wrap {
+  transform: translateX(30px);
+  width: 43%;
+  margin: auto;
+}
+
+.ment {
+  display: inline-block;
+  text-align: start;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+.ment b {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #5865f2;
+}
+
+.ment > p > b {
+  color: #23a459;
+}
+
+.ment p {
+  font-weight: 100;
+  margin-top: 20px;
+  word-break: keep-all;
+}
+
+.about_wrap::-webkit-scrollbar {
+  width: 0.6em;
+  background-color: #313338;
+}
+.about_wrap::-webkit-scrollbar-thumb {
+  background-color: #18191b;
+  border-radius: 10px;
+}
+
+.about_wrap::-webkit-scrollbar-track {
+  background-color: #404246;
+}
+
+/*다크 모드*/
+.dark {
+  background-color: #2d354a;
+}
+
+.dark .img {
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+/*반응형*/
+@media (max-width: 1600px) {
+  .about_inner h2 {
+    font-size: 3em;
+  }
+
+  .about_inner h3 {
+    font-size: 1em;
+  }
+
+  .img {
+    width: 14em;
+  }
+
+  .ment_wrap {
+    width: 50%;
+  }
+
+  .ment b {
+    font-size: 1em;
+  }
+
+  .ment p {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 1500px) {
+  .about_inner h2 {
+    font-size: 2.5em;
+  }
+
+  .mirae_wrap {
+    margin-bottom: 70px;
+  }
+
+  .ment_wrap {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .ment b {
+    font-size: 0.9em;
+  }
+
+  .ment p {
+    font-size: 0.8em;
+  }
+}

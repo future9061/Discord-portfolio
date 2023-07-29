@@ -1,0 +1,220 @@
+.skills_wrap {
+  color: white;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.skills_inner {
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.skills_inner > h2 {
+  font-size: 4em;
+  color: #5865f2;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.inner_wrap {
+  display: inline-block;
+  text-align: start;
+  transform: translateX(80px);
+}
+
+.inner_wrap > div {
+  margin-top: 20px;
+  margin-top: 60px;
+}
+
+.inner_wrap > div h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+  padding: 5px 0px;
+  background: -webkit-linear-gradient(#ffffff, #797b7c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inner_wrap ul {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inner_wrap ul div {
+  width: 100px;
+  height: 100px;
+  margin-right: 40px;
+  transition: 0.3s;
+  cursor: pointer;
+  animation: translateY 1s;
+}
+
+.inner_wrap ul div:hover {
+  transform: scale(1.1) translateY(10px);
+}
+
+.inner_wrap ul div:last-child {
+  margin-right: 0px;
+}
+
+.inner_wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes translateY {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*스크롤 style*/
+
+.skills_wrap::-webkit-scrollbar {
+  width: 0.6em;
+  background-color: #313338;
+}
+.skills_wrap::-webkit-scrollbar-thumb {
+  background-color: #18191b;
+  border-radius: 10px;
+}
+
+.skills_wrap::-webkit-scrollbar-track {
+  background-color: #404246;
+}
+
+.blue {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 0.7em;
+  color: #000;
+  animation: upDown 1.5s infinite;
+}
+
+.blue p {
+  width: 200px;
+  padding: 12px 0px 12px 15px;
+  border-radius: 30px;
+  background-color: #fff;
+  text-align: start;
+  position: relative;
+  word-break: keep-all;
+  line-height: 18px;
+}
+
+.blue p::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+}
+
+.blue img {
+  width: 50px;
+  height: 50px;
+  float: right;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(-2px);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  20% {
+    transform: translateY(-8px);
+  }
+  30% {
+    transform: translateY(-12px);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  90% {
+    transform: translateY(0px);
+  }
+}
+
+/*다크 모드*/
+
+.dark {
+  background-color: #2d354a;
+}
+
+/*반응형*/
+
+@media (max-width: 1600px) {
+  .skills_inner > h2 {
+    font-size: 3em;
+  }
+
+  .inner_wrap ul div {
+    width: 70px;
+    height: 70px;
+  }
+
+  .blue {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 1500px) {
+  .inner_wrap > div h2 {
+    font-size: 1.3em;
+  }
+
+  .inner_wrap ul div {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/*반응형*/
+
+@media (max-width: 1360px) {
+  .blue {
+    bottom: 100px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .blue {
+    bottom: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  .blue {
+    bottom: 10%;
+  }
+}

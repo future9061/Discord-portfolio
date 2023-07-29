@@ -1,0 +1,146 @@
+.setting_wrap {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.setting_inner {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.setting_inner h2 {
+  text-align: center;
+  color: rgb(230, 230, 230);
+  font-weight: 600;
+  font-size: 3em;
+  -webkit-text-stroke: 2px #75757c;
+}
+
+.setting_inner > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.basic_mode,
+.dark_mode {
+  text-align: center;
+}
+
+.img_wrap {
+  width: 40em;
+  height: 20em;
+  border: 5px solid white;
+  margin-bottom: 50px;
+  transition: 0.5s;
+}
+
+.img_wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.img_wrap:hover {
+  transform: translateY(10px) scale(1.1);
+}
+
+.basic_mode button,
+.dark_mode button {
+  border: none;
+  font-size: 2em;
+  padding: 10px 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.basic_mode button:active,
+.dark_mode button:active {
+  filter: brightness(120%);
+}
+
+.basic_mode button {
+  background-color: #23a459;
+}
+
+.dark_mode button {
+  background-color: #1e1f22;
+}
+
+.setting_wrap::-webkit-scrollbar {
+  width: 0.6em;
+  background-color: #313338;
+}
+.setting_wrap::-webkit-scrollbar-thumb {
+  background-color: #18191b;
+  border-radius: 10px;
+}
+
+.setting_wrap::-webkit-scrollbar-track {
+  background-color: #404246;
+}
+
+/*다크 모드*/
+
+.dark {
+  background-color: #2d354a;
+}
+
+.dark h2 {
+  color: white;
+  -webkit-text-stroke: 2px #9191a7;
+}
+
+.dark .basic_mode button {
+  background-color: #1e1f22;
+}
+
+.dark .dark_mode button {
+  background-color: rgb(88, 101, 242);
+}
+
+/* 반응형 */
+@media (max-width: 1600px) {
+  .img_wrap {
+    width: 30em;
+    height: 15em;
+  }
+
+  .basic_mode button,
+  .dark_mode button {
+    font-size: 1.5em;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .setting_inner > div {
+    margin-top: 200px;
+  }
+
+  .img_wrap {
+    width: 30em;
+    height: 15em;
+  }
+
+  .setting_inner > div {
+    margin-top: 50px;
+  }
+
+  .img_wrap:hover {
+    transform: translateY(5px) scale(1.02);
+  }
+}
+
+@media (max-width: 550px) {
+  .img_wrap {
+    width: 29em;
+    height: 14em;
+  }
+
+  .basic_mode button,
+  .dark_mode button {
+    font-size: 1.3em;
+  }
+}

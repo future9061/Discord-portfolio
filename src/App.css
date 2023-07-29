@@ -1,0 +1,51 @@
+.wrap {
+  background-color: #313338;
+  width: 100%;
+  height: 100%;
+  font-family: "Kanit", sans-serif;
+}
+
+.top {
+  width: 100%;
+  height: 96%;
+  display: flex;
+}
+
+.main {
+  display: flex;
+  width: 95%;
+  height: 100%;
+  border-top-left-radius: 20px;
+}
+
+.outlet {
+  display: flex;
+  flex-direction: column;
+  width: 88%;
+  height: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 1600px) {
+  .top {
+    height: 97%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .outlet {
+    width: 89%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .main {
+    width: 97%;
+  }
+
+  .outlet {
+    width: 100%;
+    position: fixed;
+    left: 3%;
+  }
+}

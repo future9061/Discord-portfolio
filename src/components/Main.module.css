@@ -1,0 +1,20 @@
+.main_wrap {
+  display: flex;
+  width: 100%;
+  height: 96%;
+}
+
+.align {
+  width: 100%;
+  height: 93%;
+  display: flex;
+}
+
+/*반응형*/
+
+@media (max-width: 1400px) {
+  .main_wrap {
+    height: 98%;
+    border: 1px solid white;
+  }
+}

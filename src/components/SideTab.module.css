@@ -1,0 +1,470 @@
+.side_tab {
+  width: 5%;
+  height: 100%;
+  text-align: center;
+  background-color: #1e1f22;
+}
+
+.side_tab ul {
+  margin: 10px auto;
+  padding: 0;
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.side_tab ul li,
+.fixedStyle ul li {
+  position: relative;
+  margin: 0px auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+}
+
+.side_tab li > article,
+.fixedStyle li > nav,
+.icon {
+  width: 70px;
+  height: 70px;
+  transition: 0.2s;
+}
+
+.fixedStyle > nav div {
+  width: 70px;
+  height: 70px;
+}
+
+.side_tab li:not(.first) > article,
+.icon {
+  background-color: #2d2e33;
+}
+
+li:not(.first) > nav {
+  background-color: #23a459;
+}
+
+.first > article {
+  background-color: #2d2e33;
+  border-radius: 20px;
+}
+
+.first > nav {
+  border-radius: 50%;
+  background-color: #5865f2;
+}
+
+.first > article:hover {
+  border-radius: 50%;
+}
+
+.side_tab li:not(.first) > article {
+  border-radius: 50%;
+  color: white;
+}
+
+.icon {
+  border-radius: 50%;
+  color: #23a459;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+}
+
+.icon:hover {
+  color: white;
+}
+
+.fixedStyle > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side_tab li:not(.first) > nav {
+  border-radius: 20px;
+}
+
+.side_tab li:not(.first) article img,
+.side_tab .fixedStyle:not(.first) nav img {
+  width: 35px;
+  height: 35px;
+}
+
+.first article img,
+.first nav img {
+  width: 50px;
+  height: 40px;
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  top: 80px;
+  left: calc(50% - 25px);
+  background-color: #404249;
+}
+
+.side_tab li:not(.first) article:hover,
+.icon:hover {
+  background-color: #23a459;
+  border-radius: 20px;
+}
+
+.side_tab .first article:hover {
+  background-color: #5865f2;
+}
+
+/*하얀색 박스*/
+.side_tab li span {
+  display: block;
+  width: 0px;
+  height: 5px;
+  border-left: 5px solid white;
+  border-top: 1.5px solid transparent;
+  border-bottom: 1.5px solid transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transform: scaleY(1);
+  position: absolute;
+  left: -15px;
+  top: 40%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fixedStyle section {
+  display: block;
+  width: 0px;
+  height: 5px;
+  border-left: 5px solid white;
+  border-top: 1.5px solid transparent;
+  border-bottom: 1.5px solid transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  position: absolute;
+  left: -15px;
+  top: 40%;
+  transform: scale(2.3, 8);
+}
+
+.fixedStyle nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side_tab li:hover span {
+  opacity: 1;
+  transform: scale(2.3, 8);
+}
+
+.side_tab li > p {
+  color: white;
+  position: absolute;
+  padding: 10px;
+  border-radius: 15px;
+  left: 70%;
+  z-index: 2;
+  background-color: #5865f2;
+  font-size: 1.8em;
+  top: 8px;
+  transition: 0.5s;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.side_tab li:hover p {
+  opacity: 1;
+}
+
+/*다크모드*/
+
+.dark {
+  background-color: #131926;
+}
+
+.dark li:not(.first) article li {
+  background-color: #303757;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.dark li:not(.first) article li:hover {
+  background-color: #23a459;
+  border-radius: 20px;
+}
+
+.dark .first article li {
+  background-color: #303757;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.dark .first article li:hover {
+  background-color: #5865f2;
+  border-radius: 50%;
+}
+
+/*블루 모드*/
+.dark li > div {
+  background-color: #303757;
+}
+
+/* 반응형 */
+
+@media (max-width: 1600px) {
+  .side_tab ul li,
+  .fixedStyle ul li {
+    width: 55px;
+    height: 55px;
+  }
+
+  .side_tab li > article,
+  .fixedStyle li > nav,
+  .icon {
+    width: 55px;
+    height: 55px;
+    font-size: 35px;
+  }
+
+  .icon > p {
+    transform: translateY(2px);
+  }
+
+  .first > article {
+    border-radius: 15px;
+  }
+
+  .side_tab li:not(.first) article:hover,
+  .icon:hover {
+    border-radius: 15px;
+  }
+  .side_tab li:not(.first) > nav {
+    border-radius: 15px;
+  }
+
+  .fixedStyle > nav div {
+    width: 55px;
+    height: 55px;
+  }
+
+  .side_tab li:not(.first) article img,
+  .side_tab .fixedStyle:not(.first) nav img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .first article img,
+  .first nav img {
+    width: 40px;
+    height: 30px;
+  }
+
+  .line {
+    width: 40px;
+    top: 65px;
+    left: calc(50% - 20px);
+  }
+
+  .side_tab li span {
+    left: -11.8px;
+  }
+
+  .fixedStyle section {
+    left: -11.8px;
+  }
+
+  .side_tab li > p {
+    font-size: 1.5em;
+    left: 70%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .side_tab ul li,
+  .fixedStyle ul li {
+    width: 50px;
+    height: 50px;
+  }
+
+  .side_tab li > article,
+  .fixedStyle li > nav,
+  .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .icon > p {
+    transform: translateY(2px);
+  }
+
+  .icon:hover p {
+    transform: translateY(2px);
+  }
+
+  .first > article {
+    border-radius: 15px;
+  }
+
+  .side_tab li:not(.first) article:hover,
+  .icon:hover {
+    border-radius: 15px;
+  }
+
+  .side_tab li:not(.first) > nav {
+    border-radius: 15px;
+  }
+
+  .fixedStyle > nav div {
+    width: 50px;
+    height: 50px;
+  }
+
+  .side_tab li:not(.first) article img,
+  .side_tab .fixedStyle:not(.first) nav img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .first article img,
+  .first nav img {
+    width: 35px;
+    height: 25px;
+  }
+
+  .line {
+    width: 35px;
+    top: 60px;
+    left: calc(50% - 17.5px);
+  }
+
+  .side_tab li span {
+    height: 4px;
+    border-left: 4px solid white;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    top: 45%;
+    left: -13px;
+  }
+
+  .fixedStyle section {
+    height: 4px;
+    border-left: 4px solid white;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    top: 45%;
+    left: -13px;
+  }
+
+  .side_tab li > p {
+    font-size: 1.3em;
+    left: 70%;
+  }
+}
+
+@media (max-width: 1450px) {
+  .side_tab li span {
+    left: -11px;
+  }
+
+  .fixedStyle section {
+    left: -11px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .side_tab li span {
+    left: -10px;
+  }
+
+  .fixedStyle section {
+    left: -10px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .side_tab li span {
+    left: -9px;
+  }
+
+  .fixedStyle section {
+    left: -9px;
+  }
+
+  .first > article {
+    background-color: #2d2e33;
+  }
+}
+
+@media (max-width: 1200px) {
+  .side_tab ul li,
+  .fixedStyle ul li {
+    width: 40px;
+    height: 40px;
+  }
+
+  .side_tab li > article,
+  .fixedStyle li > nav,
+  .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+
+  .fixedStyle > nav div {
+    width: 40px;
+    height: 40px;
+  }
+
+  .side_tab li:not(.first) article img,
+  .side_tab .fixedStyle:not(.first) nav img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .first article img,
+  .first nav img {
+    width: 28px;
+    height: 20px;
+  }
+
+  .line {
+    top: 45px;
+  }
+
+  .side_tab li span {
+    height: 2.5px;
+    border-left: 3px solid white;
+    border-top: 1.2px solid transparent;
+    border-bottom: 1.2px solid transparent;
+    top: 41%;
+    left: -11px;
+  }
+
+  .fixedStyle section {
+    height: 2.5px;
+    border-left: 3px solid white;
+    border-top: 1.2px solid transparent;
+    border-bottom: 1.2px solid transparent;
+    top: 41%;
+    left: -11px;
+  }
+
+  .side_tab li > p {
+    font-size: 1.2em;
+    top: 5px;
+    left: 60%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .side_tab {
+    display: none;
+  }
+}
