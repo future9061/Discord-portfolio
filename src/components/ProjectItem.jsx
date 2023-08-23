@@ -5,9 +5,11 @@ import { AiFillGithub } from "react-icons/ai";
 import { BiSolidLabel } from "react-icons/bi";
 import copyData from "../store/Project";
 import { ThemeContext } from "../store/Context";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectItem() {
   const { projectBtn } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
   return copyData.map((elem, index) => {
     return (
@@ -61,13 +63,13 @@ export default function ProjectItem() {
               </div>
             </div>
             <div className={classes.link_wrap}>
-              <div>
+              <div onClick={() => window.open(`${elem.git}`)}>
                 <span>
                   <AiFillGithub />
                 </span>
                 <p>Code</p>
               </div>
-              <div>
+              <div onClick={() => window.open(`${elem.demo}`)}>
                 <span>
                   <MdOutlineMonitor />
                 </span>
