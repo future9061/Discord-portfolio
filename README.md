@@ -507,6 +507,11 @@ const router = createBrowserRouter([
 
 최종 load 시간.. 조금 절감됐다.
 
+
+### ver.3 : context를 Redux로 수정
+
+context의 성능이슈에 대해 알게 됐다. 불필요한 재랜더링으로 메모리가 낭비된다는 것을 알게 되고 기존의 context로 전달하던 state를 전부 Redux로 바꿀 예정
+
 <br />
 
 
