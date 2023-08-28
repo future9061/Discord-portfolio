@@ -6,16 +6,16 @@ export const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children }) => {
   /*다크모드 */
-  const LocalTheme = window.localStorage.getItem("theme") || "basic";
-  const [themeMode, setThemeMode] = useState(LocalTheme);
+  // const LocalTheme = window.localStorage.getItem("theme") || "basic";
+  // const [themeMode, setThemeMode] = useState(LocalTheme);
 
-  const chooseTheme = useCallback(() => {
-    if (themeMode === "basic") {
-      window.localStorage.setItem("theme", "basic");
-    } else {
-      window.localStorage.setItem("theme", "dark");
-    }
-  }, [themeMode]);
+  // const chooseTheme = useCallback(() => {
+  //   if (themeMode === "basic") {
+  //     window.localStorage.setItem("theme", "basic");
+  //   } else {
+  //     window.localStorage.setItem("theme", "dark");
+  //   }
+  // }, [themeMode]);
 
   /*챗봇 */
   const SkillData = [...data];
@@ -56,9 +56,6 @@ const ThemeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider
       value={{
-        themeMode,
-        setThemeMode,
-        chooseTheme,
         atCircle,
         setAtcircle,
         setMenuTxt,

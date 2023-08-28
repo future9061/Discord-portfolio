@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import classes from "./TopBar.module.css";
-
-import { ThemeContext } from "../store/Context";
+import { useSelector } from "react-redux";
 
 function TopBar() {
-  const { themeMode } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
   return (
     <div className={`${classes.topbar_wrap} ${dark}`}>

@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./About.module.css";
 import Back from "../components/ui/Back";
-import { ThemeContext } from "../store/Context";
+import { useSelector } from "react-redux";
 
 export function About() {
-  const { themeMode } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
-  let dark = themeMode === "dark" ? classes.dark : "";
   return (
     <div className={`${classes.about_wrap} ${dark}`}>
       <Back />

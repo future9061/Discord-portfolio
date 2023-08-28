@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -10,6 +9,8 @@ import { Project } from "./pages/Project";
 import { Contact } from "./pages/Contact";
 import { Setting } from "./pages/Setting";
 import Loading from "./pages/Loading";
+import store from "./store/store";
+import { Provider } from 'react-redux';
 
 const LazyApp = lazy(() => import("./App"));
 
@@ -37,4 +38,4 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(<Provider store={store}><RouterProvider router={router} /></Provider>);

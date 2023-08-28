@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./contact.module.css";
 import Back from "../components/ui/Back";
-import { ThemeContext } from "../store/Context";
 import { PiCopyLight } from "react-icons/pi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export function Contact() {
-  const { themeMode } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
+
   const handleCopy = () => {
     alert("복사 완료!");
   };
