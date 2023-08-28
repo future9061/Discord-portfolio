@@ -8,8 +8,20 @@ import ThemeProvider from "./store/Context";
 import { useEffect } from "react";
 import SlideMenu from "./components/SlideMenu";
 import Burger from "./components/Burger";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "./store/store";
+
+
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem('theme')
+    if (localTheme) { dispatch(changeTheme(localTheme)); }
+  }, []);
+
+
   const navigate = useNavigate();
 
   useEffect(() => {

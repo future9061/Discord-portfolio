@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import classes from "./Project.module.css";
-import { ThemeContext } from "../store/Context";
 import Back from "../components/ui/Back";
 import ProjectItem from "../components/ProjectItem";
+import { useSelector } from "react-redux";
 
 export function Project() {
-  const { themeMode } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
   return (
     <div className={`${classes.project_wrap} ${dark}`}>

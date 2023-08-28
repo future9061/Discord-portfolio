@@ -3,10 +3,10 @@ import classes from "./Skills.module.css";
 import Back from "../components/ui/Back";
 import { SkillsBox } from "../components/li/SkillsBox";
 import { ThemeContext } from "../store/Context";
+import { useSelector } from "react-redux";
 
 export function Skills() {
   const {
-    themeMode,
     talk,
     talkCount,
     setTalkCount,
@@ -17,7 +17,9 @@ export function Skills() {
     SkillData,
     pathName,
   } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
   useEffect(() => {
     const talkInterval = setInterval(() => {

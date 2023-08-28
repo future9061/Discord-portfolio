@@ -4,10 +4,12 @@ import MeLi, { IconMeLi } from "./li/MeLi";
 import { BsGithub } from "react-icons/bs";
 import { ThemeContext } from "../store/Context";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 function SlideMenu() {
-  const { themeMode, setSlideToggle, slideToggle } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const { setSlideToggle, slideToggle } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
   const clickSlide = () => {
     setSlideToggle(() => false);

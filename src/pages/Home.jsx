@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import classes from "./Home.module.css";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../store/Context";
+import { useSelector } from "react-redux";
 
 export function Home() {
   const txt = "Welcome to Mirae World!";
@@ -19,14 +20,15 @@ export function Home() {
     return () => clearInterval(interval);
   });
 
-  const { themeMode, setMenuTxt } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const { setMenuTxt } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
   return (
     <div className={`${classes.home_wrap} ${dark}`}>
       <div className={classes.home_inner}>
         <div className={classes.img_wrap}>
-          {themeMode !== "dark" ? (
+          {theme !== "dark" ? (
             <img src={`${process.env.PUBLIC_URL}/img/bg-img.png`} />
           ) : (
             <img src={`${process.env.PUBLIC_URL}/img/dark-bg-img.png`} />

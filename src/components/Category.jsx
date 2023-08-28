@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BsGithub } from "react-icons/bs";
 import classes from "./Category.module.css";
 import MeLi, { IconMeLi } from "./li/MeLi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { AiFillCaretRight } from "react-icons/ai";
-import { ThemeContext } from "../store/Context";
+import { useSelector } from "react-redux";
+
 function Category() {
-  const { themeMode } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
   return (
     <div className={`${classes.category_wrap} ${dark}`}>

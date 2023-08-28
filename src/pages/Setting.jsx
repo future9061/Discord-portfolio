@@ -1,15 +1,18 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import classes from "./Setting.module.css";
 import Back from "../components/ui/Back";
-import { ThemeContext } from "../store/Context";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../store/store";
 
 export function Setting() {
-  const { themeMode, setThemeMode, chooseTheme } = useContext(ThemeContext);
-  let dark = themeMode === "dark" ? classes.dark : "";
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
 
-  useEffect(() => {
-    chooseTheme();
-  }, [themeMode, chooseTheme]);
+  const handleTheme = (theme) => {
+    dispatch(changeTheme(theme));
+    localStorage.setItem("theme", theme);
+  };
 
   return (
     <div className={`${classes.setting_wrap} ${dark}`}>
@@ -22,7 +25,7 @@ export function Setting() {
               <img
                 onClick={(e) => {
                   e.stopPropagation();
-                  setThemeMode("basic");
+                  handleTheme("basic");
                 }}
                 src={`${process.env.PUBLIC_URL}/img/basic-mode.png`}
                 alt="basic-mode"
@@ -31,7 +34,7 @@ export function Setting() {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setThemeMode("basic");
+                handleTheme("basic");
               }}
             >
               Basic
@@ -42,7 +45,7 @@ export function Setting() {
               <img
                 onClick={(e) => {
                   e.stopPropagation();
-                  setThemeMode("dark");
+                  handleTheme("dark");
                 }}
                 src={`${process.env.PUBLIC_URL}/img/blue-mode.png`}
                 alt="blue-mode"
@@ -51,7 +54,7 @@ export function Setting() {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setThemeMode("dark");
+                handleTheme("dark");
               }}
             >
               Blue
