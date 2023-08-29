@@ -27,7 +27,7 @@ export function Setting() {
                   e.stopPropagation();
                   handleTheme("basic");
                 }}
-                src={`${process.env.PUBLIC_URL}/img/basic-mode.png`}
+                src={`${process.env.PUBLIC_URL}/img/basic-mode.webp`}
                 alt="basic-mode"
               />
             </div>
@@ -47,7 +47,7 @@ export function Setting() {
                   e.stopPropagation();
                   handleTheme("dark");
                 }}
-                src={`${process.env.PUBLIC_URL}/img/blue-mode.png`}
+                src={`${process.env.PUBLIC_URL}/img/blue-mode.webp`}
                 alt="blue-mode"
               />
             </div>

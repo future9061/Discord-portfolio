@@ -1,36 +1,40 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import classes from "../Category.module.css";
-import { ThemeContext } from "../../store/Context";
+import { useSelector, useDispatch } from "react-redux";
+import { handleBtn, pathMove } from "../../store/store";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function MeLi() {
-  const { setMenuTxt, setProjectBtn, pathName } = useContext(ThemeContext);
+  const btnState = useSelector((state) => state.projectBtn);
+  const dispatch = useDispatch();
   const btnData = ["All", "Javascript", "React", "Vue", "PWA"];
-  const [clickBtn, setClickBtn] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const pathName = location.pathname.replace("/", "");
 
   const handleClick = (e) => {
-    setMenuTxt(() => "Project");
-
-    setClickBtn(() => e.target.value);
-
-    setProjectBtn(() => e.target.id);
+    dispatch(handleBtn(e.target.id));
   };
 
-  /* 페이지 벗어나면 버튼 및 스킬 아이템 초기화 코드 */
+  useEffect(() => {
+    if (btnState && pathName !== "project") {
+      navigate("/project");
+      dispatch(pathMove("Project"));
+    }
+  }, [btnState]);
 
   useEffect(() => {
-    if (pathName !== "Project") {
-      setClickBtn(() => "");
-      setProjectBtn(() => "");
+    if (pathName !== "project") {
+      dispatch(handleBtn(""));
     }
-  }, [pathName]);
+  }, [location]);
 
   return btnData.map((elem, index) => {
     return (
       <li
         key={index}
         onClick={handleClick}
-        value={index}
-        className={index === clickBtn ? classes.active : ""}
+        className={elem === btnState ? classes.active : ""}
         id={elem}
       >
         <div>

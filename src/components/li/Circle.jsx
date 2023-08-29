@@ -1,27 +1,22 @@
-import React, { useContext, useEffect } from "react";
-import { ThemeContext } from "../../store/Context";
+import React from "react";
 import classes from "../SideTab.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { pathMove } from "../../store/store";
 
-export function Circle({ src, text, action, name }) {
-  const { setMenuTxt, movePage, atCircle } = useContext(ThemeContext);
-
-  useEffect(() => {
-    movePage();
-  }, [atCircle]);
+export function Circle({ src, text, name }) {
+  const state = useSelector((state) => state.pageSlice);
+  const dispatch = useDispatch();
 
   return (
     <li
-      className={`${action === text ? classes.fixedStyle : ""} ${
-        classes[name]
-      }`}
+      className={`${state === text ? classes.fixedStyle : ""} ${classes[name]}`}
       onClick={() => {
-        setMenuTxt(text);
-        movePage();
+        dispatch(pathMove(text));
       }}
     >
-      {action === text ? <section></section> : <span></span>}
+      {state === text ? <section></section> : <span></span>}
 
-      {action === text ? (
+      {state === text ? (
         <nav className={classes.width}>
           <div>
             <img src={src} alt="sidetab" />
@@ -40,22 +35,24 @@ export function Circle({ src, text, action, name }) {
   );
 }
 
-export function CircleIcon({ icon, text, action }) {
-  const { setMenuTxt } = useContext(ThemeContext);
+export function CircleIcon({ icon, text }) {
+  const state = useSelector((state) => state.pageSlice);
+  const dispatch = useDispatch();
+
   return (
     <li
-      className={`${action === text ? classes.fixedStyle : ""}`}
+      className={`${state === text ? classes.fixedStyle : ""}`}
       onClick={() => {
-        setMenuTxt(text);
+        dispatch(pathMove(text));
       }}
     >
-      {action === text ? (
+      {state === text ? (
         <section className={classes.white}></section>
       ) : (
         <span></span>
       )}
 
-      {action === text ? (
+      {state === text ? (
         <nav className={classes.icon}>
           <p>{icon}</p>
         </nav>

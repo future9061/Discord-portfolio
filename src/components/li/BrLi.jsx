@@ -1,36 +1,36 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import classes from "../SubBar.module.css";
-import { ThemeContext } from "../../store/Context";
+import { useDispatch, useSelector } from "react-redux";
+import { pathMove } from "../../store/store";
 
-export default function BrLi({ text, action }) {
-  const { setMenuTxt, atCircle, movePage } = useContext(ThemeContext);
-  useEffect(() => {
-    movePage();
-  }, [atCircle]);
+export default function BrLi({ text }) {
+  const state = useSelector((state) => state.pageSlice);
+  const dispatch = useDispatch();
 
   return (
     <li
       onClick={() => {
-        setMenuTxt(text);
-        movePage();
+        dispatch(pathMove(text));
       }}
-      className={action === text ? classes.clickStyle : ""}
+      className={state === text ? classes.clickStyle : ""}
     >
       <p>{text}</p>
     </li>
   );
 }
 
-export function SetIcon({ icon, text, action }) {
-  const { setMenuTxt } = useContext(ThemeContext);
+export function SetIcon({ icon, text }) {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.pageSlice);
+
   return (
     <div
       onClick={() => {
-        setMenuTxt(text);
+        dispatch(pathMove(text));
       }}
-      className={action === text ? classes.setting : ""}
+      className={state === text ? classes.setting : ""}
     >
-      {action === text ? <p>{icon}</p> : <h1>{icon}</h1>}
+      {state === text ? <p>{icon}</p> : <h1>{icon}</h1>}
     </div>
   );
 }
