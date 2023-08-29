@@ -1,28 +1,21 @@
-import { ThemeContext } from "../../store/Context";
-import React, { useContext, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import skillData from "../../store/SkillData";
+import { changeTalk } from "../../store/store";
 
-export function SkillsBox({ img, alt, ImgStyle }) {
-  const { SkillData, setSelect, select } = useContext(ThemeContext);
+export function SkillsBox({ img, alt }) {
+  const dispatch = useDispatch();
+  const chatData = [...skillData];
 
-  const handleClick = (e) => {
-    const selectItem = SkillData.find((item) => item.title === e.target.alt);
+  function handleSkill(e) {
+    const selectItem = chatData.find((item) => item.title === e.target.alt);
     if (selectItem) {
-      setSelect(selectItem.content);
+      dispatch(changeTalk(selectItem.content));
     }
-  };
-
-  useEffect(() => {
-    const imgElem = document.getElementById("image");
-    imgElem.addEventListener("click", handleClick);
-  }, [select]);
+  }
 
   return (
-    <div onClick={handleClick} value={alt} id="image">
-      <img
-        src={`${process.env.PUBLIC_URL}img/${img}`}
-        alt={alt}
-        style={ImgStyle}
-      />
+    <div id="image" onClick={handleSkill}>
+      <img src={`${process.env.PUBLIC_URL}img/${img}`} alt={alt} />
     </div>
   );
 }

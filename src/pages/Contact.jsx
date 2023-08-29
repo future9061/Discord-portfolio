@@ -21,7 +21,7 @@ export function Contact() {
         <h2>🚩contact Me!</h2>
         <div>
           <div className={classes.img_wrap}>
-            <img src={`${process.env.PUBLIC_URL}img/contact.png`} />
+            <img src={`${process.env.PUBLIC_URL}img/contact.webp`} />
           </div>
           <div className={classes.text_wrap}>
             <h2>이미래 / Lee Mi Rae</h2>

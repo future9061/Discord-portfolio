@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./Project.module.css";
 import Back from "../components/ui/Back";
 import ProjectItem from "../components/ProjectItem";

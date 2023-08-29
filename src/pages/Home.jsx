@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import classes from "./Home.module.css";
 import { Link } from "react-router-dom";
-import { ThemeContext } from "../store/Context";
 import { useSelector } from "react-redux";
 
 export function Home() {
@@ -20,7 +19,6 @@ export function Home() {
     return () => clearInterval(interval);
   });
 
-  const { setMenuTxt } = useContext(ThemeContext);
   const theme = useSelector((state) => state.themSlice);
   let dark = theme === "dark" ? classes.dark : "";
 
@@ -29,9 +27,9 @@ export function Home() {
       <div className={classes.home_inner}>
         <div className={classes.img_wrap}>
           {theme !== "dark" ? (
-            <img src={`${process.env.PUBLIC_URL}/img/bg-img.png`} />
+            <img src={`${process.env.PUBLIC_URL}/img/bg-img.webp`} />
           ) : (
-            <img src={`${process.env.PUBLIC_URL}/img/dark-bg-img.png`} />
+            <img src={`${process.env.PUBLIC_URL}/img/dark-bg-img.webp`} />
           )}
         </div>
         <div className={classes.text_wrap}>
@@ -40,22 +38,10 @@ export function Home() {
         </div>
         <div className={classes.btn_wrap}>
           <Link to="/about">
-            <button
-              onClick={() => {
-                setMenuTxt("About");
-              }}
-            >
-              Start
-            </button>
+            <button>Start</button>
           </Link>
           <Link to="/setting">
-            <button
-              onClick={() => {
-                setMenuTxt("Setting");
-              }}
-            >
-              Setting
-            </button>
+            <button>Setting</button>
           </Link>
         </div>
       </div>

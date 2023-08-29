@@ -4,21 +4,17 @@ import { MdOutlineMonitor } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { BiSolidLabel } from "react-icons/bi";
 import copyData from "../store/Project";
-import { ThemeContext } from "../store/Context";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function ProjectItem() {
-  const { projectBtn } = useContext(ThemeContext);
-  const navigate = useNavigate();
+  const btnState = useSelector((state) => state.projectBtn);
 
   return copyData.map((elem, index) => {
     return (
       <div
         key={index}
         className={
-          projectBtn !== elem.keyword &&
-          projectBtn !== "All" &&
-          projectBtn !== ""
+          btnState !== elem.keyword && btnState !== "All" && btnState !== ""
             ? classes.hide
             : ""
         }

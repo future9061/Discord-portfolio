@@ -1,29 +1,30 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./SlideMenu.module.css";
 import MeLi, { IconMeLi } from "./li/MeLi";
 import { BsGithub } from "react-icons/bs";
-import { ThemeContext } from "../store/Context";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { slideToggle } from "../store/store";
 
 function SlideMenu() {
-  const { setSlideToggle, slideToggle } = useContext(ThemeContext);
   const theme = useSelector((state) => state.themSlice);
   let dark = theme === "dark" ? classes.dark : "";
+  const dispatch = useDispatch();
+  const btnBoolean = useSelector((state) => state.slideMenuSlice);
 
   const clickSlide = () => {
-    setSlideToggle(() => false);
+    dispatch(slideToggle(false));
   };
 
   return (
     <div
       className={`${classes.slide_wrap} ${
-        slideToggle ? classes.show : ""
+        btnBoolean ? classes.show : ""
       } ${dark}`}
     >
       <div className={classes.slide_inner}>
-        <div onClick={clickSlide}>
-          <AiOutlineCloseCircle />
+        <div>
+          <AiOutlineCloseCircle onClick={clickSlide} />
         </div>
         <ul>
           <h3>Log</h3>

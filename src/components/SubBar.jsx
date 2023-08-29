@@ -1,33 +1,28 @@
-import React, { useContext } from "react";
+import React from "react";
 import classes from "./SubBar.module.css";
-import { ThemeContext } from "../store/Context";
 import { IoMdSettings } from "react-icons/io";
 import BrLi, { SetIcon } from "./li/BrLi";
 import { useSelector } from "react-redux";
 
 export default function SubBar() {
-  const { atCircle } = useContext(ThemeContext);
   const theme = useSelector((state) => state.themSlice);
   let dark = theme === "dark" ? classes.dark : "";
+  const state = useSelector((state) => state.pageSlice);
 
   return (
     <div className={`${classes.sub_bar_wrap} ${dark}`}>
       <ul>
-        <BrLi text="Home" action={atCircle} />
+        <BrLi text="Home" />
 
-        <BrLi text="About" action={atCircle} />
+        <BrLi text="About" />
 
-        <BrLi text="Skills" action={atCircle} />
+        <BrLi text="Skills" />
 
-        <BrLi text="Project" action={atCircle} />
+        <BrLi text="Project" />
 
-        <BrLi text="Contact" action={atCircle} />
+        <BrLi text="Contact" />
 
-        <SetIcon
-          icon={<IoMdSettings></IoMdSettings>}
-          action={atCircle}
-          text="Setting"
-        />
+        <SetIcon icon={<IoMdSettings></IoMdSettings>} text="Setting" />
       </ul>
     </div>
   );

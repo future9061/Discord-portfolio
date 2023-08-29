@@ -1,16 +1,15 @@
-import { useContext } from "react";
 import classes from "./Burger.module.css";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { ThemeContext } from "../store/Context";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { slideToggle } from "../store/store";
 
 export default function Burger() {
-  const { setSlideToggle } = useContext(ThemeContext);
   const theme = useSelector((state) => state.themSlice);
+  const dispatch = useDispatch();
   let dark = theme === "dark" ? classes.dark : "";
 
   const handleSide = () => {
-    setSlideToggle(() => true);
+    dispatch(slideToggle(true));
   };
 
   return (

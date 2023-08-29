@@ -1,47 +1,41 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import classes from "./Skills.module.css";
 import Back from "../components/ui/Back";
 import { SkillsBox } from "../components/li/SkillsBox";
-import { ThemeContext } from "../store/Context";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import skillData from "../store/SkillData";
+import { changeTalk } from "../store/store";
+import { useState } from "react";
 
 export function Skills() {
-  const {
-    talk,
-    talkCount,
-    setTalkCount,
-    select,
-    setSelect,
-    talkWrap,
-    settalkWrap,
-    SkillData,
-    pathName,
-  } = useContext(ThemeContext);
-
   const theme = useSelector((state) => state.themSlice);
+  const chatbot = useSelector((state) => state.chatBotSlice);
   let dark = theme === "dark" ? classes.dark : "";
+  const chatData = [...skillData];
+  const dispatch = useDispatch();
 
+  const talk = [...chatbot];
+  const [index, setIndex] = useState(0);
+  // console.log(talk);
   useEffect(() => {
-    const talkInterval = setInterval(() => {
-      setTalkCount((prevTalkCount) => prevTalkCount + 1); // 비동기여서 count를 함수로 부름
-      settalkWrap(talkWrap + select[talkCount]);
-    }, 40);
+    const interval = setInterval(() => {
+      if (index <= talk.length) {
+        dispatch(changeTalk(talk.slice(0, index + 1)));
+        setIndex((pre) => pre + 1);
+        console.log(index);
+      }
+    }, 4000);
 
-    if (talkCount >= talk.length) {
-      clearInterval(talkInterval);
-    }
+    // 이펙트 종료 시 clearInterval
+    // if (index > talk.length) {
+    //   clearInterval(interval);
+    // }
+  }, [index, talk, dispatch]);
 
-    return () => clearInterval(talkInterval);
-  }, [talk, talkCount, settalkWrap]);
-
-  /* 초기화 */
-  useEffect(() => {
-    if (pathName === "Skills") {
-      setSelect(() => {
-        return SkillData[0].content;
-      });
-    }
-  }, [pathName]);
+  // useEffect(() => {
+  //   setTalk([...chatbot]);
+  //   setIndex(0);
+  // }, [chatbot]);
 
   return (
     <div className={`${classes.skills_wrap} ${dark}`}>
@@ -52,14 +46,14 @@ export function Skills() {
           <div className="language">
             <h2>Language</h2>
             <ul>
-              <SkillsBox img="javascript-icon.png" alt="Javascript" />
+              <SkillsBox img="javascript-icon.webp" alt="Javascript" />
               <SkillsBox
-                img="html-icon.png"
+                img="html-icon.webp"
                 alt="HTML"
                 ImgStyle={{ transform: "scale(1.07,1)" }}
               />
               <SkillsBox
-                img="css-icon.png"
+                img="css-icon.webp"
                 ImgStyle={{ transform: "scale(1.2,1.1)" }}
                 alt="CSS"
               />
@@ -69,9 +63,9 @@ export function Skills() {
           <div className="framework">
             <h2>Framework</h2>
             <ul>
-              <SkillsBox img="react-icon.png" alt="React" />
+              <SkillsBox img="react-icon.webp" alt="React" />
               <SkillsBox
-                img="vue 1.png"
+                img="vue-l.webp"
                 alt="Vue"
                 ImgStyle={{ transform: "scale(1.2,1.3)" }}
               />
@@ -81,9 +75,9 @@ export function Skills() {
           <div className="library">
             <h2>Library</h2>
             <ul>
-              <SkillsBox img="bootstrap-icon.png" alt="Bootstrap" />
-              <SkillsBox img="tailwind-icon.png" alt="Tailwind" />
-              <SkillsBox img="firebase-icon.png" alt="Firebase" />
+              <SkillsBox img="bootstrap-icon.webp" alt="Bootstrap" />
+              <SkillsBox img="tailwind-icon.webp" alt="Tailwind" />
+              <SkillsBox img="firebase-icon.webp" alt="Firebase" />
             </ul>
           </div>
           <div className="Tools">
@@ -94,23 +88,26 @@ export function Skills() {
                 alt="Git"
                 ImgStyle={{ transform: "scale(1.15)" }}
               />
-              <SkillsBox img="github-icon.png" alt="GitHub" />
+              <SkillsBox img="github-icon.webp" alt="GitHub" />
               <SkillsBox
-                img="figma-icon.png"
+                img="figma-icon.webp"
                 alt="Figma"
                 ImgStyle={{ transform: "scale(1.2)" }}
               />
 
-              <SkillsBox img="photoshop-icon.png" alt="Photoshop" />
+              <SkillsBox img="photoshop-icon.webp" alt="Photoshop" />
 
-              <SkillsBox img="netlify-icon.png" alt="Netlify" />
+              <SkillsBox img="netlify-icon.webp" alt="Netlify" />
             </ul>
           </div>
         </div>
 
         <div className={classes.blue}>
-          <p>{talkWrap}</p>
-          <img src={process.env.PUBLIC_URL + "/img/logo(img).png"} alt="logo" />
+          <p>{chatbot}</p>
+          <img
+            src={process.env.PUBLIC_URL + "/img/logo(img).webp"}
+            alt="logo"
+          />
         </div>
       </div>
     </div>

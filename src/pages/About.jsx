@@ -17,7 +17,7 @@ export function About() {
         <div className={classes.mirae_wrap}>
           <div className={classes.img_wrap}>
             <img
-              src={`${process.env.PUBLIC_URL}/img/mirae.png`}
+              src={`${process.env.PUBLIC_URL}/img/mirae.webp`}
               className={classes.img}
             />
           </div>
