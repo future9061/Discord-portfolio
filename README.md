@@ -7,12 +7,14 @@
 5. [📌 주요 기능](#-주요-기능)
 6. [🧾 code review](#-code-review)
    - [splash Screen](#splash-screen)
-   - [Dark mode](#dark-mode)
-   - [Back Btn](#back-Btn)
+   - [Theme mode](#theme-mode)
+   - [Back Btn](#back-btn)
    - [Skills chat bot](#skills-chat-bot)
    - [component 스타일 변경](#component-스타일-변경)
    - [Item filter 효과](#item-filter-효과)
-7. [💾 업그레이드 및 버전관리](#업그레이드-및-버전관리)
+7. [💾 업그레이드 및 버전관리](#-업그레이드-및-버전관리)
+   - [ver 2. 최적화 : 코드 분할 폰트와 이미지 관리](#-ver-2-최적화--코드-분할-폰트와-이미지-관리)
+   - [ver 3. 최적화 : redux 라이브러리](#-ver-3-최적화--redux-라이브러리)
 8. [📢 Project review](#-project-review)
 
 <br>
@@ -68,7 +70,7 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 
 ## ⏲ 개발 기간
 
-- 23.06.26일 - 2023.07.28
+- 23.06.26일 - 2023.07.28일
 
 <br>
 
@@ -76,7 +78,7 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 
 - `vs code 1.77`
 - **Framework** : react(18.2.0)
-- **library** : react-router-dom(6.14.0) react-copy-to-clipboard(5.1.0) react-icons(4.10.1)
+- **library** : reduxjs/toolkit(1.9.5), react-router-dom(6.14.0), react-copy-to-clipboard(5.1.0), react-icons(4.10.1)
 
 <br>
 
@@ -89,8 +91,11 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 - setTimeout 활용
 - Session Storage에 toggle 형태로 저장 -> 브라우저를 새로 열 때만 보인다.
 
-#### Dark mode - [코드 보기](#dark-mode)
+#### theme mode - [코드 보기](#dark-mode)
 
+> ver.3에서 redux로 state 관리하도록 변경
+
+- 테마 모드의 state를 context에서 관리하여 모든 컴포넌트에서 theme mode를 구독하게 하였다.
 - Local Storage에 mode 저장하여 새로고침해도 mode가 유지된다.
 
 #### Back Btn - [코드 보기](#back-btn)
@@ -160,7 +165,7 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
   export default App;
   ```
 
-- ### Dark mode
+- ### Theme mode
 
 1. 모든 component에 적용 되어야 하기 때문에 context 사용
 2. dark 상태를 담아 둘 useState 생성
@@ -466,24 +471,26 @@ const handleClick = (e) => {
 
 <br />
 
-##  💾업그레이드 및 버전관리
+## 💾 업그레이드 및 버전관리
 
-### ver.2 : 최적화 및 반응형 수정
+### ✔ ver 2. 최적화 : 코드 분할 폰트와 이미지 관리
 
-1.최적화
 <br />
-첫 배포 후 load 시간이 너무 오래 걸리는 걸 확인했다.
+
+첫 배포 후 웹의 load 시간이 너무 오래 걸리는 걸 확인했다.
 
   <img src="https://velog.velcdn.com/images/416homin/post/0c754ea3-31f0-47cc-a4f1-af6e6d7a13e4/image.png">
 
 **해결해야 할 부분은 bundle과 font, img 였다.** <br />
-이미지 최적화 및 web font를 css에서 import 하지 않고 html Link로 변경. <br />
-번들은 코드 분할이 필요했는데 기존에 setTimeout 으로 2.5s간 보이던 splash screen을 React.lazy와 Suspense로 변경했다. <br />
-App.js가 랜더링 될 동안 splash screen이 우선적으로 보이게 했다.
+
+- 이미지 최적화
+- web font를 css에서 import 하지 않고 html Link로 변경.
+- 번들은 코드 분할이 필요하므로 기존에 setTimeout 으로 2.5s간 보이던 splash screen을 React.lazy와 Suspense로 변경
+
 <br />
 
 ```javascript
-
+//<App> 컴포넌트가 랜더링 되는 동안 <Loadind> 컴포넌트를 보여준다.
 const LazyApp = lazy(() => import("./App"));
 
 const router = createBrowserRouter([
@@ -503,18 +510,79 @@ const router = createBrowserRouter([
 
 ```
 
+최종 load 시간이 조금 절감된 걸 확인할 수 있었다.
 <img src="https://velog.velcdn.com/images/416homin/post/9d870eba-6fbc-40c0-a202-4a82da47336c/image.png">
 
-최종 load 시간.. 조금 절감됐다.
+### ✔ ver 3. 최적화 : redux 라이브러리
 
+context의 성능이슈에 대해 알게 됐다. 불필요한 재랜더링으로 메모리가 낭비된다는 것을 알게 되고 기존의 context로 관리하던 state를 전부 Redux 라이브러리로 관리하면서 불필요한 하위 컴포넌트의 랜더링을 줄이면서 최적화를 진행하려고 한다.
 
-### ver.3 : context를 Redux로 수정
+```javascript
+//store.js
 
-context의 성능이슈에 대해 알게 됐다. 불필요한 재랜더링으로 메모리가 낭비된다는 것을 알게 되고 기존의 context로 전달하던 state를 전부 Redux로 바꿀 예정
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-<br />
+const themSlice = createSlice({
+  name: "theme",
+  initialState: "basic", //초기값은 basic
+  reducers: {
+    changeTheme: (state, action) => {
+      return action.payload;
+    }, // 함수의 파라미터 값으로 state를 변경한다.
+  },
+});
 
+export const { changeTheme } = themSlice.actions;
 
+export default configureStore({
+  reducer: {
+    themSlice: themSlice.reducer,
+  },
+});
+```
+
+```javascript
+//index.js
+
+import { Provider } from "react-redux";
+
+const router = createBrowserRouter([
+  {
+    //...생략
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <Provider store={store}>
+    //provider로 감싼 후 state를 보관하는 store를 전달
+    <RouterProvider router={router} />
+  </Provider>
+);
+```
+
+```javascript
+//setting.jsx
+
+//state 가져오기 위해 useSelector import
+//함수 사용 위해 useDispatch import
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "../store/store";
+
+export function Setting() {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.themSlice);
+  let dark = theme === "dark" ? classes.dark : "";
+
+  const handleTheme = (theme) => {
+    dispatch(changeTheme(theme));
+    localStorage.setItem("theme", theme);
+  };  //버튼 클릭시 테마가 전달됨, 새로 고침 이후에도 적용 위해 localStorage에 저장함
+
+  <button onClick={()=> handleTheme("dark")}
+  >테마</buttin>
+
+```
 
 <br>
 
