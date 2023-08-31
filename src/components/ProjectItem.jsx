@@ -35,11 +35,10 @@ export default function ProjectItem() {
           </div>
 
           <div>
-            <div className={classes.text_wrap}>{elem.content}</div>
             <div className={classes.keyowrd_wrap}>
               <div
                 style={{
-                  border: `2px solid ${elem.color}`,
+                  border: `1px solid ${elem.color}`,
                   color: `${elem.color}`,
                 }}
               >
@@ -48,7 +47,7 @@ export default function ProjectItem() {
               </div>
               <div
                 style={{
-                  border: `2px solid ${elem.secondColor}`,
+                  border: `1px solid ${elem.secondColor}`,
                   color: `${elem.secondColor}`,
                 }}
               >
@@ -58,6 +57,7 @@ export default function ProjectItem() {
                 {elem.secondkeyword}
               </div>
             </div>
+            <div className={classes.text_wrap}>{elem.content}</div>
             <div className={classes.link_wrap}>
               <div onClick={() => window.open(`${elem.git}`)}>
                 <span>

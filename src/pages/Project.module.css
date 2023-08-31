@@ -66,10 +66,10 @@
 .label {
   display: inline-block;
   transform: rotate(270deg);
-  font-size: 70px;
+  font-size: 40px;
   position: absolute;
-  top: -30px;
-  right: 10px;
+  top: -15px;
+  right: 20px;
 }
 
 .item_inner > div:first-child {
@@ -83,8 +83,8 @@
 
 .item_inner > div:first-child .img_wrap {
   width: 100%;
-  height: 250px;
-  transition: 0.5s;
+  height: 200px;
+  overflow: visible;
 }
 
 .item_inner > div:first-child .img_wrap:hover {
@@ -92,15 +92,13 @@
 }
 
 .item_inner > div:first-child .img_wrap:hover img {
-  transform: scale(1.2);
-  object-fit: contain;
-  transform: translateY(20px);
+  transform: scale(1.1);
 }
 
 .item_inner > div:first-child .img_wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top center;
   transition: 0.5s;
 }
@@ -114,13 +112,13 @@
   border-radius: 10px;
   background-color: #18191b;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /*키워드 랩*/
 .keyowrd_wrap {
   display: flex;
   gap: 20px;
-  margin-bottom: 50px;
   margin-top: 15px;
 }
 
@@ -133,7 +131,7 @@
 
 .keyowrd_wrap div span {
   margin-right: 5px;
-  font-size: 1.2em;
+  font-size: 16px;
 }
 
 .link_wrap {
@@ -206,11 +204,11 @@
 
   .item_inner > div:first-child h1 {
     margin-bottom: 20px;
-    font-size: 1.8em;
+    font-size: 1.4em;
   }
 
   .text_wrap {
-    font-size: 1em;
+    font-size: 14px;
   }
 }
 
