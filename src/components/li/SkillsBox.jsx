@@ -1,16 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import skillData from "../../store/SkillData";
 import { changeTalk } from "../../store/store";
 
-export function SkillsBox({ img, alt }) {
+export function SkillsBox({ img, alt, settalkWrap, setTalkCount }) {
   const dispatch = useDispatch();
   const chatData = [...skillData];
+  let selectItem;
 
   function handleSkill(e) {
-    const selectItem = chatData.find((item) => item.title === e.target.alt);
-    if (selectItem) {
-      dispatch(changeTalk(selectItem.content));
-    }
+    settalkWrap("");
+    setTalkCount(0);
+    selectItem = chatData.find((item) => item.title === e.target.alt);
+    dispatch(changeTalk(selectItem.content));
   }
 
   return (

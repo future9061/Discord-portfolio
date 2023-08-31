@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import SkillData from "./SkillData";
 
 //테마모드 state
 const themSlice = createSlice({
@@ -12,9 +13,10 @@ const themSlice = createSlice({
 export const { changeTheme } = themSlice.actions;
 
 //스킬챗봇 state
+const data = { ...SkillData }
 const chatBotSlice = createSlice({
   name: "chatbot",
-  initialState: "",
+  initialState: data[0].content,
   reducers: {
     changeTalk: (state, action) => action.payload
   }

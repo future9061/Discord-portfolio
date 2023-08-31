@@ -13,7 +13,7 @@ const projectData = [
     secondIcon: <BsFiletypeCss />,
     secondkeyword: "CSS module",
     secondColor: "#F5F5F5",
-    src: "basic-mode.webp",
+    src: "discord.webp",
     content: "React 첫 프로젝트로 포트폴리오를 만들었습니다. SPA에 최적화 된 리액트의 특징을 보여주기 위해 한 페이지 내에서 모든 컨텐츠를 담아내는 디자인을 고려하여 프로젝트를 만들었습니다.",
     git: 'https://github.com/future9061/portfolio',
     demo: "https://discord-mirae.netlify.app"
