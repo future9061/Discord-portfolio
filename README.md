@@ -13,7 +13,7 @@
    - [component 스타일 변경](#component-스타일-변경)
    - [Item filter 효과](#item-filter-효과)
 7. [💾 업그레이드 및 버전관리](#-업그레이드-및-버전관리)
-   - [ver 2. 최적화 : 코드 분할 폰트와 이미지 관리](#-ver-2-최적화--코드-분할-폰트와-이미지-관리)
+   - [ver 2. 최적화 : 코드 분할과 폰트, 이미지 관리](#-ver-2-최적화--코드-분할과-폰트-이미지-관리)
    - [ver 3. 최적화 : redux 라이브러리](#-ver-3-최적화--redux-라이브러리)
 8. [📢 Project review](#-project-review)
 
@@ -27,13 +27,11 @@
 
 <br>
 
-https://discord-mirae.netlify.app
-
-<br>
-
-portfolio를 만들기 시작하며 사용하기 편하고, 한 눈에 잘 들어오는 UI를 고민하던 도중
-react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 discord를 선택했습니다. <br>
-다양한 애니메이션으로 시각적인 효과를 강조하는 것보단 실제 웹과 같은 로직으로 구성해 완성도 있는 프로젝트를 만드는 것을 목표로 하였습니다.
+- `URL` : https://discord-mirae.netlify.app
+- 나를 소개하는 Portfolio 목적의 웹으로 React 프레임워크로 완성한 웹입니다.
+- 페이지 이동 시 content만 부드럽게 바뀌는 SPA의 특성이 두드러지는 UI입니다.
+- 테마로 Blue, Basic을 구성 해 사용자의 취향에 따라 테마를 선택할 수 있습니다.
+- Ux를 고려하여 상단에 메뉴바와 좌측에 뒤로가기 버튼, 다이렉트 메뉴를 계속 노출시켜 페이지 이동이 용이한 사용자 친화적인 웹입니다.
 
 <br>
 
@@ -43,22 +41,15 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 
 ```javascript
 
-📦public
- ┣ 📂img
- ┣ 📜favicon.ico
- ┣ 📜index.html
- ┗ 📜reset.css
-
-
 📦src
- ┣ 📂components  // 페이지를 구성하는 컴포넌트 directory
- ┃ ┣ 📂li  //menu bar를 구성하는 각 메뉴들의 directory
- ┃ ┣ 📂ui //모든 page에 들어가는 공통 UI directory
+ ┣ 📂components
+ ┃ ┣ 📂li
+ ┃ ┣ 📂ui
  ┣ 📂pages
- ┣ 📂store //data와 context를 모아놓은 directory
- ┃ ┣ 📜Context.js
- ┃ ┣ 📜Project.js
- ┃ ┗ 📜SkillData.js
+ ┣ 📂store
+ ┃ ┣ 📜Project.js //로컬 목업 데이터
+ ┃ ┣ 📜SkillData.js //로컬 목업 데이터
+ ┃ ┗ 📜store.js //redux로 state 관리
  ┣ 📜App.css
  ┣ 📜App.js
  ┣ 📜index.css
@@ -70,15 +61,15 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 
 ## ⏲ 개발 기간
 
-- 23.06.26일 - 2023.07.28일
+- 23.06.26 - 2023.07.28
 
 <br>
 
 ## ❗ 개발 환경
 
-- `vs code 1.77`
-- **Framework** : react(18.2.0)
-- **library** : reduxjs/toolkit(1.9.5), react-router-dom(6.14.0), react-copy-to-clipboard(5.1.0), react-icons(4.10.1)
+- **Editor** : `vs code 1.77`
+- **Framework** : `react(18.2.0)`
+- **library** : `reduxjs/toolkit(1.9.5)` `react-redux(8.1.2)` `react-router-dom(6.14.0)` `react-copy-to-clipboard(5.1.0)`
 
 <br>
 
@@ -91,6 +82,8 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 - setTimeout 활용
 - Session Storage에 toggle 형태로 저장 -> 브라우저를 새로 열 때만 보인다.
 
+<br >
+
 #### theme mode - [코드 보기](#dark-mode)
 
 > ver.3에서 redux로 state 관리하도록 변경
@@ -98,20 +91,28 @@ react의 페이지 전환 없는 SPA의 특성이 부각된다고 생각해 disc
 - 테마 모드의 state를 context에서 관리하여 모든 컴포넌트에서 theme mode를 구독하게 하였다.
 - Local Storage에 mode 저장하여 새로고침해도 mode가 유지된다.
 
+<br >
+
 #### Back Btn - [코드 보기](#back-btn)
 
 - location으로 이전 경로를 가져와 Local Storage에 저장.
 - Back 버튼 클릭 시 Local Storage의 배열 마지막을 꺼내 와 navigate로 이동 후 pop으로 삭제한다.
+
+<br >
 
 #### Skills chat bot - [코드 보기](#skills-chat-bot)
 
 - data를 import 해 클릭 요소와 data를 비교
 - 일치하는 data를 setInterval로 타이핑 효과를 넣어 보여준다.
 
+<br >
+
 #### 클릭 시 특정 component style 변경 - [코드 보기](#component-스타일-변경)
 
 - databinding한 여러 개의 목록 component를 map으로 생성해 index 번호를 부여
 - 클릭 요소와 data의 index 번호를 비교 후 해당 컴포넌트만 className 남긴다.
+
+<br >
 
 #### Item filter 효과 - [코드 보기](#item-filter-효과)
 
@@ -473,7 +474,7 @@ const handleClick = (e) => {
 
 ## 💾 업그레이드 및 버전관리
 
-### ✔ ver 2. 최적화 : 코드 분할 폰트와 이미지 관리
+### ✔ ver 2. 최적화 : 코드 분할과 폰트, 이미지 관리
 
 <br />
 
@@ -515,7 +516,7 @@ const router = createBrowserRouter([
 
 ### ✔ ver 3. 최적화 : redux 라이브러리
 
-context의 성능이슈에 대해 알게 됐다. 불필요한 재랜더링으로 메모리가 낭비된다는 것을 알게 되고 기존의 context로 관리하던 state를 전부 Redux 라이브러리로 관리하면서 불필요한 하위 컴포넌트의 랜더링을 줄이면서 최적화를 진행하려고 한다.
+- 기존의 state를 관리하던 context를 없애고 redux 라이브러리로 상태관리를 함으로써 context를 구독하는 하위 컴포넌트의 불필요한 재랜더링을 멈춘다.
 
 ```javascript
 //store.js
@@ -588,8 +589,5 @@ export function Setting() {
 
 ## 📢 Project review
 
-> 이번 프로젝트는 내가 시간과 정성을 많이 쏟은 프로젝트였다. 때문에 얻어가는 게 많은 프로젝트이기도 했다. <br />
-> 그동안 UseState를 사용하면서 값을 업데이트할 때 비동기이다 보니 일일히 useEffect나 useCallBack 훅을 사용하곤 했다. <br />
-> 하지만 훅을 사용할 필요 없이 함수형으로 값을 업데이트 해주면 되는 걸 깨달고 비동기 함수에 대한 이해가 부족한 걸 느꼈다. <br />
-> 프로젝트를 만들면서 부족한 부분을 깨달고 새로 얻어가는 스킬이 있으니 조금씩 발전하는 걸 느낄 수 있었다. <br />
-> 부족한 부분을 충당해야 할 필요성도 느끼고 새로 얻어가는 지식도 있어서 나에게 만족스러운 프로젝트였다. <br />
+> 이번 프로젝트는 나를 보여주는 포트폴리오 이기 때문에 시간과 정성을 많이 쏟은 프로젝트였다. 때문에 얻어가는 게 많은 프로젝트이기도 했다. <br />
+> 리액트로 처음 만들어 본 프로젝트여서 배포 뒤에 코드를 수정해야 할 일이 많았고 코드를 여러 번 뜯어보며 좀 더 나은 방향을 찾아가는 과정을 거치면 리액트의 매력을 알 수 있었던 것 같다. 덕분에 지금 가장 좋아하는 프레임워크로 리액트가 자리 잡았다.

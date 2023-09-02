@@ -12,7 +12,7 @@ const themSlice = createSlice({
 
 export const { changeTheme } = themSlice.actions;
 
-//스킬챗봇 state
+//스킬챗봇 state 
 const data = { ...SkillData }
 const chatBotSlice = createSlice({
   name: "chatbot",
@@ -43,7 +43,6 @@ const projectBtn = createSlice({
     handleBtn: (state, action) => action.payload
   }
 })
-
 
 export const { handleBtn } = projectBtn.actions;
 

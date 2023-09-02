@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./Setting.module.css";
 import Back from "../components/ui/Back";
 import { useDispatch, useSelector } from "react-redux";
