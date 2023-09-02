@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import classes from "./Home.module.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { pathMove } from "../store/store";
 
 export function Home() {
   const txt = "Welcome to Mirae World!";
   const [text, setText] = useState("");
   const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,6 +23,11 @@ export function Home() {
 
   const theme = useSelector((state) => state.themSlice);
   let dark = theme === "dark" ? classes.dark : "";
+
+  const setBtn = (e) => {
+    const value = e.target.textContent;
+    dispatch(pathMove(value));
+  };
 
   return (
     <div className={`${classes.home_wrap} ${dark}`}>
@@ -40,7 +47,12 @@ export function Home() {
           <Link to="/about">
             <button>Start</button>
           </Link>
-          <Link to="/setting">
+          <Link
+            to="/setting"
+            onClick={(e) => {
+              setBtn(e);
+            }}
+          >
             <button>Setting</button>
           </Link>
         </div>
