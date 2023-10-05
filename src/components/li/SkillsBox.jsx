@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import skillData from "../../store/SkillData";
 import { changeTalk } from "../../store/store";
 
-export function SkillsBox({ img, alt, settalkWrap, setTalkCount }) {
+export function SkillsBox({ img, alt, settalkWrap, setTalkCount, ImgStyle }) {
   const dispatch = useDispatch();
   const chatData = [...skillData];
   let selectItem;
@@ -16,7 +16,11 @@ export function SkillsBox({ img, alt, settalkWrap, setTalkCount }) {
 
   return (
     <div id="image" onClick={handleSkill}>
-      <img src={`${process.env.PUBLIC_URL}img/${img}`} alt={alt} />
+      <img
+        src={`${process.env.PUBLIC_URL}img/${img}`}
+        alt={alt}
+        style={{ transform: ImgStyle }}
+      />
     </div>
   );
 }

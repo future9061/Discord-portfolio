@@ -60,6 +60,25 @@ export function Skills() {
                 img="css-icon.webp"
                 ImgStyle={{ transform: "scale(1.2,1.1)" }}
                 alt="CSS"
+                ImgStyle="scale(1.1)"
+                setTalkCount={setTalkCount}
+                settalkWrap={settalkWrap}
+              />
+            </ul>
+          </div>
+
+          <div className="runtime">
+            <h2>RunTime & DB</h2>
+            <ul>
+              <SkillsBox
+                img="nodejs-icon.png"
+                alt="Nodejs"
+                setTalkCount={setTalkCount}
+                settalkWrap={settalkWrap}
+              />
+              <SkillsBox
+                img="mongodb-icon.png"
+                alt="mongodb"
                 setTalkCount={setTalkCount}
                 settalkWrap={settalkWrap}
               />
@@ -76,9 +95,9 @@ export function Skills() {
                 settalkWrap={settalkWrap}
               />
               <SkillsBox
-                img="vue-l.webp"
-                alt="Vue"
-                ImgStyle={{ transform: "scale(1.2,1.3)" }}
+                img="express-icon.png"
+                alt="express"
+                ImgStyle="scale(1.5)"
                 setTalkCount={setTalkCount}
                 settalkWrap={settalkWrap}
               />
@@ -86,7 +105,7 @@ export function Skills() {
           </div>
 
           <div className="library">
-            <h2>Library</h2>
+            <h2>Design</h2>
             <ul>
               <SkillsBox
                 img="bootstrap-icon.webp"
@@ -101,13 +120,39 @@ export function Skills() {
                 settalkWrap={settalkWrap}
               />
               <SkillsBox
-                img="firebase-icon.webp"
-                alt="Firebase"
+                img="sass-icon.png"
+                alt="Sass"
                 setTalkCount={setTalkCount}
                 settalkWrap={settalkWrap}
               />
             </ul>
           </div>
+
+          <div className="cloud-service">
+            <h2>Cloud Service</h2>
+            <ul>
+              <SkillsBox
+                img="netlify-icon.webp"
+                alt="Netlify"
+                setTalkCount={setTalkCount}
+                settalkWrap={settalkWrap}
+              />
+              <SkillsBox
+                img="firebase-icon.webp"
+                alt="Firebase"
+                setTalkCount={setTalkCount}
+                settalkWrap={settalkWrap}
+              />
+              <SkillsBox
+                img="aws-icon.png"
+                alt="AWS"
+                setTalkCount={setTalkCount}
+                settalkWrap={settalkWrap}
+                ImgStyle="scale(2)"
+              />
+            </ul>
+          </div>
+
           <div className="Tools">
             <h2>Tools</h2>
             <ul>
@@ -117,6 +162,7 @@ export function Skills() {
                 ImgStyle={{ transform: "scale(1.15)" }}
                 setTalkCount={setTalkCount}
                 settalkWrap={settalkWrap}
+                ImgStyle="scale(1.3)"
               />
               <SkillsBox
                 img="github-icon.webp"
@@ -130,18 +176,12 @@ export function Skills() {
                 ImgStyle={{ transform: "scale(1.2)" }}
                 setTalkCount={setTalkCount}
                 settalkWrap={settalkWrap}
+                ImgStyle="scale(1.3)"
               />
 
               <SkillsBox
                 img="photoshop-icon.webp"
                 alt="Photoshop"
-                setTalkCount={setTalkCount}
-                settalkWrap={settalkWrap}
-              />
-
-              <SkillsBox
-                img="netlify-icon.webp"
-                alt="Netlify"
                 setTalkCount={setTalkCount}
                 settalkWrap={settalkWrap}
               />

@@ -6,7 +6,7 @@ const SkillData = [
   {
     title: "Javascript",
     content:
-      "자료형에 대한 이해를 바탕으로 dataBinding을 할 수 있으며,selector로 DOM 요소에 접근해 조작, 이벤트 핸들러 등록 후 각종 이벤트 활용이 가능합니다.",
+      "프로토타입 기반의 객체지향 특징을 가진 언어로 객체의 인스턴스를 만들고 프로퍼티를 상속하여 활용할 수 있습니다.",
   },
   {
     title: "HTML",
@@ -21,12 +21,12 @@ const SkillData = [
   {
     title: "React",
     content:
-      "최근 많이 사용해 가장 좋아하는 frameWork로 컴포넌트로 웹 구조를 구성해 props로 데이터를 전달 받으면서 다양한 훅을 활용해 보고 있습니다. useState, useNavigate, useLocation, useContext 등을 사용한 경험이 있습니다. ",
+      "최근 많이 사용해 가장 좋아하는 frameWork로 컴포넌트로 웹 구조를 구성해 props로 데이터를 전달 받으면서 다양한 훅을 활용해 보고 있습니다. 상태관리는 redux 라이브러리를 이용합니다. ",
   },
   {
-    title: "Vue",
+    title: "express",
     content:
-      "간단한 TodoList와 vuetify로 toy 프로젝트를 만들어 봤습니다. 많이 활용해보지는 않았으나 React와 비슷한 부분이 많았다고 느꼈습니다.  v-directive로 databinding과 컴포넌트의 lifecycle에 따라 호출 될 callBack 함수 등록, route로 페이지 구성을 할 수 있습니다. ",
+      "nodejs 런타임 환경에서 서버를 구축할 때 express frameWork를 사용합니다. router로 http 메소드를 모듈화하고 port를 설정해 서버를 실행합니다.",
   },
   {
     title: "Bootstrap",
@@ -41,7 +41,7 @@ const SkillData = [
   {
     title: "Firebase",
     content:
-      "DB 관리를 위해 사용한 경험이 있습니다. 인증객체와 RealTimeDB를 이용했고, 로그인 기능과 관리자 권한을 설정해 특정 Uid를 관리할 수 있습니다.  ",
+      "인증객체로 로그인, 로그아웃 기능을 구현하고 관리자 uid를 별도 관리해본 경험이 있으며 storage에 파일을 저장하여 활용할 수 있습니다.",
   },
   {
     title: "Git",
@@ -51,7 +51,7 @@ const SkillData = [
   {
     title: "GitHub",
     content:
-      "개발자를 위한 플랫폼 중에 가장 많이 활용하는 플랫폼 입니다. 나를 증명하기 위해 최근 기록 하는 것에 정성을 들이고 있습니다.",
+      "개발자를 위한 플랫폼으로 로컬에서 push한 commit을 PR을 통해 병합, 코드리뷰 하며 이슈와 보드를 통해 프로젝트 관리를 할 수 있습니다. ",
   },
   {
     title: "Figma",
@@ -62,6 +62,18 @@ const SkillData = [
   {
     title: "Netlify",
     content: "Netlify로 react 프로젝트 build 및 배포 경험이 있습니다.",
+  }, {
+    title: "Sass",
+    content: "Scss로 스타일을 줄 때 부모 자식 요소의 관계가 명확하게 보여 가장 많이 쓰는 스타일 라이브러리 입니다.",
+  }, {
+    title: "mongodb",
+    content: "자바스크립트와 같이 객체 형태의 데이터베이스로 mongoose 라이브러리로 많이 사용하고 있습니다.",
+  }, {
+    title: "Nodejs",
+    content: "node 런타임 환경에서 자바스크립트로 서버를 구축할 수 있습니다.Rest API로 서버와 클라이언트 간의 요청 응답을 주고 받을 수 있으며, CRUD로 게시글 생성,조회, 수정, 삭제, 댓글달기, 검색하기 등의 기능을 구현할 수 있습니다.",
+  }, {
+    title: "AWS",
+    content: "가장 많이 쓰이고 있는 클라우드 컴퓨팅 서비스로 iam 사용자를 통해 EC2 인스턴스를 생성하여 배포하고, S3 Bucket에 이미지를 저장해 본 경험이 있습니다.",
   },
 ];
 

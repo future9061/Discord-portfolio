@@ -7,6 +7,7 @@
 .skills_inner {
   text-align: center;
   font-family: "Noto Sans KR", sans-serif;
+  margin-bottom: 50px;
 }
 
 .skills_inner > h2 {
@@ -27,7 +28,7 @@
   margin-top: 60px;
 }
 
-.inner_wrap > div h2 {
+.inner_wrap > div > h2 {
   font-size: 1.6em;
   font-weight: 600;
   padding: 5px 0px;

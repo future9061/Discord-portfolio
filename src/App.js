@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import SlideMenu from "./components/SlideMenu";
 import Burger from "./components/Burger";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTheme } from "./store/store";
+import { changeTheme, handleBtn, pathMove } from "./store/store";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,9 +23,6 @@ function App() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate("/home");
-  }, []);
 
   useEffect(() => {
     navigate(`/${state}`, { state: { from: location.pathname } })

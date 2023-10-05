@@ -1,8 +1,8 @@
 import { RiReactjsLine } from "react-icons/ri";
 import { SiPwa } from "react-icons/si";
-import { BiLogoVuejs, BiLogoJavascript } from "react-icons/bi";
+import { BiLogoVuejs, BiLogoJavascript, BiLogoNodejs } from "react-icons/bi";
 import { BsFiletypeCss } from "react-icons/bs";
-import { FaCss3Alt } from "react-icons/fa";
+import { FaCss3Alt, FaSass } from "react-icons/fa";
 
 const projectData = [
   {
@@ -82,6 +82,19 @@ const projectData = [
     content: "좀 더 시각화 된 디자인으로 사용자의 흥미를 이끌 수 있는 UI를 직접 설계하여 만들어본 apple display 웹입니다. ",
     git: 'https://github.com/future9061/apple-display',
     demo: "https://future9061.github.io/apple-display"
+  },
+  {
+    title: "Comment",
+    keyword: "Node",
+    color: "#339933",
+    icon: <BiLogoNodejs />,
+    secondIcon: <FaSass />,
+    secondkeyword: "SCSS",
+    secondColor: "#CC6699",
+    src: "comment.png",
+    content: "node로 서버를 구축하고 AWS EC2로 배포한 comment 프로젝트 입니다. ",
+    git: 'https://github.com/future9061/Comment',
+    demo: "http://ec2-52-79-243-158.ap-northeast-2.compute.amazonaws.com:5000"
   },
 ];
 

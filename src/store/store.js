@@ -27,7 +27,7 @@ export const { changeTalk } = chatBotSlice.actions;
 //페이지 이동 state
 const pageSlice = createSlice({
   name: "pageMove",
-  initialState: "home",
+  initialState: "Home",
   reducers: {
     pathMove: (state, action) => action.payload
   }

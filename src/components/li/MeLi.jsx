@@ -7,21 +7,16 @@ import { useNavigate, useLocation } from "react-router-dom";
 export default function MeLi() {
   const btnState = useSelector((state) => state.projectBtn);
   const dispatch = useDispatch();
-  const btnData = ["All", "Javascript", "React", "Vue", "PWA"];
-  const navigate = useNavigate();
+  const btnData = ["All", "Javascript", "React", "Node", "Vue", "PWA"];
   const location = useLocation();
   const pathName = location.pathname.replace("/", "");
 
   const handleClick = (e) => {
+    if (pathName !== "project") {
+      dispatch(pathMove("project"));
+    }
     dispatch(handleBtn(e.target.id));
   };
-
-  useEffect(() => {
-    if (btnState && pathName !== "project") {
-      navigate("/project");
-      dispatch(pathMove("Project"));
-    }
-  }, [btnState]);
 
   useEffect(() => {
     if (pathName !== "project") {
