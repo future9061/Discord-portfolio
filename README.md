@@ -364,7 +364,7 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
     }
 
     return () => clearInterval(talkInterval);
-  }, [talk, talkCount, settalkWrap]);
+  }, [selectItem]);
 
 ```
 
