@@ -499,7 +499,7 @@ const router = createBrowserRouter([
 
 ```
 
-최종 load 시간이 조금 절감된 걸 확인할 수 있었다.
+최종 load 시간은 거의 변함이 없지만 app이 로딩 되는 동안 사용자에게 Loading 컴포넌트를 보여주어 사용자가 대기하는 시간동안 UI를 노출시킬 수 있었다.
 <img src="https://velog.velcdn.com/images/416homin/post/9d870eba-6fbc-40c0-a202-4a82da47336c/image.png">
 
 ### ✔ ver 3. 최적화 : redux 라이브러리
