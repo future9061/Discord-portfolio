@@ -319,7 +319,7 @@ const SkillData = [...data];  // data의 독립적인 카피본 생성
 const [select, setSelect] = useState(SkillData[0].content); //초기값 지정, 클릭 시 select state에 상태 업데이트됨
 const [talk, setTalk] = useState(select); //최종적으로 클릭한 요소를 업데이트
 const [talkCount, setTalkCount] = useState(0); //타이핑 효과에서 length 관리를 위해 count state 생성
-const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
+const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap, 한 글자씩 talk state에 전달
 
   useEffect(() => {
     if (talk !== select) {
@@ -327,7 +327,7 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
       settalkWrap(""); // 초기화 코드, onclick으로 select의 상태가 업데이트 되면  이전 값 초기화하고 선택한 select을 talk에 담음
       setTalk(select);
     }
-  }, [select, setSelect]);
+  }, [select]);
 
 
 
@@ -342,14 +342,8 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
     }
   };
 
-  useEffect(() => {
-    const imgElem = document.getElementById("image");
-    imgElem.addEventListener("click", handleClick);
-  }, [select]); //handleClick 함수에 event를 주기 위함, useEffect 안에 함수를 만들 수 없었고(onClick에 적용할 수 없음),
-//⭐⭐⭐usecallBack 사용 시 데이터 변화가 없으면 리랜더링이 되지 않아 중복 클릭할 때 업데이트가 되지 않는 문제가 생김. (react를 클릭 -> vue를 클릭 -> 다시 react 클릭하면 react 데이터 업데이트 안됨)
-
   return (
-       <div onClick={handleClick} value={alt} id="image">
+       <div onClick={(e)=>handleClick(e)} value={alt} >
       );
 
 
@@ -361,7 +355,7 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
 
   useEffect(() => {
     const talkInterval = setInterval(() => {
-      setTalkCount((prevTalkCount) => prevTalkCount + 1); // ⭐비동기여서 TalkCount를 함수로 업데이트 함, 함수를 만나면 함수 내부에 코드를 먼저 시행하기 때문. useState 말고 let 키워드로 변수 선언하려 했으나 어째서인지 에러 뜸
+      setTalkCount((prevTalkCount) => prevTalkCount + 1); 
       settalkWrap(talkWrap + select[talkCount]);talkWrap의 이전값에 select을 한 글자씩 넣음
     }, 40);
 
