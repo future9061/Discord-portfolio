@@ -229,7 +229,7 @@ export default App;
 
  useEffect(() => {
     chooseTheme();
-  }, [themeMode, chooseTheme]);
+  }, [themeMode]);
 
   <button onClick={(e) => {
                 e.stopPropagation(); //이벤트 버블링 현상
