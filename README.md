@@ -330,9 +330,6 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
   }, [select]);
 
 
-
-
-
 //SkillsBox.js  (component)
 
   const handleClick = (e) => {
@@ -345,10 +342,6 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
   return (
        <div onClick={(e)=>handleClick(e)} value={alt} >
       );
-
-
-
-
 
 
 //Skills.js  (page)
@@ -388,6 +381,7 @@ const btnData = ["All", "Javascript", "React", "Vue", "PWA"]; //컴포넌트 데
 const [clickBtn, setClickBtn] = useState(""); // 클릭한 컴포넌트의 value를 담을 useState
 
   const handleClick = (e) => {
+    e.preventDefault();
     setClickBtn(() => e.target.value);   //클릭한 요소의 value를 업데이트
   };
 
@@ -407,7 +401,7 @@ const [clickBtn, setClickBtn] = useState(""); // 클릭한 컴포넌트의 value
     return (
       <li
         key={index}
-        onClick={handleClick}
+        onClick={(e)=>handleClick(e)}
         value={index}
         className={index === clickBtn ? classes.active : ""}   //classname을 남김
       >
