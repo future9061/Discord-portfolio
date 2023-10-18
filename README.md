@@ -259,7 +259,7 @@ export default App;
 //context.js
 const movePage = useCallback(() => {
   navigate(`/${atCircle}`, { state: { from: location.pathname } }); //페이지 이동할 때 이전경로를 저장해두기!
-}, [atCircle, location.pathname, navigate]);
+}, [location.pathname]);
 
 //back.jsx - sesstionStorage에 이전 경로 배열로 넣기
 useEffect(() => {
