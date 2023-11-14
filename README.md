@@ -229,7 +229,7 @@ export default App;
 
  useEffect(() => {
     chooseTheme();
-  }, [themeMode, chooseTheme]);
+  }, [themeMode]);
 
   <button onClick={(e) => {
                 e.stopPropagation(); //이벤트 버블링 현상
@@ -259,7 +259,7 @@ export default App;
 //context.js
 const movePage = useCallback(() => {
   navigate(`/${atCircle}`, { state: { from: location.pathname } }); //페이지 이동할 때 이전경로를 저장해두기!
-}, [atCircle, location.pathname, navigate]);
+}, [location.pathname]);
 
 //back.jsx - sesstionStorage에 이전 경로 배열로 넣기
 useEffect(() => {
@@ -319,7 +319,7 @@ const SkillData = [...data];  // data의 독립적인 카피본 생성
 const [select, setSelect] = useState(SkillData[0].content); //초기값 지정, 클릭 시 select state에 상태 업데이트됨
 const [talk, setTalk] = useState(select); //최종적으로 클릭한 요소를 업데이트
 const [talkCount, setTalkCount] = useState(0); //타이핑 효과에서 length 관리를 위해 count state 생성
-const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
+const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap, 한 글자씩 talk state에 전달
 
   useEffect(() => {
     if (talk !== select) {
@@ -327,10 +327,7 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
       settalkWrap(""); // 초기화 코드, onclick으로 select의 상태가 업데이트 되면  이전 값 초기화하고 선택한 select을 talk에 담음
       setTalk(select);
     }
-  }, [select, setSelect]);
-
-
-
+  }, [select]);
 
 
 //SkillsBox.js  (component)
@@ -342,26 +339,16 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
     }
   };
 
-  useEffect(() => {
-    const imgElem = document.getElementById("image");
-    imgElem.addEventListener("click", handleClick);
-  }, [select]); //handleClick 함수에 event를 주기 위함, useEffect 안에 함수를 만들 수 없었고(onClick에 적용할 수 없음),
-//⭐⭐⭐usecallBack 사용 시 데이터 변화가 없으면 리랜더링이 되지 않아 중복 클릭할 때 업데이트가 되지 않는 문제가 생김. (react를 클릭 -> vue를 클릭 -> 다시 react 클릭하면 react 데이터 업데이트 안됨)
-
   return (
-       <div onClick={handleClick} value={alt} id="image">
+       <div onClick={(e)=>handleClick(e)} value={alt} >
       );
-
-
-
-
 
 
 //Skills.js  (page)
 
   useEffect(() => {
     const talkInterval = setInterval(() => {
-      setTalkCount((prevTalkCount) => prevTalkCount + 1); // ⭐비동기여서 TalkCount를 함수로 업데이트 함, 함수를 만나면 함수 내부에 코드를 먼저 시행하기 때문. useState 말고 let 키워드로 변수 선언하려 했으나 어째서인지 에러 뜸
+      setTalkCount((prevTalkCount) => prevTalkCount + 1); 
       settalkWrap(talkWrap + select[talkCount]);talkWrap의 이전값에 select을 한 글자씩 넣음
     }, 40);
 
@@ -370,7 +357,7 @@ const [talkWrap, settalkWrap] = useState(""); // 타이핑 효과를 위한 wrap
     }
 
     return () => clearInterval(talkInterval);
-  }, [talk, talkCount, settalkWrap]);
+  }, [selectItem]);
 
 ```
 
@@ -394,6 +381,7 @@ const btnData = ["All", "Javascript", "React", "Vue", "PWA"]; //컴포넌트 데
 const [clickBtn, setClickBtn] = useState(""); // 클릭한 컴포넌트의 value를 담을 useState
 
   const handleClick = (e) => {
+    e.preventDefault();
     setClickBtn(() => e.target.value);   //클릭한 요소의 value를 업데이트
   };
 
@@ -413,7 +401,7 @@ const [clickBtn, setClickBtn] = useState(""); // 클릭한 컴포넌트의 value
     return (
       <li
         key={index}
-        onClick={handleClick}
+        onClick={(e)=>handleClick(e)}
         value={index}
         className={index === clickBtn ? classes.active : ""}   //classname을 남김
       >
@@ -511,7 +499,7 @@ const router = createBrowserRouter([
 
 ```
 
-최종 load 시간이 조금 절감된 걸 확인할 수 있었다.
+최종 load 시간은 거의 변함이 없지만 app이 로딩 되는 동안 사용자에게 Loading 컴포넌트를 보여주어 사용자가 대기하는 시간동안 UI를 노출시킬 수 있었다.
 <img src="https://velog.velcdn.com/images/416homin/post/9d870eba-6fbc-40c0-a202-4a82da47336c/image.png">
 
 ### ✔ ver 3. 최적화 : redux 라이브러리
