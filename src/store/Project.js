@@ -92,9 +92,22 @@ const projectData = [
     secondkeyword: "SCSS",
     secondColor: "#CC6699",
     src: "comment.png",
-    content: "node로 서버를 구축하고 AWS EC2로 배포한 comment 프로젝트 입니다. ",
+    content: "<인스턴스 종료> node로 서버를 구축하고 AWS EC2로 배포한 comment 프로젝트 입니다. ",
     git: 'https://github.com/future9061/Comment',
     demo: "http://ec2-52-79-243-158.ap-northeast-2.compute.amazonaws.com:5000"
+  },
+  {
+    title: "Alarm",
+    keyword: "Node",
+    color: "#339933",
+    icon: <BiLogoNodejs />,
+    secondIcon: <FaSass />,
+    secondkeyword: "SCSS",
+    secondColor: "#CC6699",
+    src: "alarm-project.png",
+    content: "React-query로 실시간 통신하는 알람 웹 서비스입니다. ",
+    git: 'https://github.com/future9061/Alarm',
+    demo: "http://ec2-13-209-5-25.ap-northeast-2.compute.amazonaws.com:5000"
   },
 ];
 
